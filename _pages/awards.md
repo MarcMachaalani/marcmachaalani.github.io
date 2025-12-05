@@ -12,10 +12,10 @@ layout: single
 
 - **Feb 2025** – **Conquer Cancer Merit Award**, ASCO Genitourinary Cancers Symposium, San Francisco, CA, USA
 
-- **Jan 2025** – **Merit Travel Grant**, OncLive National Fellows Forum, San Francisco, CA, USA
+- **Jan 2025** – **Merit Travel Grant**, OncLive National Fellows Forum for Genitourinary Cancers, San Francisco, CA, USA
 
 - **Dec 2024** – **Frank Shaughnessy Endowed Fellowship in Kidney Cancer**
 
-- **Jan 2024** – **Merit Travel Grant**, OncLive National Fellows Forum, San Francisco, CA, USA
+- **Jan 2024** – **Merit Travel Grant**, OncLive National Fellows Forum for Genitourinary Cancers, San Francisco, CA, USA
 
 - **Sep 2023** – **Merit Award for Distinguished Medical Students**, American Lebanese Medical Association (ALMA), Beirut, Lebanon
