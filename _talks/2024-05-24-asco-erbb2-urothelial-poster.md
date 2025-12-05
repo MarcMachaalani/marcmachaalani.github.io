@@ -3,9 +3,9 @@ title: "ERBB2 mutations and association with molecular phenotype in urothelial c
 collection: talks
 category: posters
 type: "Poster presentation"
-permalink: /talks/2025-05-24-asco-erbb2-urothelial-poster
+permalink: /talks/2024-05-24-asco-erbb2-urothelial-poster
 venue: "ASCO Annual Meeting 2024"
-date: 2025-05-24
+date: 2024-05-24
 location: "Chicago, IL, USA"
 ---
 
