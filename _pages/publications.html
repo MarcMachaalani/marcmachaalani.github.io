@@ -6,10 +6,13 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">My <a href="{{site.author.googlescholar}}"> Google Scholar </a> profile.</div>
+  <div class="wordwrap">
+    <a href="{{ site.author.googlescholar }}">Google Scholar Profile</a>
+  </div>
 {% endif %}
 
 {% include base_path %}
+
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
