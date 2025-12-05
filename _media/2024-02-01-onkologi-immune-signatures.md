@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Immune signatures as predictors for immunotherapy regimens in metastatic RCC"
 collection: media
 date: 2024-02-01
