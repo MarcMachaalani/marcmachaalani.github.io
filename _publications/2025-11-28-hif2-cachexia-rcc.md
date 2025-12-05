@@ -2,7 +2,7 @@
 title: "Targeting of HIF2-driven cachexia in kidney cancer"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-11-28-hif2-cachexia-rcc
+permalink: /publication/2025-11-28-hif2-cachexia-rcc.md
 excerpt: "Mechanistic and translational study demonstrating that HIF2-driven PTHLH mediates hypercalcemia and cachexia in clear cell renal cell carcinoma and is rapidly reversed by HIF2 inhibition."
 date: 2025-11-28
 venue: "<strong>Nature Medicine</strong>"
