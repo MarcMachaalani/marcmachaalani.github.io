@@ -12,5 +12,4 @@
 
 - **Jan 2024** – **Merit Travel Grant**, OncLive National Fellows Forum, San Francisco, CA, USA
 
-- **Sep 2023** – **Merit Award for Distinguished Medical Students**, American Lebanese Medical Association (ALMA)  
-  *Awarded to 6 distinguished medical students out of 800+ based on the Dean’s recommendation.*
+- **Sep 2023** – **Merit Award for Distinguished Medical Students**, American Lebanese Medical Association (ALMA), Beirut, Lebanon
