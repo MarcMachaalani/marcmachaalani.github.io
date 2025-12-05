@@ -26,9 +26,9 @@ author:
   avatar           : "Machaalani_Marc_square.jpg"
   name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Research Fellow"
+  bio              : "Postdoctoral Research Fellow at Dana-Farber Cancer Institute"
   location         : "Boston, MA"
-  employer         : "Dana-Farber Cancer Institute"
+  employer         : #
   uri              : # URL
   email            : # 
 
@@ -110,7 +110,7 @@ media_category:
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
-words_per_minute         : 180
+words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
