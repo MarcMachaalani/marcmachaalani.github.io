@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "ERBB2 amplifications across sex, race, and cancer types studied to guide HER2 therapies"
 collection: media
 date: 2024-09-14
