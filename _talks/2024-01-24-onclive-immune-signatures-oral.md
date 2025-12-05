@@ -9,4 +9,4 @@ date: 2024-01-24
 location: "San Francisco, CA, USA"
 ---
 
-Presenting our work evaluating host immune gene-expression signatures as predictors of response to ICI-based regimens in metastatic RCC.
+Presenting work evaluating host immune gene-expression signatures as predictors of response to ICI-based regimens in metastatic RCC.
