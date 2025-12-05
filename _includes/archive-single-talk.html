@@ -54,13 +54,21 @@
 
     {% if post.venue %}
       <p class="archive__item-excerpt" itemprop="description">
-                {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
+        {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
       </p>
     {% endif %}
 
     {% if post.excerpt %}
       <p class="archive__item-excerpt" itemprop="description">
         {{ post.excerpt | markdownify }}
+      </p>
+    {% endif %}
+
+    {% if post.collection == "media" and post.paperurl %}
+      <p class="archive__item-excerpt" itemprop="description">
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener">
+          Link
+        </a>
       </p>
     {% endif %}
   </article>
