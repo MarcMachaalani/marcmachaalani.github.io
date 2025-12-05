@@ -8,4 +8,4 @@ type: "News Feature"
 paperurl: "https://www.urologytimes.com/view/marc-machaalani-md-on-soluble-madcam-1-in-metastatic-renal-cell-carcinoma"
 ---
 
-Expert commentary on the clinical relevance of soluble MAdCAM-1 in metastatic renal cell carcinoma.
+Commentary on the clinical relevance of soluble MAdCAM-1 in metastatic renal cell carcinoma.
