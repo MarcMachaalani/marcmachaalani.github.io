@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title: "Marc Machaalani, MD"
+title: "Biography"
 author_profile: true
 redirect_from: 
   - /about/
