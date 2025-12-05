@@ -91,11 +91,6 @@ publication_category:
   conferences:
     title: 'Conference Papers'
 
-#Media
-collections:
-  media:
-    output: true
-    permalink: /media/:path/
     
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
