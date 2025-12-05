@@ -13,7 +13,7 @@ title                    : "Marc Machaalani"
 title_separator          : "-"
 name                     : &name "Marc Machaalani, MD"
 description              : &description "Marc is a postdoctoral research fellow at Dana-Farber Cancer Institute. He completed my medical training at the Lebanese University. My research focuses on integrative analyses of circulating and tumor biomarkers, and the impact of host immunity, gut dysbiosis, and tumor genomics on clinical outcomes in patients with renal cell carcinoma. Outside of medicine, Marc is an accomplished pianist and enjoys reading, biking, and playing tennis."   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+url                      : https://marcotitto.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
