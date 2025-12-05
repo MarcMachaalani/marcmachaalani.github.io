@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Marc Machaalani / Site Title"
+title                    : "Marc Machaalani"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Marc Machaalani, MD"
 description              : &description "Marc is a postdoctoral research fellow at Dana-Farber Cancer Institute. He completed my medical training at the Lebanese University. My research focuses on integrative analyses of circulating and tumor biomarkers, and the impact of host immunity, gut dysbiosis, and tumor genomics on clinical outcomes in patients with renal cell carcinoma. Outside of medicine, Marc is an accomplished pianist and enjoys reading, biking, and playing tennis."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -24,24 +24,24 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "Postdoctoral Research Fellow"
+  location         : "Boston, MA"
+  employer         : "Dana-Farber Cancer Institute"
   uri              : # URL
   email            : "none@example.org" 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=hYkqkEUAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-6708-9922"
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=machaalani+m"
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
