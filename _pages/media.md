@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Media"
+title: "Media/Interviews"
 permalink: /media/
 author_profile: true
 ---
