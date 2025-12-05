@@ -17,6 +17,9 @@ main:
   - title: "Awards"
     url: /awards/
 
+  - title: "Media"
+   url: /media/
+
   #- title: "Teaching"
   #  url: /teaching/    
     
