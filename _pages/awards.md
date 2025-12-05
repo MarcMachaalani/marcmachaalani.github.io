@@ -1,0 +1,16 @@
+## Honors & Awards
+
+- **Oct 2025** – **Merit Award**, European Society of Medical Oncology (ESMO) Congress, Berlin, Germany
+
+- **Jun 2025** – **Conquer Cancer Merit Award**, ASCO Annual Meeting, Chicago, IL, USA
+
+- **Feb 2025** – **Conquer Cancer Merit Award**, ASCO Genitourinary Cancers Symposium, San Francisco, CA, USA
+
+- **Jan 2025** – **Merit Travel Grant**, OncLive National Fellows Forum, San Francisco, CA, USA
+
+- **Dec 2024** – **Frank Shaughnessy Endowed Fellowship in Kidney Cancer**
+
+- **Jan 2024** – **Merit Travel Grant**, OncLive National Fellows Forum, San Francisco, CA, USA
+
+- **Sep 2023** – **Merit Award for Distinguished Medical Students**, American Lebanese Medical Association (ALMA)  
+  *Awarded to 6 distinguished medical students out of 800+ based on the Dean’s recommendation.*
