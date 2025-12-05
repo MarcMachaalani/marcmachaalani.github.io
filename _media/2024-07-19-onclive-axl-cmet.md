@@ -7,4 +7,4 @@ type: "Video Interview"
 paperurl: "https://www.onclive.com/view/dr-machaalani-on-overcoming-acquired-resistance-through-axl-and-c-met-inhibition-in-rcc"
 ---
 
-Expert discussion on targeting AXL and c-MET pathways to overcome acquired resistance in renal cell carcinoma.
+Discussion on targeting AXL and c-MET pathways to overcome acquired resistance in renal cell carcinoma.
