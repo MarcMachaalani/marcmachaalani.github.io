@@ -9,4 +9,4 @@ date: 2025-10-17
 location: "Berlin, Germany"
 ---
 
-Presenting our work evaluating soluble mucosal vascular addressin cell adhesion molecule 1 (MAdCAM-1) as a prognostic biomarker in metastatic renal cell carcinoma across three independent clinical trials
+Evaluating soluble mucosal vascular addressin cell adhesion molecule 1 (MAdCAM-1) as a prognostic biomarker in metastatic renal cell carcinoma across three independent clinical trials.
