@@ -2,6 +2,7 @@
 layout: single
 title: "Immune signatures as predictors for immunotherapy regimens in metastatic RCC"
 collection: media
+category: video
 date: 2024-02-01
 venue: "Onkologi SE"
 type: "Video Feature"

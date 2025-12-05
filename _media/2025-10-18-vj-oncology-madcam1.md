@@ -2,6 +2,7 @@
 layout: single
 title: "Soluble MAdCAM-1 as a prognostic biomarker in metastatic RCC"
 collection: media
+category: video
 date: 2025-10-18
 venue: "The Video Journal of Oncology (VJOncology)"
 type: "Video Interview"

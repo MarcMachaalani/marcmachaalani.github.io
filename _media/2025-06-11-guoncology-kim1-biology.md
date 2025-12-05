@@ -2,6 +2,7 @@
 layout: single
 title: "Characterization of circulating KIM-1: correlation with protein levels and tumor biology in metastatic RCC"
 collection: media
+category: video
 date: 2025-06-11
 venue: "GU Oncology Now"
 type: "News Feature"

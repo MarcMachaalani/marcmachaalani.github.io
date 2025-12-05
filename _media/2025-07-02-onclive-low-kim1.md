@@ -2,6 +2,7 @@
 layout: single
 title: "Low KIM-1 levels are associated with improved clinical outcomes in advanced RCC"
 collection: media
+category: article
 date: 2025-07-02
 venue: "OncLive"
 type: "News Feature"

@@ -100,6 +100,12 @@ talk_category:
   invited:
     title: 'Invited Talks'    
 
+# Media Category - The following the list of media categories and their headings
+media_category:
+  video:
+    title: 'Video Interviews'
+  article:
+    title: 'Articles'      
     
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
