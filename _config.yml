@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+a# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "air" # Currently available options are "default", "air"
+site_theme               : "default" # Currently available options are "default", "air"
 title                    : "Marc Machaalani"
 title_separator          : "-"
 name                     : &name "Marc Machaalani, MD"
@@ -26,9 +26,9 @@ author:
   avatar           : "Machaalani_Marc_square.jpg"
   name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Research Fellow at Dana-Farber Cancer Institute"
+  bio              : "Postdoctoral Research Fellow"
   location         : "Boston, MA"
-  employer         : #
+  employer         : "Dana-Farber Cancer Institute"
   uri              : # URL
   email            : # 
 
@@ -38,11 +38,11 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=hYkqkEUAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : #"https://orcid.org/0000-0002-6708-9922"
+  orcid            : "https://orcid.org/0000-0002-6708-9922"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=machaalani+m"
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Marc-Machaalani"
   scopus           : # URL
   zotero           : # URL
 
@@ -110,7 +110,7 @@ media_category:
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
-words_per_minute         : 160
+words_per_minute         : 180
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
