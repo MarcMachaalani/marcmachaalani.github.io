@@ -91,6 +91,15 @@ publication_category:
   conferences:
     title: 'Conference Papers'
 
+# Talk Category - The following the list of talk categories and their headings
+talk_category:
+  posters:
+    title: 'Poster Presentations'
+  orals:
+    title: 'Oral Presentations'    
+  invited:
+    title: 'Invited Talks'    
+
     
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
