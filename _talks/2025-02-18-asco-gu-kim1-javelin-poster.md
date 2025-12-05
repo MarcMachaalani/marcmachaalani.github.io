@@ -9,7 +9,7 @@ date: 2025-02-18
 location: "San Francisco, CA, USA"
 ---
 
-Poster on circulating KIM-1 as a biomarker in metastatic RCC based on a post-hoc analysis of JAVELIN Renal 101.
+Poster on circulating kidney injury molecule-1 (KIM-1) as a biomarker in metastatic RCC based on a post-hoc analysis of JAVELIN Renal 101.
 
 Event links:  
 - <https://meetings.asco.org/meetings/2025-asco-genitourinary-cancers-symposium/326/program-guide/scheduled-sessions>  
