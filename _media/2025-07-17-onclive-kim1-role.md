@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Dr Machaalani on the potential role of circulating KIM-1 as a biomarker in metastatic RCC"
 collection: media
 date: 2025-07-17
