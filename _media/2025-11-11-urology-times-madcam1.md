@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Marc Machaalani, MD, on soluble MAdCAM-1 in metastatic renal cell carcinoma"
 collection: media
 date: 2025-11-11
