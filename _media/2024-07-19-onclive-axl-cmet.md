@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Dr Machaalani on overcoming acquired resistance through AXL and c-MET inhibition in RCC"
 collection: media
 date: 2024-07-19
