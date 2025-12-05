@@ -7,5 +7,5 @@ excerpt: "Cross-sectional study evaluating hypertension knowledge, attitudes, an
 date: 2022-07-13
 venue: "Vascular Health and Risk Management"
 paperurl: "https://doi.org/10.2147/VHRM.S367187"
-citation: "<strong>Machaalani M</strong>, Seifeddine H, Ali A, Bitar H, Briman O, Chahine MN. \"Knowledge, Attitude, and Practice Toward Hypertension Among Hypertensive Patients Residing in Lebanon.\" Vasc Health Risk Manag. 2022;18:541-553. doi:10.2147/VHRM.S367187."
+citation: "<strong>Machaalani M</strong>, Seifeddine H, Ali A, Bitar H, Briman O, Chahine MN. Knowledge, Attitude, and Practice Toward Hypertension Among Hypertensive Patients Residing in Lebanon. Vasc Health Risk Manag. 2022;18:541-553. doi:10.2147/VHRM.S367187."
 ---
