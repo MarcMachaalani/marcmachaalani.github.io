@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Immunotherapy rechallenge after prior immune checkpoint inhibition in mRCC"
 collection: media
 date: 2024-05-25
