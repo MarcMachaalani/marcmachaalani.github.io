@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Elevated KIM-1 levels are associated with poor prognosis in metastatic RCC"
 collection: media
 date: 2025-05-30
