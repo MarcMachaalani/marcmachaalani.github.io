@@ -26,9 +26,9 @@ author:
   avatar           : "Machaalani_Marc_square.jpg"
   name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Research Fellow at Dana-Farber Cancer Institute"
+  bio              : "Postdoctoral Research Fellow"
   location         : "Boston, MA"
-  employer         : #
+  employer         : "Dana-Farber Cancer Institute"
   uri              : # URL
   email            : # 
 
@@ -38,7 +38,7 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=hYkqkEUAAAAJ"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0002-6708-9922"
+  orcid            : #"https://orcid.org/0000-0002-6708-9922"
   semantic         : # URL
   ssrn             : # URL
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=machaalani+m"
