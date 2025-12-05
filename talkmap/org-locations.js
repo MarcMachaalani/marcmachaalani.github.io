@@ -1,5 +1,10 @@
 var addressPoints = [
   [
+    "ERBB2 mutations and association with molecular phenotype in urothelial carcinoma<br />ASCO Annual Meeting 2024; Chicago, IL, USA",
+    41.8755616,
+    -87.6244212
+  ],
+  [
     "Integrative clinical, genomic, transcriptomic, and immunopathologic characterization of circulating KIM-1<br />Kidney Cancer Research Summit (KCRS) 2025; Boston, MA, USA",
     42.3588336,
     -71.0578303
@@ -18,6 +23,11 @@ var addressPoints = [
     "KIM-1 as a circulating biomarker in metastatic RCC: Post-hoc analysis of JAVELIN Renal 101<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
     37.7932754,
     -122.3963589
+  ],
+  [
+    "Inhibition of AXL along with c-Met overcomes resistance development in renal cell carcinoma<br />Kidney Cancer Research Symposium 2024; Boston, MA, USA",
+    42.3588336,
+    -71.0578303
   ],
   [
     "Host immune signatures as predictors of response to immunotherapy-based regimens in metastatic renal cell carcinoma<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
