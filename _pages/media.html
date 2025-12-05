@@ -1,0 +1,25 @@
+---
+layout: archive
+title: "Media"
+permalink: /media/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% assign videos   = site.media | where: "category", "video" %}
+{% assign articles = site.media | where: "category", "article" %}
+
+{% if videos.size > 0 %}
+  <h2>Video Interviews</h2><hr />
+  {% for post in videos reversed %}
+    {% include archive-single-talk.html %}
+  {% endfor %}
+{% endif %}
+
+{% if articles.size > 0 %}
+  <h2>Articles</h2><hr />
+  {% for post in articles reversed %}
+    {% include archive-single-talk.html %}
+  {% endfor %}
+{% endif %}
