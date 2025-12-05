@@ -1,10 +1,5 @@
 var addressPoints = [
   [
-    "ERBB2 mutations and association with molecular phenotype in urothelial carcinoma<br />ASCO Annual Meeting 2024; Chicago, IL, USA",
-    41.8755616,
-    -87.6244212
-  ],
-  [
     "Integrative clinical, genomic, transcriptomic, and immunopathologic characterization of circulating KIM-1<br />Kidney Cancer Research Summit (KCRS) 2025; Boston, MA, USA",
     42.3588336,
     -71.0578303
@@ -23,6 +18,11 @@ var addressPoints = [
     "ERBB2 amplifications across sex, race, and cancer types<br />ESMO Congress 2024; Barcelona, Spain",
     41.3825802,
     2.177073
+  ],
+  [
+    "ERBB2 mutations and association with molecular phenotype in urothelial carcinoma<br />ASCO Annual Meeting 2024; Chicago, IL, USA",
+    41.8755616,
+    -87.6244212
   ],
   [
     "Implementing Biomarkers of Immunotherapy for Genitourinary Cancers<br />Society for Immunotherapy of Cancer (SITC) \u2013 Leveraging Biomarkers to Accelerate IO Drug Development Workshop; Boston, MA, USA",
