@@ -1,3 +1,9 @@
+---
+title: "Awards"
+permalink: /awards/
+layout: single
+---
+
 ## Honors & Awards
 
 - **Oct 2025** – **Merit Award**, European Society of Medical Oncology (ESMO) Congress, Berlin, Germany
