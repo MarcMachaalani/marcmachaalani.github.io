@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # Currently available options are "default", "air"
+site_theme               : "air" # Currently available options are "default", "air"
 title                    : "Marc Machaalani"
 title_separator          : "-"
 name                     : &name "Marc Machaalani, MD"
@@ -26,9 +26,9 @@ author:
   avatar           : "Machaalani_Marc_square.jpg"
   name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Research Fellow focusing on Renal Cell Carcinoma"
+  bio              : "Postdoctoral Research Fellow at Dana-Farber Cancer Institute"
   location         : "Boston, MA"
-  employer         : "Dana-Farber Cancer Institute"
+  employer         : #
   uri              : # URL
   email            : # 
 
