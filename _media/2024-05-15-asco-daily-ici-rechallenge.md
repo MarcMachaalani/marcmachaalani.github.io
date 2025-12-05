@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Examining the evidence on immunotherapy rechallenge after prior ICI exposure in mRCC"
 collection: media
 date: 2024-05-15
