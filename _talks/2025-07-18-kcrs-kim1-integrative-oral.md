@@ -9,4 +9,4 @@ date: 2025-07-18
 location: "Boston, MA, USA"
 ---
 
-Presenting our integrative multi-omic and immunopathologic analysis of circulating kidney injury molecule-1 (KIM-1) in patients with metastatic renal cell carcinoma.
+Presenting an integrative analysis of circulating kidney injury molecule-1 (KIM-1) in patients with metastatic renal cell carcinoma.
