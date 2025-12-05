@@ -7,5 +7,5 @@ excerpt: "Mechanistic study identifying SLC1A1/EAAT3 as an epigenetically regula
 date: 2025-11-14
 venue: "<strong>Nature Communications</strong>"
 paperurl: "https://doi.org/10.1038/s41467-025-64983-x"
-citation: "Grubb T, Koochaki P, Matar S, Ghandour F, <strong>Machaalani M</strong>, Saad E, Tang C, Reznik E, Khatun J, Salem C, Dubasik N, Orlando DA, Guenther MG, Parajuli G, Srivastava RM, Martinez SR, Coker JA, Kotecha RR, Hakimi AA, Asara JM, Chan TA, Vanharanta S, Stauffer SR, Kaelin WG Jr, Signoretti S, Choueiri TK, Chakraborty AA."
+citation: "Grubb T, Koochaki P, Matar S, Ghandour F, <strong>Machaalani M</strong>, Saad E, Tang C, Reznik E, Khatun J, Salem C, Dubasik N, Orlando DA, Guenther MG, Parajuli G, Srivastava RM, Martinez SR, Coker JA, Kotecha RR, Hakimi AA, Asara JM, Chan TA, Vanharanta S, Stauffer SR, Kaelin WG Jr, Signoretti S, Choueiri TK, Chakraborty AA. (2025). &quot;The SLC1A1/EAAT3 dicarboxylic amino acid transporter is an epigenetically dysregulated nutrient carrier that sustains oncogenic metabolic programs.&quot; <i>Nature Communications</i>."
 ---
