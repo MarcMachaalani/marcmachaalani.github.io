@@ -1,13 +1,23 @@
 var addressPoints = [
   [
-    "Talk 2 on Relevant Topic in Your Field<br />London School of Testing; London, UK",
-    51.5074456,
-    -0.1277653
-  ],
-  [
     "Integrative clinical, genomic, transcriptomic, and immunopathologic characterization of circulating KIM-1<br />Kidney Cancer Research Summit (KCRS) 2025; Boston, MA, USA",
     42.3588336,
     -71.0578303
+  ],
+  [
+    "Perspectives on knowledge, precautionary behaviors, and psychological status of patients with cardiovascular diseases during the first wave of the COVID-19 pandemic in Lebanon<br />Demystifying COVID-19: Lessons Learned and Future Opportunities; Beirut, Lebanon",
+    33.8892265,
+    35.5025585
+  ],
+  [
+    "Implementing Biomarkers of Immunotherapy for Genitourinary Cancers<br />Society for Immunotherapy of Cancer (SITC) \u2013 Leveraging Biomarkers to Accelerate IO Drug Development Workshop; Boston, MA, USA",
+    42.3588336,
+    -71.0578303
+  ],
+  [
+    "KIM-1 as a circulating biomarker in metastatic RCC: Post-hoc analysis of JAVELIN Renal 101<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
+    37.7932754,
+    -122.3963589
   ],
   [
     "Host immune signatures as predictors of response to immunotherapy-based regimens in metastatic renal cell carcinoma<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
