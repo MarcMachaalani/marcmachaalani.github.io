@@ -1,0 +1,148 @@
+/* ==========================================================================
+   PUBLICATIONS PAGE STYLING
+   ========================================================================== */
+
+.publications-header {
+  margin-bottom: 3rem;
+  text-align: center;
+  
+  .scholar-link {
+    display: flex;
+    justify-content: center;
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: var(--global-box-shadow);
+      background-color: var(--global-primary-color);
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      
+      &:hover {
+        box-shadow: var(--global-box-shadow-lg);
+        transform: translateY(-2px);
+        background-color: var(--global-primary-dark);
+      }
+      
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.publications-container {
+  max-width: 900px;
+}
+
+.publication-category {
+  margin-bottom: 3rem;
+  
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    
+    .category-title {
+      margin: 0;
+      font-size: 1.75rem;
+      color: var(--global-text-color);
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    
+    .category-count {
+      display: none;
+    }
+  }
+  
+  .category-divider {
+    border: none;
+    border-top: 2px solid var(--global-border-color);
+    margin: 1.5rem 0;
+  }
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  /* Style individual publication items */
+  .archive__item {
+    padding: 1.5rem;
+    background-color: var(--global-bg-color);
+    border-radius: 8px;
+    box-shadow: var(--global-box-shadow);
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      box-shadow: var(--global-box-shadow-md);
+      transform: translateX(4px);
+    }
+    
+    .archive__item-title {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      
+      a {
+        color: var(--global-link-color);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--global-link-color-hover);
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .archive__item-excerpt {
+      color: var(--global-text-color-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    
+    .archive__item-teaser {
+      display: none; /* Hide images if present */
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .publication-category {
+    .category-header {
+      flex-direction: column;
+      align-items: flex-start;
+      
+      .category-count {
+        align-self: flex-start;
+      }
+    }
+  }
+  
+  .publications-list {
+    gap: 1rem;
+    
+    .archive__item {
+      padding: 1rem;
+      
+      .archive__item-title {
+        font-size: 1.1rem;
+      }
+      
+      .archive__item-excerpt {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

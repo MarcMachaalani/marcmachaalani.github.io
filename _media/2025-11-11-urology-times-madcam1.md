@@ -5,7 +5,7 @@ collection: media
 category: video
 date: 2025-11-11
 venue: "Urology Times"
-type: "News Feature"
+type: "Video Interview"
 paperurl: "https://www.urologytimes.com/view/marc-machaalani-md-on-soluble-madcam-1-in-metastatic-renal-cell-carcinoma"
 ---
 

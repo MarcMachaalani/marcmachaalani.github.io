@@ -1,47 +1,72 @@
 /* ==========================================================================
-   DEFAULT THEME
+   DEFAULT THEME - IMPROVED VERSION
    ========================================================================== */
 
 /* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$gray                       : #6b7280;
+$dark-gray                  : #1f2937;
+$darker-gray                : #111827;
+$light-gray                 : #e5e7eb;
+$lighter-gray               : #f3f4f6;
 
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+/* IMPROVED: Modern, cohesive color palette */
+$danger-color               : #ef4444;
+$info-color                 : #3b82f6;
+$notice-color               : #8b5cf6;
+$success-color              : #10b981;
+$warning-color              : #f59e0b;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
+$border-radius              : 6px;
+$box-shadow                 : 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+$box-shadow-md              : 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$box-shadow-lg              : 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$global-transition          : all 0.3s ease-in-out;
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site */
+/* Default light theme for the site - IMPROVED */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
-    --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
+    /* PRIMARY COLORS - Modern blue for links and accents */
+    --global-primary-color              : #2563eb;
+    --global-primary-dark               : #1e40af;
+    --global-primary-light              : #dbeafe;
+    
+    /* BACKGROUNDS */
+    --global-base-color                 : #{$dark-gray};
+    --global-bg-color                   : #ffffff;
+    --global-footer-bg-color            : #{$lighter-gray};
+    
+    /* BORDERS */
+    --global-border-color               : #{$light-gray};
+    --global-dark-border-color          : #d1d5db;
+    
+    /* CODE BLOCKS */
+    --global-code-background-color      : #f9fafb;
     --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
+    
+    /* TEXT */
     --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
+    --global-text-color-light           : #{$gray};
+    --global-fig-caption-color          : #{$gray};
+    
+    /* LINKS - Modern blue with good contrast */
+    --global-link-color                 : #2563eb;
+    --global-link-color-hover           : #1e40af;
+    --global-link-color-visited         : #7c3aed;
+    
+    /* HEADER/MASTHEAD */
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : #2563eb;
+    
+    /* TABLES */
     --global-thead-color                : #{$lighter-gray};
+    
+    /* SHADOWS */
+    --global-box-shadow                 : #{$box-shadow};
+    --global-box-shadow-md              : #{$box-shadow-md};
+    --global-box-shadow-lg              : #{$box-shadow-lg};
 }

@@ -5,7 +5,7 @@ collection: media
 category: video
 date: 2024-02-01
 venue: "Onkologi SE"
-type: "Video Feature"
+type: "Video Interview"
 paperurl: "https://bpno.se/medtalks/host-immune-signatures-as-predictors-for-immunotherapy-regimens-in-patients-with-metastatic-renal-cell-carcinoma/"
 ---
 

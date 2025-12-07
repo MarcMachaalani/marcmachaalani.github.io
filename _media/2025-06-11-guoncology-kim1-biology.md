@@ -5,7 +5,7 @@ collection: media
 category: video
 date: 2025-06-11
 venue: "GU Oncology Now"
-type: "News Feature"
+type: "Vide Interview"
 paperurl: "https://www.guoncologynow.com/post/characterization-of-circulating-kim-1-understanding-the-correlation-with-protein-levels-and-tumor-biology-in-metastatic-rcc"
 ---
 

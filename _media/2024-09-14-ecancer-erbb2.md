@@ -5,7 +5,7 @@ collection: media
 category: video
 date: 2024-09-14
 venue: "ecancer"
-type: "Video Feature"
+type: "Video Interview"
 paperurl: "https://ecancer.org/en/video/12013-erbb2-amplifications-across-sex-race-and-cancer-types-studied-to-guide-her2-therapies"
 ---
 
