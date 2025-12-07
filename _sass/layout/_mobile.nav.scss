@@ -1,0 +1,109 @@
+/* ==========================================================================
+   MOBILE NAVIGATION IMPROVEMENTS
+   ========================================================================== */
+
+/* Mobile Navigation Bar - Sticky bottom nav */
+.mobile-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--global-bg-color);
+  border-top: 1px solid var(--global-border-color);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding-bottom: env(safe-area-inset-bottom); /* Account for notch */
+}
+
+/* Mobile nav links */
+.mobile-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 60px;
+  text-decoration: none;
+  color: var(--global-text-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 0.25rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  
+  &:hover,
+  &.active {
+    color: var(--global-primary-color);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--global-primary-color);
+    }
+  }
+  
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjust main content to not be hidden by nav */
+  body {
+    padding-bottom: 60px;
+  }
+  
+  /* Make header responsive */
+  .site-title {
+    font-size: 1.5rem;
+  }
+  
+  .page__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .masthead {
+    padding: 0.5rem 0;
+  }
+}
+
+/* Show mobile nav only on small screens */
+@media (min-width: 769px) {
+  .mobile-nav-bar {
+    display: none;
+  }
+  
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 600px) and (max-width: 768px) {
+  .mobile-nav-bar {
+    height: 70px;
+  }
+  
+  .mobile-nav-link {
+    font-size: 0.85rem;
+    height: 70px;
+    
+    i {
+      font-size: 1.75rem;
+    }
+  }
+  
+  body {
+    padding-bottom: 70px;
+  }
+}
