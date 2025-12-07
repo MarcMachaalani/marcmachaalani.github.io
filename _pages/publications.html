@@ -5,13 +5,11 @@ permalink: /publications/
 author_profile: true
 ---
 
-<div class="publications-header">
-  {% if site.author.googlescholar %}
-    <a href="{{ site.author.googlescholar }}" class="btn">
-      <i class="fas fa-graduation-cap"></i> View on Google Scholar
-    </a>
-  {% endif %}
-</div>
+{% if site.author.googlescholar %}
+  <a href="{{ site.author.googlescholar }}" class="btn publications-scholar-btn">
+    <i class="fas fa-graduation-cap"></i> View on Google Scholar
+  </a>
+{% endif %}
 
 {% include base_path %}
 
