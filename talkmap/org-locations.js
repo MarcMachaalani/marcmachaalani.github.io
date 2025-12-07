@@ -25,7 +25,7 @@ var addressPoints = [
     -87.6244212
   ],
   [
-    "Implementing Biomarkers of Immunotherapy for Genitourinary Cancers<br />Society for Immunotherapy of Cancer (SITC) \u2013 Leveraging Biomarkers to Accelerate IO Drug Development Workshop; Boston, MA, USA",
+    "Implementing Biomarkers of Immunotherapy for Genitourinary Cancers<br />SITC Workshop; Boston, MA, USA",
     42.3588336,
     -71.0578303
   ],
