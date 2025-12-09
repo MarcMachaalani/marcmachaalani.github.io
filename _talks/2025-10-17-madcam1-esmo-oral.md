@@ -6,6 +6,7 @@ type: "Oral presentation"
 permalink: /talks/2025-10-17-madcam1-esmo-oral
 venue: "ESMO Congress 2025"
 date: 2025-10-17
+paperurl: "https://doi.org/10.1016/j.annonc.2025.08.3215"
 location: "Berlin, Germany"
 ---
 
