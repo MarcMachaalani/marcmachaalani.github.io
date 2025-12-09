@@ -6,6 +6,7 @@ type: "Poster presentation"
 permalink: /talks/2025-02-18-asco-gu-kim1-javelin-poster
 venue: "ASCO Genitourinary Cancers Symposium 2025"
 date: 2025-02-18
+paperurl: "https://doi.org/10.1200/JCO.2025.43.5_suppl.594"
 location: "San Francisco, CA, USA"
 ---
 
