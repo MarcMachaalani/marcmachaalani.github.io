@@ -6,8 +6,8 @@ var addressPoints = [
   ],
   [
     "KIM-1 as a circulating biomarker in metastatic RCC: Post-hoc analysis of JAVELIN Renal 101<br />ASCO Genitourinary Cancers Symposium 2025; San Francisco, CA, USA",
-    37.7932754,
-    -122.3963589
+    37.7879363,
+    -122.4075201
   ],
   [
     "Perspectives on knowledge, precautionary behaviors, and psychological status of patients with cardiovascular diseases during the first wave of the COVID-19 pandemic in Lebanon<br />Demystifying COVID-19: Lessons Learned and Future Opportunities; Beirut, Lebanon",
@@ -31,8 +31,8 @@ var addressPoints = [
   ],
   [
     "KIM-1 as a circulating biomarker in metastatic RCC: Post-hoc analysis of JAVELIN Renal 101<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
-    37.7932754,
-    -122.3963589
+    37.7879363,
+    -122.4075201
   ],
   [
     "Integrative clinical, genomic, and transcriptomic characterization of circulating KIM-1 in metastatic RCC<br />ASCO Annual Meeting 2025; Chicago, IL, USA",
@@ -46,8 +46,8 @@ var addressPoints = [
   ],
   [
     "Host immune signatures as predictors of response to immunotherapy-based regimens in metastatic renal cell carcinoma<br />OncLive National Fellows Forum: Genitourinary Cancers; San Francisco, CA, USA",
-    37.7932754,
-    -122.3963589
+    37.7879363,
+    -122.4075201
   ],
   [
     "Soluble MAdCAM-1 predicts outcomes in patients with metastatic renal cell carcinoma: results from three independent clinical trials<br />ESMO Congress 2025; Berlin, Germany",
