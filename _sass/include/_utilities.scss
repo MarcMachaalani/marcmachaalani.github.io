@@ -498,3 +498,28 @@ a.reversefootnote {
   color: $danger-color;
   font-weight: bold;
 }
+
+/* ==========================================================================
+   Compact masthead on mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .masthead {
+    padding: 0.25rem 0;
+  }
+
+  .masthead__inner-wrap {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .masthead__menu-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .site-title {
+    font-size: 1.25rem;
+  }
+}
+
