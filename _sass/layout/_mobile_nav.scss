@@ -107,3 +107,25 @@
     padding-bottom: 70px;
   }
 }
+
+/* Mobile bottom nav: icons only */
+@media (max-width: 768px) {
+  .mobile-nav-link span {
+    display: none;
+  }
+
+  .mobile-nav-link {
+    font-size: 0; /* prevents leftover inline spacing */
+    gap: 0;
+  }
+
+  .mobile-nav-link i {
+    font-size: 1.6rem; /* adjust if you want bigger/smaller */
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-link {
+    justify-content: center;
+  }
+}
