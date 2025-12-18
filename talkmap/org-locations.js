@@ -35,6 +35,11 @@ var addressPoints = [
     -122.4075201
   ],
   [
+    "Pan-tumor multicenter study of the impact of prior immune-related adverse events (irAEs) on safety and efficacy of subsequent antibody-drug conjugate (ADC)<br />Society for Immunotherapy of Cancer (SITC); National Harbor, MD, USA",
+    38.789356,
+    -77.0066308
+  ],
+  [
     "Integrative clinical, genomic, and transcriptomic characterization of circulating KIM-1 in metastatic RCC<br />ASCO Annual Meeting 2025; Chicago, IL, USA",
     41.8755616,
     -87.6244212
