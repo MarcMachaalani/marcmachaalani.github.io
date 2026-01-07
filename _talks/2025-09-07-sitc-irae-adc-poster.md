@@ -9,4 +9,4 @@ date: 2025-09-07
 location: "National Harbor, MD, USA"
 ---
 
-Presenting work at the SITC Annual Meeting showing that prior irAEs during ICI therapy were associated with increased ADC toxicity across tumor types. 
+Poster showing that prior irAEs during ICI therapy were associated with increased ADC toxicity across tumor types. 
