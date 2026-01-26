@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Marc Machaalani, MD, received his medical degree from the Lebanese University in 2023. He is currently a postdoctoral research fellow at Dana-Farber Cancer Institute, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
+Marc Machaalani, MD, received his medical degree from the Lebanese University in 2023. He is currently a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
 
 His research focuses on integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with an emphasis on host immunity, gut dysbiosis, and tumor genomics as determinants of clinical outcomes.
 
