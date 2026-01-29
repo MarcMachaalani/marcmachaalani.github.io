@@ -168,15 +168,20 @@
         color: var(--global-text-color);
         font-size: 0.9rem;
         user-select: none;
+        list-style: none; // Remove default triangle
         
-        i {
-          margin-right: 0.5rem;
-          color: var(--global-primary-color);
+        &::-webkit-details-marker {
+          display: none; // Remove default triangle in webkit
         }
         
         &:hover {
           color: var(--global-primary-color);
         }
+      }
+      
+      // Open state - change arrow direction
+      &[open] summary::before {
+        content: "▾ ";
       }
       
       p {
