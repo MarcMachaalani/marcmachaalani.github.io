@@ -74,7 +74,7 @@
     {%- comment -%} Citation section (collapsible) {%- endcomment -%}
     {% if post.citation %}
       <details class="publication-citation">
-        <summary></summary>
+        <summary><span class="citation-toggle-text">Show Citation</span></summary>
         <p>{{ post.citation | markdownify }}</p>
       </details>
     {% endif %}

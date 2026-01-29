@@ -178,9 +178,9 @@
           display: none;
         }
         
-        // Add custom arrow and text
+        // Add arrow before the text
         &::before {
-          content: "▸ Show Citation";
+          content: "▸ ";
         }
         
         &:hover {
@@ -190,7 +190,14 @@
       
       // Open state - change arrow direction
       &[open] summary::before {
-        content: "▾ Hide Citation";
+        content: "▾ ";
+      }
+      
+      // Change text when open
+      &[open] summary .citation-toggle-text::after {
+        content: " (Hide)";
+        font-size: 0.85em;
+        opacity: 0.7;
       }
       
       p {
