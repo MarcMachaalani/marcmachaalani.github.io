@@ -33,13 +33,14 @@ author_profile: true
         <section class="publication-category">
           <div class="category-header">
             <h2 class="category-title">{{ category[1].title }}</h2>
+            <span class="category-count">{{ category_items }}</span>
           </div>
           <hr class="category-divider" />
           
           <div class="publications-list">
             {% for post in site.publications reversed %}
               {% if post.category == category[0] %}
-                {% include archive-single.html %}
+                {% include archive-single-publication.html %}
               {% endif %}
             {% endfor %}
           </div>
@@ -51,7 +52,7 @@ author_profile: true
   <div class="publications-container">
     <div class="publications-list">
       {% for post in site.publications reversed %}
-        {% include archive-single.html %}
+        {% include archive-single-publication.html %}
       {% endfor %}
     </div>
   </div>
