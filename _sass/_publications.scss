@@ -168,10 +168,19 @@
         color: var(--global-text-color);
         font-size: 0.9rem;
         user-select: none;
-        list-style: none; // Remove default triangle
+        list-style: none;
         
         &::-webkit-details-marker {
-          display: none; // Remove default triangle in webkit
+          display: none;
+        }
+        
+        &::marker {
+          display: none;
+        }
+        
+        // Add custom arrow and text
+        &::before {
+          content: "▸ Show Citation";
         }
         
         &:hover {
@@ -181,7 +190,7 @@
       
       // Open state - change arrow direction
       &[open] summary::before {
-        content: "▾ ";
+        content: "▾ Hide Citation";
       }
       
       p {

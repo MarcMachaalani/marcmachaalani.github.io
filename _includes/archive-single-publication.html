@@ -49,8 +49,7 @@
     {%- comment -%} Publication-specific metadata {%- endcomment -%}
     {% if post.venue %}
       <p class="publication-venue">
-        <i class="fas fa-book-open"></i>
-        Published in {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }},{{ post.date | date: "%Y" }}
+        Published in {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ post.date | date: "%Y" }}
       </p>
     {% elsif post.date %}
       <p class="page__date">
@@ -75,7 +74,7 @@
     {%- comment -%} Citation section (collapsible) {%- endcomment -%}
     {% if post.citation %}
       <details class="publication-citation">
-        <summary>▸ Show Citation</summary>
+        <summary></summary>
         <p>{{ post.citation | markdownify }}</p>
       </details>
     {% endif %}
