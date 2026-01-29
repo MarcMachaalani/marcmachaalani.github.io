@@ -12,7 +12,7 @@ Marc Machaalani, MD, received his medical degree from the Lebanese University in
 
 His research focuses on integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with an emphasis on host immunity, gut dysbiosis, and tumor genomics as determinants of clinical outcomes.
 
-Dr. Machaalani has authored multiple high-impact publications in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, *JAMA Network Open*, and *European Urology*. His contributions span cancer metabolism, immune evasion, tumor microenvironment biology, circulating biomarkers, and health disparities. He has presented his findings at major international meetings including, ASCO, ASCO GU, ESMO, SITC, and KCRS, through oral and poster presentations.
+Dr. Machaalani has authored multiple high-impact publications in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, *JAMA Network Open*, *Clinical Cancer Research*, and *European Urology*. His contributions span cancer metabolism, immune evasion, tumor microenvironment biology, circulating biomarkers, and health disparities. He has presented his findings at major international meetings including, ASCO, ASCO GU, ESMO, SITC, and KCRS, through oral and poster presentations.
 
 He is the recipient of several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards, supported by competitive fellowships and travel grants.
 
