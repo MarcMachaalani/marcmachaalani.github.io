@@ -8,4 +8,5 @@ date: 2025-02-01
 venue: "<strong>ESMO Open</strong>"
 paperurl: "https://doi.org/10.1016/j.esmoop.2024.104105"
 citation: "Xu W, Birch G, Melki A, Moritz V, Bharadwaj M, Schindler NR, Labaki C, Saliby RM, Dinh K, Horst JT, Sun M, Kashima S, Hugaboom M, Dighe A, <strong>Machaalani M</strong>, Lee GS-M, Hurwitz M, McGregor BA, Hirsch MS, Shukla SA, McDermott DF, Signoretti S, Romee R, Choueiri TK, Braun DA. Progressive natural killer cell dysfunction in advanced-stage clear-cell renal cell carcinoma and association with clinical outcomes. <i>ESMO Open</i>. 2025;10(2):104105. doi:10.1016/j.esmoop.2024.104105."
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/39813824/"
 ---

@@ -8,4 +8,5 @@ date: 2025-11-28
 venue: "<strong>Nature Medicine</strong>"
 paperurl: "https://doi.org/10.1038/s41591-025-04054-2"
 citation: "Abu-Remaileh M, Stransky LA, Bhalerao N, Shirole NH, Jiang Q, Saad E, <strong>Machaalani M</strong>, Vigeant SM, Woldemichael H, Xu C, Lu J, Wei H, Liu Z, Sun W, Enomoto K, Choueiri TK, Pitarresi JR, Carr SA, Udeshi ND, Kaelin WG Jr. Targeting of HIF2-driven cachexia in kidney cancer. <i>Nat Med</i>. 2025. doi:10.1038/s41591-025-04054-2."
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/41315757/"
 ---
