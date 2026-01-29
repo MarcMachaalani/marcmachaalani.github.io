@@ -4,7 +4,7 @@
 
 .publications-scholar-btn {
   display: inline-block;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;  // Reduced from 4rem
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   border-radius: 6px;
@@ -70,12 +70,12 @@
 .publications-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
   
   /* Style individual publication items */
   .publication-item {
     .archive__item {
-      padding: 1.75rem;
+      padding: 1.25rem;
       background-color: var(--global-bg-color);
       border-radius: 8px;
       border: 1px solid var(--global-border-color);
@@ -92,14 +92,14 @@
     .archive__item-body {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
     
     .archive__item-title {
       margin: 0;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.3;
       
       a {
         color: var(--global-link-color);
@@ -124,7 +124,7 @@
     
     .publication-venue {
       margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--global-text-color);
       font-weight: 500;
       
@@ -150,14 +150,14 @@
     
     .archive__item-excerpt {
       color: var(--global-text-color-light);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0.25rem 0;
     }
     
     .publication-citation {
-      margin: 0.75rem 0;
-      padding: 0.75rem;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
       background-color: rgba(0, 0, 0, 0.02);
       border-left: 3px solid var(--global-border-color);
       border-radius: 4px;
@@ -212,8 +212,8 @@
     .publication-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
       
       .pub-link {
         display: inline-flex;
