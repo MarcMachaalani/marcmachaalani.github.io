@@ -2,11 +2,7 @@
 layout: splash
 permalink: /
 title: "Marc Machaalani, MD"
-author_profile: true
-header:
-  overlay_image: /images/Machaalani_Marc_square.jpg
-  caption: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
-#excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
+author_profile: false
 feature_row:
   - image_path: #/assets/images/pub-icon.png 
     title: "Research"
@@ -29,6 +25,21 @@ feature_row:
     btn_label: "View Awards"
     btn_class: "btn--primary"  
 ---
+
+<div style="display:flex; gap:1.5rem; align-items:center; margin: 1.5rem 0 2rem 0;">
+  <img src="/images/Machaalani_Marc_square.jpg"
+       alt="Marc Machaalani"
+       style="width:170px; height:170px; object-fit:cover; border-radius:18px;" />
+  <div>
+    <h1 style="margin:0;">Marc Machaalani, MD</h1>
+    <p style="margin:0.35rem 0 0 0; font-size:1.05rem;">
+      Postdoctoral Fellow at Dana-Farber Cancer Institute · Harvard Medical School
+    </p>
+  </div>
+</div>
+<hr/>
+
+
 
 Marc Machaalani, MD, is a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/). He received his medical degree from the Lebanese University in 2023.
 
