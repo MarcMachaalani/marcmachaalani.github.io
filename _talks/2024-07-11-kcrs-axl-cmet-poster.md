@@ -10,5 +10,3 @@ location: "Boston, MA, USA"
 ---
 
 Poster on dual AXL and c-Met inhibition as a strategy to overcome therapeutic resistance in RCC.
-
-Event link: <https://kcrs.kidneycan.org/kcrs24-program/>

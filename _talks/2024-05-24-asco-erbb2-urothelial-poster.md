@@ -10,6 +10,3 @@ location: "Chicago, IL, USA"
 ---
 
 Evaluation of _ERBB2_ mutations and their association with molecular phenotypes in urothelial carcinoma.
-
-Event links:  
-- <https://meetings.asco.org/meetings/2024-asco-annual-meeting/316/program-guide/scheduled-sessions> 

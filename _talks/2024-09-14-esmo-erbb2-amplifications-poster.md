@@ -11,7 +11,3 @@ location: "Barcelona, Spain"
 ---
 
 Analysis of ERBB2 amplification patterns across sex, race, and multiple cancer types.
-
-Event links:  
-- <https://www.esmo.org/meeting-calendar/esmo-congress-2024>  
-- <https://oncologypro.esmo.org/congress-resources/esmo-congress-2024?session=poster_session_08>

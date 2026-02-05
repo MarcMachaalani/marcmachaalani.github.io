@@ -10,14 +10,14 @@ header:
 feature_row:
   - image_path: #/assets/images/pub-icon.png 
     title: "Research"
-    excerpt: "Translational genitourinary oncology."
+    excerpt: "Publications in translational genitourinary oncology."
     url: "/publications/"
     btn_label: "View Publications"
     btn_class: "btn--primary"
 
   - image_path: #/assets/images/research-icon.png 
     title: "Presentations"
-    excerpt: "Oral and poster Presentations at major international conferences."
+    excerpt: "Oral and poster presentations at major international conferences."
     url: "/talks/"
     btn_label: "View Presentations"
     btn_class: "btn--primary"
