@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /
-title: "Marc Machaalani, MD"
+title: ""
 #author_profile: true
 #excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
 feature_row:
