@@ -14,10 +14,10 @@
 
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
-        <img
-          src=
+        <img src=
           {% if teaser contains "://" %}
             "{{ teaser }}"
           {% else %}
@@ -27,12 +27,11 @@
       </div>
     {% endif %}
 
-    <!-- Title -->
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a>
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">
-          <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
+          <i class="fa fa-link" aria-hidden="true"></i>
           <span class="sr-only">Permalink</span>
         </a>
       {% else %}
@@ -40,7 +39,7 @@
       {% endif %}
     </h2>
 
-    <!-- Meta line: type · venue · location -->
+    {%- comment -%} Talk-specific metadata {%- endcomment -%}
     {% if post.type or post.venue or post.location %}
       <p class="page__meta">
         {% if post.type %}
@@ -48,36 +47,72 @@
         {% endif %}
         {% if post.venue %}
           {% if post.type %} · {% endif %}
+          <i class="fa fa-fw fa-building" aria-hidden="true"></i>
           {{ post.venue }}
         {% endif %}
         {% if post.location %}
-          · {{ post.location }}
+          {% if post.type or post.venue %}<br>{% endif %}
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+          {{ post.location }}
         {% endif %}
       </p>
     {% endif %}
 
-    <!-- Date -->
     {% if post.date %}
       <p class="page__meta">
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        {{ post.date | date: '%B %d, %Y' }}
+        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <strong>Date:</strong>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%B %d, %Y" }}
+        </time>
       </p>
     {% endif %}
 
-    <!-- Description / abstract -->
     {% if post.excerpt %}
       <p class="archive__item-excerpt" itemprop="description">
         {{ post.excerpt | markdownify }}
       </p>
     {% endif %}
 
-    <!-- Media-specific external link -->
-    {% if post.collection == "media" and post.paperurl %}
-      <p class="archive__item-excerpt" itemprop="description">
-        <a href="{{ post.paperurl }}" target="_blank" rel="noopener">
-          Link
-        </a>
-      </p>
+    {%- comment -%} Citation section (collapsible) {%- endcomment -%}
+    {% if post.citation %}
+      <details class="publication-citation">
+        <summary><span class="citation-toggle-text">Show Citation</span></summary>
+        <p>{{ post.citation | markdownify }}</p>
+      </details>
     {% endif %}
+
+    {%- comment -%} Talk links {%- endcomment -%}
+    <div class="publication-links">
+      {% if post.slidesurl %}
+        <a href="{{ post.slidesurl }}" class="pub-link pub-link-slides" target="_blank" rel="noopener">
+          <i class="fas fa-file-powerpoint"></i> Slides
+        </a>
+      {% endif %}
+
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
+          <i class="fas fa-file-pdf"></i> Paper
+        </a>
+      {% endif %}
+
+      {% if post.video %}
+        <a href="{{ post.video }}" class="pub-link pub-link-video" target="_blank" rel="noopener">
+          <i class="fas fa-video"></i> Video
+        </a>
+      {% endif %}
+
+      {% if post.code %}
+        <a href="{{ post.code }}" class="pub-link pub-link-code" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> Code
+        </a>
+      {% endif %}
+
+      {% if post.website %}
+        <a href="{{ post.website }}" class="pub-link pub-link-website" target="_blank" rel="noopener">
+          <i class="fas fa-globe"></i> Website
+        </a>
+      {% endif %}
+    </div>
+
   </article>
 </div>
