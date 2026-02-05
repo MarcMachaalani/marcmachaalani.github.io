@@ -1,13 +1,16 @@
----
-layout: single
+----
+layout: splash
 permalink: /
-title: ""
-#author_profile: true
-#excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
+title: "Marc Machaalani, MD"
+author_profile: true
+header:
+  image: /images/Machaalani_Marc_square.jpg
+  caption: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
+#excerpt: ""
 feature_row:
   - image_path: #/assets/images/pub-icon.png 
-    title: "Publications"
-    excerpt: "High-impact publications in translational oncology."
+    title: "Research"
+    excerpt: "Translational genitourinary oncology."
     url: "/publications/"
     btn_label: "View Publications"
     btn_class: "btn--primary"
