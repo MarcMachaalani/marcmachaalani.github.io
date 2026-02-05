@@ -4,7 +4,7 @@ collection: talks
 category: invited
 type: "Invited Talk"
 permalink: /talks/2025-05-22-sitc-biomarkers-oral
-venue: "SITC Workshop"
+venue: "SITC Leveraging Biomarkers to Accelerate IO Drug Development Workshop"
 date: 2025-05-22
 location: "Boston, MA, USA"
 ---

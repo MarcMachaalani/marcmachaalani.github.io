@@ -4,7 +4,7 @@ collection: talks
 category: orals
 type: "Oral presentation"
 permalink: /talks/2021-07-14-cvd-covid-lebanon-oral
-venue: "Demystifying COVID-19: Lessons Learned and Future Opportunities"
+venue: "Demystifying COVID-19: Lessons Learned and Future Opportunities conference"
 date: 2021-07-14
 location: "Beirut, Lebanon"
 ---

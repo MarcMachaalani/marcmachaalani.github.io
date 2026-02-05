@@ -4,7 +4,7 @@ collection: talks
 category: posters
 type: "Poster presentation"
 permalink: /talks/2025-09-07-sitc-irae-adc-poster
-venue: "Society for Immunotherapy of Cancer (SITC)"
+venue: "Society for Immunotherapy of Cancer (SITC) annual meeting 2025"
 date: 2025-09-07
 paperurl: "https://jitc.bmj.com/content/13/Suppl_2/A454"
 location: "National Harbor, MD, USA"
