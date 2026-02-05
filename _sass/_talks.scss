@@ -1,0 +1,321 @@
+/* ==========================================================================
+   TALKS PAGE STYLING
+   ========================================================================== */
+
+.talks-container {
+  max-width: 900px;
+}
+
+.talks-category {
+  margin-bottom: 4rem;
+  
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    letter-spacing: -0.5px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 2px solid var(--global-border-color);
+    margin: 1.5rem 0 2rem 0;
+  }
+}
+
+.talks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  
+  /* Style individual talk items */
+  .talk-item {
+    .archive__item {
+      padding: 1.25rem;
+      background-color: var(--global-bg-color);
+      border-radius: 8px;
+      border: 1px solid var(--global-border-color);
+      box-shadow: var(--global-box-shadow);
+      transition: all 0.3s ease-in-out;
+      
+      &:hover {
+        box-shadow: var(--global-box-shadow-md);
+        border-color: var(--global-primary-color);
+        transform: translateY(-2px);
+      }
+    }
+    
+    .archive__item-title {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.3;
+      
+      a {
+        color: var(--global-link-color);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--global-link-color-hover);
+          text-decoration: underline;
+        }
+      }
+      
+      .fa-link {
+        font-size: 0.85rem;
+        margin-left: 0.5rem;
+        opacity: 0.5;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    
+    /* Talk metadata section */
+    .page__meta {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--global-text-color);
+      line-height: 1.6;
+      
+      i {
+        margin-right: 0.5rem;
+        color: var(--global-primary-color);
+        width: 1.2em;
+        text-align: center;
+      }
+      
+      strong {
+        font-weight: 600;
+      }
+      
+      time {
+        color: var(--global-text-color-light);
+      }
+    }
+    
+    /* Talk description/excerpt */
+    .archive__item-excerpt {
+      color: var(--global-text-color-light);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0.75rem 0;
+    }
+    
+    /* Citation section styling */
+    .publication-citation {
+      margin: 0.75rem 0;
+      padding: 0.6rem;
+      background-color: rgba(0, 0, 0, 0.02);
+      border-left: 3px solid var(--global-border-color);
+      border-radius: 4px;
+      
+      summary {
+        cursor: pointer;
+        font-weight: 500;
+        color: var(--global-text-color);
+        font-size: 0.9rem;
+        user-select: none;
+        list-style: none;
+        padding: 0.25rem 0;
+        
+        &::-webkit-details-marker {
+          display: none;
+        }
+        
+        &::marker {
+          display: none;
+        }
+        
+        // Add arrow before the text
+        &::before {
+          content: "▸ ";
+          margin-right: 0.25rem;
+        }
+        
+        &:hover {
+          color: var(--global-primary-color);
+        }
+      }
+      
+      // Open state - change arrow direction
+      &[open] summary::before {
+        content: "▾ ";
+      }
+      
+      p {
+        margin: 0.75rem 0 0 0;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--global-text-color-light);
+        font-family: monospace;
+      }
+    }
+    
+    /* Talk links - clean styling without backgrounds on icons */
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--global-border-color);
+      
+      .pub-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid var(--global-border-color);
+        background-color: transparent;
+        color: var(--global-text-color);
+        
+        i {
+          font-size: 0.95rem;
+          margin: 0 !important;
+          padding: 0 !important;
+          background: none !important;
+        }
+        
+        &:hover {
+          background-color: var(--global-primary-color);
+          color: white;
+          border-color: var(--global-primary-color);
+          transform: translateY(-1px);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Link specific styling */
+        &.pub-link-link {
+          &:hover {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+          }
+        }
+        
+        /* Slides specific styling */
+        &.pub-link-slides {
+          &:hover {
+            background-color: #fd7e14;
+            border-color: #fd7e14;
+          }
+        }
+        
+        /* Video specific styling */
+        &.pub-link-video {
+          &:hover {
+            background-color: #6f42c1;
+            border-color: #6f42c1;
+          }
+        }
+        
+        /* Code specific styling */
+        &.pub-link-code {
+          &:hover {
+            background-color: #24292e;
+            border-color: #24292e;
+          }
+        }
+        
+        /* Website specific styling */
+        &.pub-link-website {
+          &:hover {
+            background-color: #20c997;
+            border-color: #20c997;
+          }
+        }
+      }
+    }
+    
+    .archive__item-teaser {
+      display: none; /* Hide images if present */
+    }
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .talks-list {
+    .talk-item {
+      .archive__item {
+        background-color: rgba(255, 255, 255, 0.05);
+        
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+      }
+      
+      .publication-citation {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+      
+      .publication-links {
+        border-top-color: var(--global-border-color);
+        
+        .pub-link {
+          background-color: rgba(255, 255, 255, 0.05);
+          border-color: var(--global-border-color);
+          
+          &:hover {
+            background-color: var(--global-primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .talks-category {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .talks-list {
+    gap: 1.5rem;
+    
+    .talk-item {
+      .archive__item {
+        padding: 1rem;
+        
+        &:hover {
+          transform: none;
+        }
+      }
+      
+      .archive__item-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .page__meta {
+        font-size: 0.85rem;
+      }
+      
+      .archive__item-excerpt {
+        font-size: 0.85rem;
+      }
+      
+      .publication-links {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        
+        .pub-link {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

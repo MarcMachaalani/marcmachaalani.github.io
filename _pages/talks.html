@@ -17,23 +17,46 @@ author_profile: true
 {% assign posters = site.talks | where: "category", "posters" %}
 {% assign invited = site.talks | where: "category", "invited" %}
 
-{% if orals.size > 0 %}
-  <h2>Oral Presentations</h2><hr />
-  {% for post in orals reversed %}
-    {% include archive-single-talk.html %}
-  {% endfor %}
-{% endif %}
+<div class="talks-container">
+  {% if orals.size > 0 %}
+    <div class="talks-category">
+      <h2>Oral Presentations</h2>
+      <hr />
+      <div class="talks-list">
+        {% for post in orals reversed %}
+          <div class="talk-item">
+            {% include archive-single-talk.html %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 
-{% if posters.size > 0 %}
-  <h2>Poster Presentations</h2><hr />
-  {% for post in posters reversed %}
-    {% include archive-single-talk.html %}
-  {% endfor %}
-{% endif %}
+  {% if posters.size > 0 %}
+    <div class="talks-category">
+      <h2>Poster Presentations</h2>
+      <hr />
+      <div class="talks-list">
+        {% for post in posters reversed %}
+          <div class="talk-item">
+            {% include archive-single-talk.html %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 
-{% if invited.size > 0 %}
-  <h2>Invited Talks</h2><hr />
-  {% for post in invited reversed %}
-    {% include archive-single-talk.html %}
-  {% endfor %}
-{% endif %}
+  {% if invited.size > 0 %}
+    <div class="talks-category">
+      <h2>Invited Talks</h2>
+      <hr />
+      <div class="talks-list">
+        {% for post in invited reversed %}
+          <div class="talk-item">
+            {% include archive-single-talk.html %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>

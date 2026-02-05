@@ -9,4 +9,4 @@ date: 2025-02-25
 location: "San Francisco, CA, USA"
 ---
 
-Presenting a post-hoc analysis of JAVELIN Renal 101 evaluating circulating KIM-1 in metastatic RCC.
+Post-hoc analysis of JAVELIN Renal 101 evaluating circulating KIM-1 in metastatic RCC.

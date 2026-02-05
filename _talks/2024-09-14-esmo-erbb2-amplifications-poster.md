@@ -10,7 +10,7 @@ paperurl: "https://doi.org/10.1016/j.annonc.2024.08.2181"
 location: "Barcelona, Spain"
 ---
 
-Poster analyzing ERBB2 amplification patterns across sex, race, and multiple cancer types.
+Analysis of ERBB2 amplification patterns across sex, race, and multiple cancer types.
 
 Event links:  
 - <https://www.esmo.org/meeting-calendar/esmo-congress-2024>  
