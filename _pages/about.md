@@ -3,9 +3,6 @@ layout: single
 permalink: /
 title: "Marc Machaalani, MD"
 author_profile: true
-header:
-  overlay_color: "#000000" 
-  overlay_filter: "0.5"
 excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
 feature_row:
   - image_path: #/assets/images/pub-icon.png 
