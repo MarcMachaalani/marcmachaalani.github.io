@@ -31,7 +31,6 @@ alt="">
       {% if post.link %}
 <a href="{{ post.link }}">{{ title }}</a>
 <a href="{{ base_path }}{{ post.url }}" rel="permalink">
-<i class="fa fa-link" aria-hidden="true"></i>
 <span class="sr-only">Permalink</span>
 </a>
       {% else %}
@@ -41,9 +40,9 @@ alt="">
 
     {%- comment -%} Talk-specific metadata {%- endcomment -%}
     {% if post.venue or post.location %}
-<p class="page__meta" style="font-size: 1.05em;">
-        Presented at the
-        {% if post.venue %}<strong>{{ post.venue }}</strong>{% endif %}
+<p class="page__meta">
+        Presented at
+        {% if post.venue %}{{ post.venue }}{% endif %}
         {% if post.venue and post.location %} in {% endif %}
         {% if post.location %}{{ post.location }}{% endif %}
 </p>

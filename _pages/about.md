@@ -48,7 +48,7 @@ His research focuses on integrative analyses of **circulating and tumor biomarke
 *   Gut dysbiosis and microbiome
 *   Tumor genomics and metabolism
 
-Dr. Machaalani has authored multiple high-impact publications in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, and *European Urology*. He has presented his findings at major international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and annual genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
+Dr. Machaalani has authored multiple high-impact publications in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, and *European Urology*. He has presented his findings at major international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
 
 He is the recipient of several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards.
 
