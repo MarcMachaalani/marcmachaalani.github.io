@@ -1,28 +1,28 @@
 ---
-layout: splash
+layout: single
 permalink: /
 title: "Marc Machaalani, MD"
+author_profile: true
 header:
-  overlay_color: "#3a3a3aff" # Optional: Makes the top banner dark/professional
-  overlay_filter: "0.5" # Optional: Darkens image if you add one later
+  overlay_color: "#000000" 
+  overlay_filter: "0.5"
 excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
 feature_row:
-  
-  - image_path: #/assets/images/pub-icon.png # You can add icons later, or remove this line
+  - image_path: #/assets/images/pub-icon.png 
     title: "Publications"
     excerpt: "High-impact publications in translational oncology."
     url: "/publications/"
     btn_label: "View Publications"
     btn_class: "btn--primary"
 
-  - image_path: #/assets/images/research-icon.png # You can add icons later, or remove this line
+  - image_path: #/assets/images/research-icon.png 
     title: "Presentations"
     excerpt: "Oral and poster Presentations at major international conferences."
     url: "/talks/"
     btn_label: "View Presentations"
     btn_class: "btn--primary"
 
-  - image_path: #/assets/images/research-icon.png # You can add icons later, or remove this line
+  - image_path: #/assets/images/research-icon.png 
     title: "Awards"
     excerpt: "International awards and honors."
     url: "/awards/"
