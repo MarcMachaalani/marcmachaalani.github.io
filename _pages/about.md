@@ -4,7 +4,7 @@ permalink: /
 title: "Marc Machaalani, MD"
 author_profile: true
 header:
-  image: /images/Machaalani_Marc_square.jpg
+  image: "/images/Machaalani_Marc_square.jpg"
   caption: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
 #excerpt: "Postdoctoral Fellow at Dana-Farber Cancer Institute."
 feature_row:

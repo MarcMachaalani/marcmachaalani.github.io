@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: ""
+title: "Presentations"
 permalink: /talks/
 author_profile: true
 ---
@@ -13,50 +13,68 @@ author_profile: true
 </p>
 {% endif %}
 
+<!-- Define the categories -->
 {% assign orals   = site.talks | where: "category", "orals" %}
 {% assign posters = site.talks | where: "category", "posters" %}
 {% assign invited = site.talks | where: "category", "invited" %}
 
-<div class="talks-container">
+<div class="publications-container"> <!-- Changed class to match publications wrapper -->
+
+  <!-- ORAL PRESENTATIONS -->
   {% if orals.size > 0 %}
-    <div class="talks-category">
-      <h2>Oral Presentations</h2>
-      <hr />
-      <div class="talks-list">
+    <section class="publication-category">
+      <div class="category-header">
+        <h2 class="category-title">Oral Presentations</h2>
+        <span class="category-count">{{ orals.size }}</span>
+      </div>
+      <hr class="category-divider" />
+      
+      <div class="publications-list"> <!-- Reuse publication list styling for grid/spacing -->
         {% for post in orals reversed %}
           <div class="talk-item">
             {% include archive-single-talk.html %}
           </div>
         {% endfor %}
       </div>
-    </div>
+    </section>
   {% endif %}
 
+  <!-- POSTER PRESENTATIONS -->
   {% if posters.size > 0 %}
-    <div class="talks-category">
-      <h2>Poster Presentations</h2>
-      <hr />
-      <div class="talks-list">
+    <section class="publication-category">
+      <div class="category-header">
+        <h2 class="category-title">Poster Presentations</h2>
+        <span class="category-count">{{ posters.size }}</span>
+      </div>
+      <hr class="category-divider" />
+      
+      <div class="publications-list">
         {% for post in posters reversed %}
           <div class="talk-item">
             {% include archive-single-talk.html %}
           </div>
         {% endfor %}
       </div>
-    </div>
+    </section>
   {% endif %}
 
+  <!-- INVITED TALKS -->
   {% if invited.size > 0 %}
-    <div class="talks-category">
-      <h2>Invited Talks</h2>
-      <hr />
-      <div class="talks-list">
+    <section class="publication-category">
+      <div class="category-header">
+        <h2 class="category-title">Invited Talks</h2>
+        <span class="category-count">{{ invited.size }}</span>
+      </div>
+      <hr class="category-divider" />
+      
+      <div class="publications-list">
         {% for post in invited reversed %}
           <div class="talk-item">
             {% include archive-single-talk.html %}
           </div>
         {% endfor %}
       </div>
-    </div>
+    </section>
   {% endif %}
+
 </div>
