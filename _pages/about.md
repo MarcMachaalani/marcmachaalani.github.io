@@ -29,11 +29,11 @@ feature_row:
 <div style="display:flex; gap:1.5rem; align-items:center; margin: 1.5rem 0 2rem 0;">
   <img src="/images/Machaalani_Marc_square.jpg"
        alt="Marc Machaalani"
-       style="width:170px; height:170px; object-fit:cover; border-radius:18px;" />
+       style="width:200px; height:200px; object-fit:cover; border-radius:18px;" />
   <div>
     <h1 style="margin:0;">Marc Machaalani, MD</h1>
     <p style="margin:0.35rem 0 0 0; font-size:1.05rem;">
-      Postdoctoral Fellow at Dana-Farber Cancer Institute · Harvard Medical School
+      Postdoctoral Research Fellow at Dana-Farber Cancer Institute
     </p>
   </div>
 </div>
