@@ -1,319 +1,329 @@
 /* ==========================================================================
-   TALKS PAGE STYLING
+   TALKS PAGE STYLING (MATCH PUBLICATIONS)
    ========================================================================== */
 
 .talks-container {
   max-width: 900px;
+  font-size: 0.95rem; // match publications global downscale
 }
 
 .talks-category {
-  margin-bottom: 2rem;
-  
+  margin-bottom: 1.75rem; // was 2rem
+
+  /* Match publications category header look */
   h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.75rem;
+    margin: 0;
+    margin-top: 1.35rem;   // match publications title spacing
+    margin-bottom: 0.9rem; // was 1rem
+    font-size: 1.6rem;     // was 1.75rem
     font-weight: 600;
     color: var(--global-text-color);
     letter-spacing: -0.5px;
   }
-  
+
   hr {
     border: none;
     border-top: 2px solid var(--global-border-color);
-    margin: 1.5rem 0 2rem 0;
+    margin: 1.35rem 0 1.75rem 0; // match publications divider spacing
   }
 }
 
 .talks-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  
+  gap: 1.1rem; // was 1.25rem (match publications)
+
   /* Style individual talk items */
   .talk-item {
     .archive__item {
-      padding: 1.25rem;
+      padding: 1.1rem; // was 1.25rem
       background-color: var(--global-bg-color);
-      border-radius: 8px;
+      border-radius: 7px; // was 8px
       border: 1px solid var(--global-border-color);
       box-shadow: var(--global-box-shadow);
       transition: all 0.3s ease-in-out;
-      
+
       &:hover {
         box-shadow: var(--global-box-shadow-md);
         border-color: var(--global-primary-color);
         transform: translateY(-2px);
       }
     }
-    
+
+    .archive__item-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem; // align with publications body spacing
+    }
+
     .archive__item-title {
-      margin: 0 0 0.75rem 0;
-      font-size: 1.15rem;
+      margin: 0;
+      font-size: 1.08rem; // was 1.15rem
       font-weight: 600;
       line-height: 1.3;
-      
+
       a {
         color: var(--global-link-color);
         text-decoration: none;
-        
+
         &:hover {
           color: var(--global-link-color-hover);
           text-decoration: underline;
         }
       }
-      
+
       .fa-link {
-        font-size: 0.85rem;
-        margin-left: 0.5rem;
+        font-size: 0.8rem; // was 0.85rem
+        margin-left: 0.45rem; // was 0.5rem
         opacity: 0.5;
-        
+
         &:hover {
           opacity: 1;
         }
       }
     }
-    
+
     /* Talk metadata section */
     .page__meta {
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
+      margin: 0; // tighten and match publications (venue/date sit close)
+      font-size: 0.85rem; // was 0.9rem
       color: var(--global-text-color);
       line-height: 1.6;
-      
+
       i {
-        margin-right: 0.5rem;
+        margin-right: 0.45rem; // was 0.5rem
         color: var(--global-primary-color);
         width: 1.2em;
         text-align: center;
       }
-      
+
       strong {
         font-weight: 600;
       }
-      
+
       time {
         color: var(--global-text-color-light);
       }
     }
-    
+
     /* Talk description/excerpt */
     .archive__item-excerpt {
       color: var(--global-text-color-light);
-      font-size: 0.9rem;
+      font-size: 0.85rem; // was 0.9rem
       line-height: 1.5;
-      margin: 0.75rem 0;
+      margin: 0.22rem 0; // was 0.75rem 0 (match publications tighter excerpt)
     }
-    
-    /* Citation section styling */
+
+    /* Citation section styling (match publications exactly) */
     .publication-citation {
-      margin: 0.75rem 0;
-      padding: 0.6rem;
+      margin: 0.45rem 0; // was 0.75rem 0
+      padding: 0.5rem;   // was 0.6rem
       background-color: rgba(0, 0, 0, 0.02);
       border-left: 3px solid var(--global-border-color);
       border-radius: 4px;
-      
+
       summary {
         cursor: pointer;
         font-weight: 500;
         color: var(--global-text-color);
-        font-size: 0.9rem;
+        font-size: 0.85rem; // was 0.9rem
         user-select: none;
         list-style: none;
-        padding: 0.25rem 0;
-        
+        padding: 0; // match publications (no extra padding)
+
         &::-webkit-details-marker {
           display: none;
         }
-        
+
         &::marker {
           display: none;
         }
-        
-        // Add arrow before the text
+
+        /* Match publications arrow behavior */
         &::before {
           content: "▸ ";
-          margin-right: 0.25rem;
         }
-        
+
         &:hover {
           color: var(--global-primary-color);
         }
       }
-      
-      // Open state - change arrow direction
+
       &[open] summary::before {
         content: "▾ ";
       }
-      
+
+      /* Match publications "Hide" toggle text behavior if you use .citation-toggle-text */
+      &[open] summary .citation-toggle-text::after {
+        content: " (Hide)";
+        font-size: 0.85em;
+        opacity: 0.7;
+      }
+
       p {
-        margin: 0.75rem 0 0 0;
-        font-size: 0.85rem;
+        margin: 0.7rem 0 0 0; // was 0.75rem 0 0 0
+        font-size: 0.85rem;   // was 0.85rem already, keep aligned
         line-height: 1.5;
         color: var(--global-text-color-light);
         font-family: monospace;
       }
     }
-    
-    /* Talk links - clean styling without backgrounds on icons */
+
+    /* Talk links (make match publications buttons sizing + spacing) */
     .publication-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--global-border-color);
-      
+      gap: 0.55rem;      // was 0.75rem
+      margin-top: 0.35rem; // was 1rem
+      padding-top: 0;      // remove divider to match publications (no top border)
+      border-top: none;    // remove divider to match publications
+
       .pub-link {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        gap: 0.35rem;          // was 0.4rem
+        padding: 0.45rem 0.9rem; // was 0.5rem 1rem
+        font-size: 0.85rem;     // was 0.9rem
         font-weight: 500;
-        border-radius: 5px;
+        border-radius: 4px;     // was 5px
         text-decoration: none;
         transition: all 0.2s ease-in-out;
-        border: 1px solid var(--global-border-color);
-        background-color: transparent;
-        color: var(--global-text-color);
-        
+        border: 1px solid;      // match publications (not fixed to border color)
+
         i {
-          font-size: 0.95rem;
+          font-size: 0.9rem; // was 0.95rem
           margin: 0 !important;
           padding: 0 !important;
           background: none !important;
         }
-        
+
         &:hover {
-          background-color: var(--global-primary-color);
-          color: white;
-          border-color: var(--global-primary-color);
           transform: translateY(-1px);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Link specific styling */
+
+        /* Match publications colored button scheme */
         &.pub-link-link {
+          background-color: #0d6efd;
+          color: white;
+          border-color: #0d6efd;
+
           &:hover {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
           }
         }
-        
-        /* Slides specific styling */
+
         &.pub-link-slides {
+          background-color: #fd7e14;
+          color: white;
+          border-color: #fd7e14;
+
           &:hover {
-            background-color: #fd7e14;
-            border-color: #fd7e14;
+            background-color: #e8590c;
+            border-color: #dc5502;
           }
         }
-        
-        /* Video specific styling */
+
         &.pub-link-video {
+          background-color: #6f42c1;
+          color: white;
+          border-color: #6f42c1;
+
           &:hover {
-            background-color: #6f42c1;
-            border-color: #6f42c1;
+            background-color: #5e37a6;
+            border-color: #59339d;
           }
         }
-        
-        /* Code specific styling */
+
         &.pub-link-code {
+          background-color: #24292e;
+          color: white;
+          border-color: #24292e;
+
           &:hover {
-            background-color: #24292e;
-            border-color: #24292e;
+            background-color: #1b1f23;
+            border-color: #1b1f23;
           }
         }
-        
-        /* Website specific styling */
+
         &.pub-link-website {
+          background-color: #20c997;
+          color: white;
+          border-color: #20c997;
+
           &:hover {
-            background-color: #20c997;
-            border-color: #20c997;
+            background-color: #1aa179;
+            border-color: #199d76;
           }
         }
       }
     }
-    
+
     .archive__item-teaser {
       display: none; /* Hide images if present */
     }
   }
 }
 
-/* Dark mode adjustments */
+/* Dark mode adjustments (match publications) */
 @media (prefers-color-scheme: dark) {
   .talks-list {
     .talk-item {
       .archive__item {
         background-color: rgba(255, 255, 255, 0.05);
-        
+
         &:hover {
           background-color: rgba(255, 255, 255, 0.08);
         }
       }
-      
+
       .publication-citation {
         background-color: rgba(255, 255, 255, 0.05);
-      }
-      
-      .publication-links {
-        border-top-color: var(--global-border-color);
-        
-        .pub-link {
-          background-color: rgba(255, 255, 255, 0.05);
-          border-color: var(--global-border-color);
-          
-          &:hover {
-            background-color: var(--global-primary-color);
-            color: white;
-          }
-        }
       }
     }
   }
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments (match publications compact behavior) */
 @media (max-width: 600px) {
   .talks-category {
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem; // was 1.5rem
     }
   }
-  
+
   .talks-list {
-    gap: 1.5rem;
-    
+    gap: 1.25rem; // was 1.5rem
+
     .talk-item {
       .archive__item {
-        padding: 1rem;
-        
+        padding: 1.1rem; // keep compact
         &:hover {
           transform: none;
         }
       }
-      
+
       .archive__item-title {
-        font-size: 1.05rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.05rem; // was 1.05rem (keep aligned with publications mobile)
+        margin-bottom: 0;   // remove extra spacing for uniformity
       }
-      
+
       .page__meta {
         font-size: 0.85rem;
       }
-      
+
       .archive__item-excerpt {
         font-size: 0.85rem;
       }
-      
+
       .publication-links {
-        gap: 0.5rem;
-        margin-top: 0.75rem;
-        
+        gap: 0.45rem; // was 0.5rem
+        margin-top: 0.35rem;
+
         .pub-link {
-          padding: 0.4rem 0.8rem;
-          font-size: 0.85rem;
+          padding: 0.38rem 0.72rem; // match publications mobile
+          font-size: 0.82rem;       // match publications mobile
         }
       }
     }
