@@ -41,15 +41,12 @@ feature_row:
 
 
 
-Marc Machaalani, MD, is a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/). He received his medical degree from the Lebanese University in 2023.
+Marc Machaalani, MD, is an incoming Internal Medicine resident at Yale New Haven Hospital. He is a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
 
-His research focuses on integrative analyses of **circulating and tumor biomarkers in renal cell carcinoma**, with a specific emphasis on:
-*   Host immunity and immune evasion
-*   Gut dysbiosis and microbiome
-*   Tumor genomics and metabolism
+Dr. Machaalani received his medical degree from the Lebanese University in 2023. His research focuses on integrative analyses of **circulating and tumor biomarkers in renal cell carcinoma**, with particular interests in host immunity and immune evasion, gut dysbiosis and the microbiome, and tumor genomics and metabolism.
 
-Dr. Machaalani has authored multiple high-impact publications in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, and *European Urology*. He has presented his findings at major international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
+His work has been published in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, and *European Urology*. He has presented his findings at major international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
 
-He is the recipient of several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards.
+Dr. Machaalani has received several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards.
 
 {% include feature_row %}
