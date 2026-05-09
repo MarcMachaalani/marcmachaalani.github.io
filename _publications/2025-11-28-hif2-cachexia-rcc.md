@@ -7,6 +7,6 @@ excerpt: "Mechanistic and translational study demonstrating that HIF2-driven PTH
 date: 2025-11-28
 venue: "<strong>Nature Medicine</strong>"
 paperurl: "https://doi.org/10.1038/s41591-025-04054-2"
-citation: "Abu-Remaileh M, Stransky LA, Bhalerao N, Shirole NH, Jiang Q, Saad E, <strong>Machaalani M</strong>, Vigeant SM, Woldemichael H, Xu C, Lu J, Wei H, Liu Z, Sun W, Enomoto K, Choueiri TK, Pitarresi JR, Carr SA, Udeshi ND, Kaelin WG Jr. Targeting of HIF2-driven cachexia in kidney cancer. <i>Nat Med</i>. 2025. doi:10.1038/s41591-025-04054-2."
+citation: "Abu-Remaileh M, Stransky LA, Bhalerao N, Shirole NH, Jiang Q, Saad E, <strong>Machaalani M</strong>, Vigeant SM, Woldemichael H, Xu C, Lu J, Wei H, Liu Z, Sun W, Enomoto K, Choueiri TK, Pitarresi JR, Carr SA, Udeshi ND, Kaelin WG Jr. Targeting of HIF2-driven cachexia in kidney cancer. <i>Nat Med</i>. 2026 Jan;32(1):245-257. doi: 10.1038/s41591-025-04054-2. Epub 2025 Nov 28. Erratum in: <i>Nat Med</i>. 2026 Feb;32(2):766. doi: 10.1038/s41591-026-04236-6. PMID: 41315757; PMCID: PMC12823431."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/41315757/"
 ---
