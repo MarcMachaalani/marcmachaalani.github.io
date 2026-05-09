@@ -6,21 +6,21 @@ author_profile: false
 feature_row:
   - image_path: #/assets/images/pub-icon.png 
     title: "Research"
-    excerpt: "Publications in translational genitourinary oncology."
+    excerpt: "Selected publications."
     url: "/publications/"
     btn_label: "View Publications"
     btn_class: "btn--primary"
 
   - image_path: #/assets/images/research-icon.png 
     title: "Presentations"
-    excerpt: "Oral and poster presentations at major international conferences."
+    excerpt: "Talks and poster presentations."
     url: "/talks/"
     btn_label: "View Presentations"
     btn_class: "btn--primary"
 
   - image_path: #/assets/images/research-icon.png 
     title: "Awards"
-    excerpt: "International awards and honors."
+    excerpt: "Recognition for research."
     url: "/awards/"
     btn_label: "View Awards"
     btn_class: "btn--primary"  
@@ -33,7 +33,7 @@ feature_row:
   <div>
     <h1 style="margin:0;">Marc Machaalani, MD</h1>
     <p style="margin:0.35rem 0 0 0; font-size:1.05rem;">
-      Postdoctoral Research Fellow at Dana-Farber Cancer Institute
+      Incoming Resident at Yale and Research Fellow at Dana-Farber Cancer Institute
     </p>
   </div>
 </div>
@@ -41,12 +41,12 @@ feature_row:
 
 
 
-Marc Machaalani, MD, is an incoming Internal Medicine resident at Yale New Haven Hospital. He is a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
+I am an incoming Internal Medicine resident at Yale New Haven Hospital and a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, where I am mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
 
-Dr. Machaalani received his medical degree from the Lebanese University in 2023. His research focuses on integrative analyses of **circulating and tumor biomarkers in renal cell carcinoma**, with particular interests in host immunity and immune evasion, gut dysbiosis and the microbiome, and tumor genomics and metabolism.
+I received my medical degree from the Lebanese University in 2023. My research focuses on integrative analyses of **circulating and tumor biomarkers in renal cell carcinoma**, with particular interests in tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics.
 
-His work has been published in leading journals including *Nature Medicine*, *Nature Communications*, *Journal of Clinical Oncology*, and *European Urology*. He has presented his findings at major international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
+My work has been published in journals including *Nature Medicine*, *Nature Communications*, *Nature Reviews Clinical Oncology*, *Journal of Clinical Oncology*, and *European Urology* and has been presented at international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting.
 
-Dr. Machaalani has received several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards.
+I have been honored with several national and international honors, including multiple ASCO Conquer Cancer and ESMO Merit Awards.
 
 {% include feature_row %}
