@@ -41,7 +41,7 @@ feature_row:
 
 
 
-I am an incoming Internal Medicine resident at Yale New Haven Hospital and a postdoctoral research fellow at Dana-Farber Cancer Institute and Harvard Medical School, where I am mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
+I am an incoming Internal Medicine resident at Yale New Haven Hospital and a postdoctoral research fellow at [Dana-Farber Cancer Institute](https://labs.dana-farber.org/choueirilab/people/marc-machaalani-md/) and [Harvard Medical School](https://connects.catalyst.harvard.edu/Profiles/display/Person/217637/), where I am mentored by [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/).
 
 I received my medical degree from the Lebanese University in 2023. My research focuses on integrative analyses of **circulating and tumor biomarkers in renal cell carcinoma**, with particular interests in tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics.
 
