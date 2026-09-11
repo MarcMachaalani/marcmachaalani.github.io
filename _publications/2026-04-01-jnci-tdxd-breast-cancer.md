@@ -2,7 +2,7 @@
 title: "Molecular and clinical insights of trastuzumab deruxtecan efficacy in advanced breast cancer"
 collection: publications
 category: manuscripts
-permalink: /publications/2026-04-01-jnci-tdxd-breast-cancer
+permalink: /publication/2026-04-01-jnci-tdxd-breast-cancer
 excerpt: "Comprehensive clinical, genomic, and immune correlates of T-DXd outcomes in advanced breast cancer across two independent institutional cohorts."
 date: 2026-04-01
 venue: "<strong>Journal of the National Cancer Institute</strong>"
