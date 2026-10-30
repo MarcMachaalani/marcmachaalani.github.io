@@ -608,3 +608,22 @@ html[data-theme="dark"] .publication-citation:hover, html[data-theme="dark"] .pu
 @media (prefers-reduced-motion: reduce) {
   .publication-record, .presentation-record, .publication-citation, .publication-links .pub-link { transition: none !important; }
 }
+
+/* Keep the editorial typography above the theme's nested archive selectors. */
+.publications-list .publication-item .publication-record .archive__item-title {
+  font-size: clamp(1.2rem, 2vw, 1.48rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+.publications-list .publication-item .publication-record .archive__item-title a {
+  color: var(--global-text-color) !important;
+}
+.publications-list .publication-item .publication-record .archive__item-title a:hover {
+  color: var(--portfolio-accent-dark) !important;
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+}
+.publications-list .publication-item .publication-record .archive__item-excerpt {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
