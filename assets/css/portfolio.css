@@ -127,3 +127,10 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 }
 .interests-page p { margin: 0 0 1.3em; }
 .interests-page a { text-decoration-color: var(--accent); }
+
+.interests-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
