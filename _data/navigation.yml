@@ -23,6 +23,9 @@ main:
   - title: "Media"
     url: /media/
 
+  - title: "Interests"
+    url: /interests/
+
   #- title: "Teaching"
   #  url: /teaching/    
     
