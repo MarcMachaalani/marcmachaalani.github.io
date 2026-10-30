@@ -23,7 +23,7 @@ author_profile: false
   <h2 id="about-title">A little about me</h2>
   <p>I earned my medical degree from Lebanese University in 2023. From 2023 to 2026, I completed a postdoctoral fellowship in genitourinary oncology at Dana-Farber Cancer Institute and Harvard Medical School, mentored by <a href="https://labs.dana-farber.org/choueirilab/">Pr. Toni K. Choueiri</a>. I am now part of the <a href="https://medicine.yale.edu/internal-medicine/education/residency/">Yale Traditional Internal Medicine Residency Program</a>.</p>
   <p>My research has included integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with work spanning tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. Selected publications are included below.</p>
-  <p>From 2006 to 2021, I also studied piano at the Lebanese National Higher Conservatory of Music in Beirut, Lebanon, under the tutelage of Loucine Panjarian, earning a Bachelor’s Degree with High Distinction.</p>
+  <p>From 2006 to 2021, I also studied piano at the Lebanese National Higher Conservatory of Music under the tutelage of Loucine Panjarian, earning a Bachelor’s Degree with High Distinction.</p>
 </section>
 
 <section class="home-section" aria-labelledby="selected-work-title">
