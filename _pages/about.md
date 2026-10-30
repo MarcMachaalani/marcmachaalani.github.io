@@ -8,8 +8,8 @@ author_profile: false
   <img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" />
   <div class="home-hero__copy">
       <h1 id="home-title">Marc Machaalani, MD</h1>
-    <p class="home-hero__role">Internal Medicine Resident at Yale</p>
-    <p class="home-hero__summary">I’m currently completing internal medicine residency at Yale. This is a small personal site I’ve enjoyed building and updating, where I share a little about my training, academic work, and interests.</p>
+    <p class="home-hero__role">Internal Medicine Resident at <a href="https://medicine.yale.edu/internal-medicine/education/residency/">Yale</a></p>
+    <p class="home-hero__summary">This is a small personal site I’ve enjoyed building and updating, where I share a little about my training, academic work, and interests.</p>
     <div class="home-hero__actions">
       <a class="portfolio-button portfolio-button--primary" href="/publications/">Explore my research</a>
       <a class="portfolio-button" href="/talks/">View presentations</a>
