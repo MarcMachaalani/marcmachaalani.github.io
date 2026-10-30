@@ -3,48 +3,76 @@ layout: splash
 permalink: /
 title: "Marc Machaalani, MD"
 author_profile: false
-feature_row:
-  - image_path: #/assets/images/pub-icon.png 
-    title: "Research"
-    excerpt: "Selected publications."
-    url: "/publications/"
-    btn_label: "View Publications"
-    btn_class: "btn--primary"
-
-  - image_path: #/assets/images/research-icon.png 
-    title: "Presentations"
-    excerpt: "Talks and poster presentations."
-    url: "/talks/"
-    btn_label: "View Presentations"
-    btn_class: "btn--primary"
-
-  - image_path: #/assets/images/research-icon.png 
-    title: "Awards"
-    excerpt: "Recognition for research."
-    url: "/awards/"
-    btn_label: "View Awards"
-    btn_class: "btn--primary"  
 ---
-
-<div style="display:flex; gap:1.5rem; align-items:center; margin: 1.5rem 0 2rem 0;">
-  <img src="/images/Machaalani_Marc_square.jpg"
-       alt="Marc Machaalani"
-       style="width:200px; height:200px; object-fit:cover; border-radius:18px;" />
-  <div>
-    <h1 style="margin:0;">Marc Machaalani, MD</h1>
-    <p style="margin:0.35rem 0 0 0; font-size:1.05rem;">
-      Internal Medicine Resident at Yale
-    </p>
+<section class="home-hero" aria-labelledby="home-title">
+  <img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" />
+  <div class="home-hero__copy">
+    <p class="home-eyebrow">Physician · Clinical researcher</p>
+    <h1 id="home-title">Marc Machaalani, MD</h1>
+    <p class="home-hero__role">Internal Medicine Resident at Yale</p>
+    <p class="home-hero__summary">I study the biology of kidney cancer and the factors that shape response to immunotherapy, bringing clinical, genomic, and immune data together to better understand patient outcomes.</p>
+    <div class="home-hero__actions">
+      <a class="portfolio-button portfolio-button--primary" href="/publications/">Explore my research</a>
+      <a class="portfolio-button" href="/talks/">View presentations</a>
+    </div>
   </div>
-</div>
-<hr/>
+</section>
 
+<section class="home-section home-bio" aria-labelledby="about-title">
+  <p class="home-eyebrow">About</p>
+  <h2 id="about-title">Clinical care, grounded in research</h2>
+  <p>I am a PGY-1 resident at the <a href="https://medicine.yale.edu/internal-medicine/education/residency/">Yale Traditional Internal Medicine Residency</a>. I earned my medical degree from Lebanese University in 2023 and then completed a postdoctoral fellowship in genitourinary oncology at Dana-Farber Cancer Institute and Harvard Medical School (2023–2026), mentored by <a href="https://labs.dana-farber.org/choueirilab/">Dr. Toni K. Choueiri</a>.</p>
+  <p>My research focuses on renal cell carcinoma, including tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. I have also enjoyed building and tinkering with this site as a personal project.</p>
+</section>
 
+<section class="home-section" aria-labelledby="selected-work-title">
+  <div class="section-heading">
+    <div>
+      <p class="home-eyebrow">Selected work</p>
+      <h2 id="selected-work-title">Research highlights</h2>
+    </div>
+    <a class="section-heading__link" href="/publications/">All publications <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="research-grid">
+    <article class="research-card">
+      <p class="research-card__meta">Nature Medicine · 2026</p>
+      <h3><a href="/publication/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
+      <p>Plasma profiling identifies metabolic signals associated with immunotherapy outcomes across cancer types.</p>
+    </article>
+    <article class="research-card">
+      <p class="research-card__meta">Nature Medicine · 2026</p>
+      <h3><a href="/publication/2026-01-07-nature-medicine-smadcam1-mrcc/">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
+      <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
+    </article>
+    <article class="research-card">
+      <p class="research-card__meta">Journal of Clinical Oncology · 2025</p>
+      <h3><a href="/publication/2025-08-10-chromophobe-rcc-antitumor-immunity/">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
+      <p>Integrated single-cell and immunogenomic analyses characterize the tumor microenvironment in chromophobe kidney cancer.</p>
+    </article>
+  </div>
+</section>
 
-I am a PGY-1 resident at the [Yale Traditional Internal Medicine Residency](https://medicine.yale.edu/internal-medicine/education/residency/). This website is a little personal project that I've enjoyed putting together and tinkering with over time.
-
-I received my medical degree from the [Lebanese University](http://medicine.ul.edu.lb/) in 2023, after which I completed my postdoctoral research fellowship in genitourinary oncology (2023–2026) at [Dana-Farber Cancer Institute](https://labs.dana-farber.org/choueirilab/people/marc-machaalani-md/) and [Harvard Medical School](https://connects.catalyst.harvard.edu/Profiles/display/Person/217637/) under the mentorship of [Dr. Toni K. Choueiri](https://labs.dana-farber.org/choueirilab/). My research has focused on integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with particular interests in tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics.
-
-My work has been [published](/publications/) in leading journals including *Nature Medicine*, *Nature Communications*, and the *Journal of Clinical Oncology*, and has been [presented](/talks/) at international meetings including the American Society of Clinical Oncology annual meeting (ASCO) and genitourinary symposium (ASCO GU), the European Society of Medical Oncology (ESMO) annual congress, and the Society for Immunotherapy of Cancer (SITC) annual meeting. I have been the recipient of several national and international [honors](/awards/), including multiple ASCO Conquer Cancer and ESMO Merit Awards.
-
-{% include feature_row %}
+<section class="home-section home-links" aria-labelledby="more-title">
+  <p class="home-eyebrow">More</p>
+  <h2 id="more-title">Explore the site</h2>
+  <div class="portal-grid">
+    <a class="portal-card" href="/talks/">
+      <span class="portal-card__number" aria-hidden="true">01</span>
+      <span class="portal-card__title">Presentations</span>
+      <span class="portal-card__description">Talks and posters at oncology meetings.</span>
+      <span class="portal-card__arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="portal-card" href="/awards/">
+      <span class="portal-card__number" aria-hidden="true">02</span>
+      <span class="portal-card__title">Awards</span>
+      <span class="portal-card__description">Research honors and recognition.</span>
+      <span class="portal-card__arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="portal-card" href="/media/">
+      <span class="portal-card__number" aria-hidden="true">03</span>
+      <span class="portal-card__title">Media</span>
+      <span class="portal-card__description">Interviews and other coverage.</span>
+      <span class="portal-card__arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
