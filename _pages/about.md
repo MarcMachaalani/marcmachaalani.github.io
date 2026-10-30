@@ -42,7 +42,7 @@ author_profile: false
     </article>
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publication/2026-01-07-nature-medicine-smadcam1-mrcc">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
+      <h3><a href="/publications/2026-01-07-nature-medicine-smadcam1-mrcc">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
       <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
     </article>
     <article class="research-card">
