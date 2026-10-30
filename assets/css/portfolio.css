@@ -116,27 +116,14 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
   .award-item { grid-template-columns: 1fr; gap: .5rem; }
 }
 
-.interests-page { max-width: 900px; }
-.interests-section {
-  display: grid;
-  grid-template-columns: minmax(9rem, 1fr) minmax(0, 2.2fr);
-  gap: 1rem 3rem;
-  padding-block: 1.5rem;
-  border-top: 1px solid var(--rule);
-}
-.interests-section h2 {
-  margin: 0;
-  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
-}
-.interests-section p {
+.journal #main.interests-page {
   max-width: 64ch;
-  margin: 0 0 1rem;
-  color: var(--muted);
+  padding-block: clamp(2rem, 6vw, 5rem);
+  line-height: 1.8;
 }
-.interests-section p:last-child { margin-bottom: 0; }
-@media (max-width: 740px) {
-  .interests-section {
-    grid-template-columns: 1fr;
-    gap: .5rem;
-  }
+.interests-page h1 {
+  margin: 0 0 .55em;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
 }
+.interests-page p { margin: 0 0 1.3em; }
+.interests-page a { text-decoration-color: var(--accent); }
