@@ -5,6 +5,16 @@
   --portfolio-tint: #edf5f4;
 }
 
+html[data-theme="dark"] {
+  --portfolio-accent: #78c8cc;
+  --portfolio-accent-dark: #a4e0e2;
+  --portfolio-tint: #1c3538;
+}
+
+html[data-theme="dark"] .portfolio-button--primary {
+  color: #102327;
+}
+
 .home-hero {
   display: grid;
   grid-template-columns: minmax(170px, 225px) minmax(0, 1fr);
