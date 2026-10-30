@@ -115,16 +115,3 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
   .colophon nav { justify-content: flex-start; margin-top: 1rem; }
   .award-item { grid-template-columns: 1fr; gap: .5rem; }
 }
-.contact-form { display: grid; gap: .5rem; max-width: 36rem; }
-.contact-form label { font-weight: 600; }
-.contact-form input, .contact-form textarea {
-  width: 100%;
-  padding: .75rem;
-  margin-bottom: .75rem;
-  border: 1px solid var(--muted);
-  background: var(--paper);
-  color: var(--ink);
-  font: inherit;
-}
-.contact-form textarea { resize: vertical; }
-.contact-form button { justify-self: start; cursor: pointer; }

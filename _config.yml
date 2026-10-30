@@ -392,6 +392,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-# Public form submission URL. Configure the receiving inbox with the form provider.
-contact_endpoint: ""
