@@ -10,16 +10,10 @@ author_profile: true
 {% assign videos = site.media | where: "category", "video" %}
 {% assign articles = site.media | where: "category", "article" %}
 
-<div class="collection-intro">
-  <p>Interviews and articles featuring my work, with links to the original coverage.</p>
-  <span class="collection-intro__count">{{ site.media.size }} features</span>
-</div>
-
 {% if videos.size > 0 %}
   <section class="media-section" aria-labelledby="media-videos-title">
     <div class="category-header">
       <h2 class="category-title" id="media-videos-title">Video interviews</h2>
-      <span class="category-count">{{ videos.size }}</span>
     </div>
     <div class="media-list">
       {% for post in videos reversed %}
@@ -33,7 +27,6 @@ author_profile: true
   <section class="media-section" aria-labelledby="media-articles-title">
     <div class="category-header">
       <h2 class="category-title" id="media-articles-title">Articles</h2>
-      <span class="category-count">{{ articles.size }}</span>
     </div>
     <div class="media-list">
       {% for post in articles reversed %}
