@@ -62,7 +62,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 .section-heading, .colophon { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 .section-heading__link, .work-detail__back { font-size: .88rem; }
 .research-grid, .portal-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2rem; }
-.research-grid { counter-reset: paper; }
+.research-grid { counter-reset: paper; grid-template-columns: repeat(2,minmax(0,1fr)); }
 .research-card { border-top: 2px solid var(--accent); padding-top: 1rem; counter-increment: paper; }
 .research-card::before { content: counter(paper,decimal-leading-zero); color: var(--muted); font: italic 1.65rem var(--serif); }
 .research-card h3, .media-card__title, .archive__item-title { font-size: clamp(1.35rem,2.3vw,1.85rem); margin: .65rem 0; }

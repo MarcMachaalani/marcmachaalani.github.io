@@ -16,7 +16,7 @@ author_profile: false
       <a class="portfolio-button" href="/talks/">View presentations</a>
     </div>
   </div>
-  <figure class="portrait"><img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" /><figcaption>Marc Machaalani <span>New Haven, CT</span></figcaption></figure>
+  <figure class="portrait"><img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" /></figure>
 </section>
 
 <section class="home-section home-bio" aria-labelledby="about-title">
@@ -44,6 +44,11 @@ author_profile: false
       <p class="research-card__meta">Nature Medicine · 2026</p>
       <h3><a href="/publications/2026-01-07-nature-medicine-smadcam1-mrcc">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
       <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
+    </article>
+    <article class="research-card">
+      <p class="research-card__meta">Nature Medicine · 2025</p>
+      <h3><a href="/publication/2025-11-28-hif2-cachexia-rcc">Targeting of HIF2-driven cachexia in kidney cancer</a></h3>
+      <p>This study examines how HIF2 signaling contributes to weight loss and high calcium levels in clear cell kidney cancer.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Journal of Clinical Oncology · 2025</p>
