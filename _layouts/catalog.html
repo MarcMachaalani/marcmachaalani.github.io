@@ -3,7 +3,7 @@ layout: default
 ---
 <main id="main" class="catalog">
   <header class="catalog-title">
-    <p class="home-eyebrow">Academic record <span aria-hidden="true">/</span> {{ page.folio }}</p>
+    <p class="home-eyebrow">{{ page.section_label | default: "Academic record" }}{% if page.folio %} <span aria-hidden="true">/</span> {{ page.folio }}{% endif %}</p>
     <h1>{{ page.title }}</h1>
     <p>{{ page.intro }}</p>
   </header>
