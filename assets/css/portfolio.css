@@ -627,3 +627,5 @@ html[data-theme="dark"] .publication-citation:hover, html[data-theme="dark"] .pu
   font-size: 0.95rem !important;
   line-height: 1.7 !important;
 }
+
+.publication-citation summary .citation-toggle-text::after { content: none !important; }
