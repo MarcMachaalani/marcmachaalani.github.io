@@ -2,7 +2,8 @@
 title: "Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publications/2026-01-07-nature-medicine-smadcam1-mrcc
+permalink: /publications/2026-01-07-nature-medicine-smadcam1-mrcc/
+redirect_from: /publications/2026-01-07-nature-medicine-smadcam1-mrcc.html
 excerpt: "Evaluation of soluble MAdCAM-1 as a prognostic biomarker in metastatic renal cell carcinoma, linking clinical outcomes to gut microbiota composition and immune regulation across three independent clinical trials."
 date: 2026-01-07
 venue: "<strong>Nature Medicine</strong>"

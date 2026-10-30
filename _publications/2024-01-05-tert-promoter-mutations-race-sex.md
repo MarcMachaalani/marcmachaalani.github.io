@@ -2,7 +2,8 @@
 title: "<i>TERT</i> Promoter Mutations Frequency Across Race, Sex, and Cancer Type"
 collection: publications
 category: manuscripts
-permalink: /publication/2024-01-05-tert-promoter-mutations-race-sex
+permalink: /publication/2024-01-05-tert-promoter-mutations-race-sex/
+redirect_from: /publication/2024-01-05-tert-promoter-mutations-race-sex.html
 excerpt: "Genomic study defining differences in <i>TERT</i> promoter mutation prevalence across racial and sex-based groups and cancer types."
 date: 2024-01-05
 venue: "<strong>The Oncologist</strong>"

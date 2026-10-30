@@ -2,7 +2,8 @@
 title: "Pharmacologic HIF-2α inhibition preserves T cell effector function in clear cell renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2026-10-06-pharmacologic-hif2-inhibition-t-cell-function
+permalink: /publication/2026-10-06-pharmacologic-hif2-inhibition-t-cell-function/
+redirect_from: /publication/2026-10-06-pharmacologic-hif2-inhibition-t-cell-function.html
 excerpt: "In primary human T cells and patient samples, pharmacologic HIF-2α inhibition with belzutifan preserved proliferation, cytokine production, cytotoxicity, and activation states, supporting its immunologic safety in clear cell renal cell carcinoma."
 date: 2026-10-06
 venue: "<strong>The Journal of Clinical Investigation</strong>"

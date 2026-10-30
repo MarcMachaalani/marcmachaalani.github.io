@@ -2,7 +2,8 @@
 title: "Novel framework for the validation of intermediate clinical endpoints in oncology real-world data"
 collection: publications
 category: manuscripts
-permalink: /publication/2026-10-19-validation-intermediate-endpoints-real-world-data
+permalink: /publication/2026-10-19-validation-intermediate-endpoints-real-world-data/
+redirect_from: /publication/2026-10-19-validation-intermediate-endpoints-real-world-data.html
 excerpt: "A nationwide real-world study in metastatic breast cancer evaluates intermediate clinical endpoints against overall survival and proposes a framework for validating endpoints in oncology data."
 date: 2026-10-19
 venue: "<strong>Journal of the National Cancer Institute</strong>"
