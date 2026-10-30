@@ -8,7 +8,7 @@ layout: compress
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
   <head>
     {% assign journal = false %}
-    {% if page.url == "/" or page.layout == "catalog" or page.collection == "publications" or page.collection == "talks" or page.collection == "media" %}
+    {% if page.url == "/" or page.url == "/interests/" or page.layout == "catalog" or page.collection == "publications" or page.collection == "talks" or page.collection == "media" %}
       {% assign journal = true %}
     {% endif %}
     {% include head.html %}
