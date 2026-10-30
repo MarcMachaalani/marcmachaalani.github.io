@@ -21,7 +21,7 @@ author_profile: false
   <p class="home-eyebrow">About</p>
   <h2 id="about-title">A little about me</h2>
   <p>I earned my medical degree from Lebanese University in 2023. From 2023 to 2026, I completed a postdoctoral fellowship in genitourinary oncology at Dana-Farber Cancer Institute and Harvard Medical School, mentored by <a href="https://labs.dana-farber.org/choueirilab/">Dr. Toni K. Choueiri</a>. I am now part of the <a href="https://medicine.yale.edu/internal-medicine/education/residency/">Yale Traditional Internal Medicine Residency Program</a>.</p>
-  <p>My contributions included integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with work spanning tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. Selected publications and presentations from that chapter of my training are included below.</p>
+  <p>My contributions included integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with work spanning tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. Selected publications and presentations are included below.</p>
 </section>
 
 <section class="home-section" aria-labelledby="selected-work-title">
@@ -56,19 +56,16 @@ author_profile: false
   <h2 id="more-title">Explore the site</h2>
   <div class="portal-grid">
     <a class="portal-card" href="/talks/">
-      <span class="portal-card__number" aria-hidden="true">01</span>
       <span class="portal-card__title">Presentations</span>
       <span class="portal-card__description">Talks and posters at oncology meetings.</span>
       <span class="portal-card__arrow" aria-hidden="true">→</span>
     </a>
     <a class="portal-card" href="/awards/">
-      <span class="portal-card__number" aria-hidden="true">02</span>
       <span class="portal-card__title">Awards</span>
       <span class="portal-card__description">Research honors and recognition.</span>
       <span class="portal-card__arrow" aria-hidden="true">→</span>
     </a>
     <a class="portal-card" href="/media/">
-      <span class="portal-card__number" aria-hidden="true">03</span>
       <span class="portal-card__title">Media</span>
       <span class="portal-card__description">Interviews and other coverage.</span>
       <span class="portal-card__arrow" aria-hidden="true">→</span>

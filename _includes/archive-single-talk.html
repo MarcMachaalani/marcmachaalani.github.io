@@ -13,7 +13,7 @@
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
-<article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+<article class="archive__item presentation-record" itemscope itemtype="http://schema.org/Event">
 
     {% if include.type == "grid" and teaser %}
 <div class="archive__item-teaser">
@@ -40,7 +40,7 @@ alt="">
 
     {%- comment -%} Talk-specific metadata {%- endcomment -%}
     {% if post.venue or post.location %}
-<p class="page__meta">
+<p class="presentation-meta">
         Presented at
         {% if post.venue %}{{ post.venue }}{% endif %}
         {% if post.venue and post.location %} in {% endif %}
@@ -49,7 +49,7 @@ alt="">
     {% endif %}
 
     {% if post.date %}
-<p class="page__meta">
+<p class="presentation-meta">
 <strong>Date:</strong>
 <time datetime="{{ post.date | date_to_xmlschema }}">
           {{ post.date | date: "%B %d, %Y" }}
@@ -66,7 +66,7 @@ alt="">
     {%- comment -%} Citation section (collapsible) {%- endcomment -%}
     {% if post.citation %}
 <details class="publication-citation">
-<summary><span class="citation-toggle-text">Show Citation</span></summary>
+<summary><span class="citation-toggle-text">Citation</span></summary>
 <p>{{ post.citation | markdownify }}</p>
 </details>
     {% endif %}

@@ -16,6 +16,49 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
+  {% if page.collection == "publications" or page.collection == "talks" %}
+    {% assign work_kind = "publication" %}{% assign back_url = "/publications/" %}{% assign back_label = "Back to publications" %}
+    {% if page.collection == "talks" %}{% assign work_kind = "presentation" %}{% assign back_url = "/talks/" %}{% assign back_label = "Back to presentations" %}{% endif %}
+    <article class="page work-detail work-detail--{{ work_kind }}" itemscope itemtype="http://schema.org/CreativeWork">
+      {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+      <div class="page__inner-wrap">
+        <header class="work-detail__header">
+          <p class="work-detail__eyebrow">{% if work_kind == "publication" %}Publication{% else %}{{ page.type | default: "Presentation" }}{% endif %}</p>
+          <h1 class="work-detail__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+          <p class="work-detail__metadata">
+            {% if page.collection == "publications" %}
+              {% if page.venue %}<span>{{ page.venue | markdownify | remove: "<p>" | remove: "</p>" }}</span>{% endif %}
+              {% if page.date %}<span>{{ page.date | date: "%Y" }}</span>{% endif %}
+            {% else %}
+              {% if page.venue %}<span>{{ page.venue }}</span>{% endif %}
+              {% if page.date %}<span>{{ page.date | date: "%B %d, %Y" }}</span>{% endif %}
+              {% if page.location %}<span>{{ page.location }}</span>{% endif %}
+            {% endif %}
+          </p>
+        </header>
+        <section class="work-detail__body" itemprop="text">
+          {% if content and content != "" %}{{ content }}{% elsif page.excerpt %}{{ page.excerpt | markdownify }}{% endif %}
+        </section>
+        {% if page.citation %}
+          <details class="publication-citation work-detail__citation">
+            <summary><span class="citation-toggle-text">Citation</span></summary><p>{{ page.citation | markdownify }}</p>
+          </details>
+        {% endif %}
+        <nav class="work-detail__resources publication-links" aria-label="Related links">
+          {% if page.paperurl %}<a href="{{ page.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">{% if page.collection == "publications" %}<i class="fas fa-file-pdf" aria-hidden="true"></i> Paper{% else %}Link{% endif %}</a>{% endif %}
+          {% if page.pubmed %}<a href="{{ page.pubmed }}" class="pub-link pub-link-pubmed" target="_blank" rel="noopener"><i class="fas fa-notes-medical" aria-hidden="true"></i> PubMed</a>{% endif %}
+          {% if page.slidesurl %}<a href="{{ page.slidesurl }}" class="pub-link pub-link-slides" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i> Slides</a>{% endif %}
+          {% if page.video %}<a href="{{ page.video }}" class="pub-link pub-link-video" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> Video</a>{% endif %}
+          {% if page.code %}<a href="{{ page.code }}" class="pub-link pub-link-code" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
+          {% if page.website %}<a href="{{ page.website }}" class="pub-link pub-link-website" target="_blank" rel="noopener">Website</a>{% endif %}
+          {% if page.bibtexurl %}<a href="{{ page.bibtexurl }}" class="pub-link pub-link-bibtex" target="_blank" rel="noopener"><i class="fas fa-quote-left" aria-hidden="true"></i> BibTeX</a>{% endif %}
+        </nav>
+        <a class="work-detail__back" href="{{ base_path }}{{ back_url }}"><span aria-hidden="true">←</span> {{ back_label }}</a>
+        {% include post_pagination.html %}
+      </div>
+    </article>
+  {% else %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -105,5 +148,6 @@ layout: default
         {% endfor %}
       </div>
     </div>
+  {% endif %}
   {% endif %}
 </div>

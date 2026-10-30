@@ -496,3 +496,136 @@ html[data-theme="dark"] .portfolio-button--primary {
     grid-template-columns: 1fr;
   }
 }
+
+/* Editorial publication and presentation experience */
+.publications-container { max-width: 980px; }
+.publications-scholar-btn { margin: 0.15rem 0 1.6rem; }
+.publication-category { margin: 2.8rem 0 3.5rem; }
+.publication-category .category-header { margin: 0; }
+.publication-category .category-title {
+  margin: 0; color: var(--global-text-color); font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 2.7vw, 2rem); font-weight: 500; letter-spacing: -0.035em;
+}
+.publication-category .category-divider { margin: 0.9rem 0 0; border: 0; border-top: 1px solid var(--global-border-color); }
+.publications-list { display: block; }
+.publications-list > .publication-item, .publications-list > .talk-item { margin: 0; }
+.publication-record, .presentation-record {
+  position: relative; margin: 0 !important; padding: 1.65rem 0 1.8rem !important;
+  border: 0 !important; border-bottom: 1px solid var(--global-border-color) !important;
+  border-radius: 0 !important; background: transparent !important; box-shadow: none !important;
+  transition: background-color 180ms ease, padding 180ms ease !important;
+}
+.publication-record:hover, .presentation-record:hover {
+  padding-right: 0.85rem !important; padding-left: 0.85rem !important;
+  border-color: var(--global-border-color) !important; background: var(--portfolio-tint) !important;
+  box-shadow: none !important; transform: none !important;
+}
+.publication-record .archive__item-title, .presentation-record .archive__item-title {
+  max-width: 78ch; margin: 0; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.48rem); font-weight: 500;
+  letter-spacing: -0.025em; line-height: 1.35;
+}
+.publication-record .archive__item-title a, .presentation-record .archive__item-title a {
+  color: var(--global-text-color); text-decoration: none; text-decoration-color: transparent;
+  text-decoration-thickness: 1px; text-underline-offset: 0.16em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+.publication-record .archive__item-title a:hover, .presentation-record .archive__item-title a:hover {
+  color: var(--portfolio-accent-dark); text-decoration: underline; text-decoration-color: currentColor;
+}
+.publication-venue, .presentation-meta {
+  margin: 0.65rem 0 0 !important; color: var(--portfolio-accent-dark) !important;
+  font-size: 0.88rem !important; font-weight: 650 !important; letter-spacing: 0.015em;
+}
+.publication-record .archive__item-excerpt, .presentation-record .archive__item-excerpt {
+  max-width: 78ch; margin: 0.75rem 0 0 !important; color: var(--global-masthead-link-color);
+  font-size: 0.95rem !important; line-height: 1.7 !important;
+}
+.publication-citation {
+  display: inline-block; max-width: 100%; margin: 0.95rem 0 0 !important;
+  padding: 0.48rem 0.7rem !important; border: 1px solid transparent !important;
+  border-radius: 0.45rem !important; background: transparent !important; color: var(--global-masthead-link-color);
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+.publication-citation:hover, .publication-citation:focus-within, .publication-citation[open] {
+  border-color: var(--global-border-color) !important; background: var(--global-bg-color) !important;
+  color: var(--portfolio-accent-dark);
+}
+.publication-citation summary {
+  display: flex; align-items: center; gap: 0.55rem; cursor: pointer;
+  color: inherit !important; font-size: 0.82rem !important; font-weight: 700 !important;
+  letter-spacing: 0.015em; list-style: none;
+}
+.publication-citation summary::-webkit-details-marker { display: none; }
+.publication-citation summary::before {
+  content: "+"; display: inline-grid; width: 1.15rem; height: 1.15rem; place-items: center;
+  border: 1px solid currentColor; border-radius: 50%; font-size: 0.85rem; line-height: 1;
+}
+.publication-citation[open] summary::before { content: "−"; }
+.publication-citation p {
+  max-width: 88ch; margin: 0.75rem 0 0 !important; color: var(--global-masthead-link-color) !important;
+  font-family: inherit !important; font-size: 0.84rem !important; line-height: 1.7 !important; overflow-wrap: anywhere;
+}
+.publication-links { display: flex; flex-wrap: wrap; gap: 0.55rem !important; margin-top: 0.95rem !important; }
+.publication-links .pub-link {
+  min-height: 2.25rem; display: inline-flex; align-items: center; gap: 0.42rem;
+  padding: 0.43rem 0.78rem !important; border: 1px solid var(--global-border-color) !important;
+  border-radius: 999px !important; background: var(--global-bg-color) !important; color: var(--global-text-color) !important;
+  font-size: 0.79rem !important; font-weight: 650 !important; text-decoration: none !important;
+  transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+.publication-links .pub-link:hover, .publication-links .pub-link:focus-visible {
+  transform: translateY(-1px); border-color: var(--portfolio-accent) !important;
+  background: var(--portfolio-tint) !important; color: var(--portfolio-accent-dark) !important; box-shadow: none !important;
+}
+.publication-links .pub-link i { color: var(--portfolio-accent); }
+.work-detail { max-width: 850px; margin: 0 auto; }
+.work-detail__eyebrow { margin: 0 0 0.9rem; color: var(--portfolio-accent); font-size: 0.74rem; font-weight: 750; letter-spacing: 0.13em; text-transform: uppercase; }
+.work-detail__title { max-width: 25ch; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4.4vw, 3.25rem); font-weight: 500; letter-spacing: -0.045em; line-height: 1.12; }
+.work-detail__metadata { margin: 1.1rem 0 0; color: var(--portfolio-accent-dark); font-size: 1rem; font-weight: 650; line-height: 1.65; }
+.work-detail__metadata span + span::before { content: "·"; padding: 0 0.55rem; color: var(--global-masthead-link-color); }
+.work-detail__body { max-width: 74ch; margin: 2rem 0 0; padding-top: 1.45rem; border-top: 1px solid var(--global-border-color); color: var(--global-masthead-link-color); font-size: 1.06rem; line-height: 1.85; }
+.work-detail__body > :first-child { margin-top: 0; }
+.work-detail__body > :last-child { margin-bottom: 0; }
+.work-detail__resources { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+.work-detail__citation { margin-top: 1.6rem !important; }
+.work-detail__back { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; color: var(--portfolio-accent-dark); font-size: 0.9rem; font-weight: 700; text-decoration: none; }
+.work-detail__back:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.work-detail .page__inner-wrap { padding-bottom: 2rem; }
+.work-detail .page__meta { display: none; }
+html[data-theme="dark"] .publication-record:hover, html[data-theme="dark"] .presentation-record:hover { background: var(--portfolio-tint) !important; }
+html[data-theme="dark"] .publication-links .pub-link { background: rgba(255,255,255,.035) !important; }
+html[data-theme="dark"] .publication-citation:hover, html[data-theme="dark"] .publication-citation:focus-within, html[data-theme="dark"] .publication-citation[open] { background: rgba(255,255,255,.035) !important; }
+@media (max-width: 640px) {
+  .publication-category { margin: 2.25rem 0 2.8rem; }
+  .publication-record, .presentation-record { padding: 1.25rem 0 1.45rem !important; }
+  .publication-record:hover, .presentation-record:hover { padding-right: 0.55rem !important; padding-left: 0.55rem !important; }
+  .publication-record .archive__item-excerpt, .presentation-record .archive__item-excerpt { font-size: 0.91rem !important; }
+  .work-detail__metadata span { display: block; }
+  .work-detail__metadata span + span::before { content: none; padding: 0; }
+  .work-detail__body { margin-top: 1.5rem; font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .publication-record, .presentation-record, .publication-citation, .publication-links .pub-link { transition: none !important; }
+}
+
+/* Keep the editorial typography above the theme's nested archive selectors. */
+.publications-list .publication-item .publication-record .archive__item-title {
+  font-size: clamp(1.2rem, 2vw, 1.48rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+.publications-list .publication-item .publication-record .archive__item-title a {
+  color: var(--global-text-color) !important;
+}
+.publications-list .publication-item .publication-record .archive__item-title a:hover {
+  color: var(--portfolio-accent-dark) !important;
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+}
+.publications-list .publication-item .publication-record .archive__item-excerpt {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+.publication-citation summary .citation-toggle-text::after { content: none !important; }

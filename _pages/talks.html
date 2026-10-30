@@ -7,11 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-<div class="collection-intro">
-  <p>Selected talks and poster presentations, grouped by format and listed newest first. Each entry includes its meeting, date, and a short description where available.</p>
-  <span class="collection-intro__count">{{ site.talks.size }} presentations</span>
-</div>
-
 {% if site.talkmap_link == true %}
 <p style="text-decoration:underline;">
   <a href="/talkmap.html">See a map of all the places I've given a talk!</a>
@@ -30,7 +25,6 @@ author_profile: true
     <section class="publication-category">
       <div class="category-header">
         <h2 class="category-title">Oral Presentations</h2>
-        <span class="category-count">{{ orals.size }}</span>
       </div>
       <hr class="category-divider" />
       
@@ -49,7 +43,6 @@ author_profile: true
     <section class="publication-category">
       <div class="category-header">
         <h2 class="category-title">Poster Presentations</h2>
-        <span class="category-count">{{ posters.size }}</span>
       </div>
       <hr class="category-divider" />
       
@@ -68,7 +61,6 @@ author_profile: true
     <section class="publication-category">
       <div class="category-header">
         <h2 class="category-title">Invited Talks</h2>
-        <span class="category-count">{{ invited.size }}</span>
       </div>
       <hr class="category-divider" />
       
