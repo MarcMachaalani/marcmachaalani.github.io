@@ -11,9 +11,12 @@ author_profile: true
   </a>
 {% endif %}
 
-<div style="margin-bottom: 0.9rem;"></div>
-
 {% include base_path %}
+
+<div class="collection-intro">
+  <p>A chronological list of publications, reviews, and commentaries. Entries include a brief summary, citation, and available DOI and PubMed links.</p>
+  <span class="collection-intro__count">{{ site.publications.size }} entries</span>
+</div>
 
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}

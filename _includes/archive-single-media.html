@@ -1,0 +1,16 @@
+{% include base_path %}
+
+<article class="media-card">
+  <div class="media-card__meta">
+    <span>{{ post.type | default: post.category | capitalize }}</span>
+    {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>{% endif %}
+  </div>
+  <h2 class="media-card__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h2>
+  {% if post.venue %}<p class="media-card__source">{{ post.venue }}</p>{% endif %}
+  {% if post.excerpt %}<div class="media-card__excerpt">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</div>{% endif %}
+  {% if post.paperurl %}
+    <a class="media-card__action" href="{{ post.paperurl }}" target="_blank" rel="noopener">
+      {% if post.category == "video" %}Watch interview <span aria-hidden="true">↗</span>{% else %}Read article <span aria-hidden="true">↗</span>{% endif %}
+    </a>
+  {% endif %}
+</article>
