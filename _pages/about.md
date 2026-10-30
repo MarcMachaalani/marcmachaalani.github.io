@@ -7,10 +7,9 @@ author_profile: false
 <section class="home-hero" aria-labelledby="home-title">
   <img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" />
   <div class="home-hero__copy">
-    <p class="home-eyebrow">Physician · Clinical researcher</p>
-    <h1 id="home-title">Marc Machaalani, MD</h1>
+      <h1 id="home-title">Marc Machaalani, MD</h1>
     <p class="home-hero__role">Internal Medicine Resident at Yale</p>
-    <p class="home-hero__summary">I study the biology of kidney cancer and the factors that shape response to immunotherapy, bringing clinical, genomic, and immune data together to better understand patient outcomes.</p>
+    <p class="home-hero__summary">I’m currently completing internal medicine residency at Yale. This is a small personal site I’ve enjoyed building and updating, where I share a little about my training, academic work, and interests.</p>
     <div class="home-hero__actions">
       <a class="portfolio-button portfolio-button--primary" href="/publications/">Explore my research</a>
       <a class="portfolio-button" href="/talks/">View presentations</a>
@@ -20,16 +19,16 @@ author_profile: false
 
 <section class="home-section home-bio" aria-labelledby="about-title">
   <p class="home-eyebrow">About</p>
-  <h2 id="about-title">Clinical care, grounded in research</h2>
-  <p>I am a PGY-1 resident at the <a href="https://medicine.yale.edu/internal-medicine/education/residency/">Yale Traditional Internal Medicine Residency</a>. I earned my medical degree from Lebanese University in 2023 and then completed a postdoctoral fellowship in genitourinary oncology at Dana-Farber Cancer Institute and Harvard Medical School (2023–2026), mentored by <a href="https://labs.dana-farber.org/choueirilab/">Dr. Toni K. Choueiri</a>.</p>
-  <p>My research focuses on renal cell carcinoma, including tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. I have also enjoyed building and tinkering with this site as a personal project.</p>
+  <h2 id="about-title">A little about me</h2>
+  <p>I earned my medical degree from Lebanese University in 2023. From 2023 to 2026, I completed a postdoctoral fellowship in genitourinary oncology at Dana-Farber Cancer Institute and Harvard Medical School, mentored by <a href="https://labs.dana-farber.org/choueirilab/">Dr. Toni K. Choueiri</a>.</p>
+  <p>My contributions included integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with work spanning tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. Selected publications and presentations from that chapter of my training are included below.</p>
 </section>
 
 <section class="home-section" aria-labelledby="selected-work-title">
   <div class="section-heading">
     <div>
-      <p class="home-eyebrow">Selected work</p>
-      <h2 id="selected-work-title">Research highlights</h2>
+      <p class="home-eyebrow">Selected academic work</p>
+      <h2 id="selected-work-title">Selected contributions</h2>
     </div>
     <a class="section-heading__link" href="/publications/">All publications <span aria-hidden="true">→</span></a>
   </div>
