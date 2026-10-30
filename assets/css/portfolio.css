@@ -1,0 +1,350 @@
+/* Personal portfolio styling */
+:root {
+  --portfolio-accent: #176b73;
+  --portfolio-accent-dark: #10545b;
+  --portfolio-tint: #edf5f4;
+}
+
+html[data-theme="dark"] {
+  --portfolio-accent: #78c8cc;
+  --portfolio-accent-dark: #a4e0e2;
+  --portfolio-tint: #1c3538;
+}
+
+html[data-theme="dark"] .portfolio-button--primary {
+  color: #102327;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(170px, 225px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  max-width: 1120px;
+  margin: 1.25rem auto 0;
+  padding: 1rem 0 2.75rem;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.home-hero__portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 14px 34px rgba(20, 40, 59, 0.14);
+}
+
+.home-hero__copy h1 {
+  margin: 0.15rem 0 0.25rem;
+  font-size: clamp(2.1rem, 4.2vw, 3.25rem);
+  letter-spacing: -0.045em;
+}
+
+.home-eyebrow,
+.research-card__meta {
+  margin: 0 0 0.45rem;
+  color: var(--portfolio-accent);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.home-hero__role {
+  margin: 0;
+  color: var(--global-text-color);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.home-hero__summary {
+  max-width: 650px;
+  margin: 1.2rem 0 1.35rem;
+  color: var(--global-masthead-link-color);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--portfolio-accent);
+  border-radius: 0.45rem;
+  color: var(--portfolio-accent);
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.portfolio-button:hover {
+  transform: translateY(-1px);
+  background: var(--portfolio-tint);
+  color: var(--portfolio-accent-dark);
+}
+
+.portfolio-button--primary {
+  background: var(--portfolio-accent);
+  color: #fff;
+}
+
+.portfolio-button--primary:hover {
+  background: var(--portfolio-accent-dark);
+  color: #fff;
+}
+
+.home-section {
+  max-width: 1120px;
+  margin: 3.25rem auto;
+}
+
+.home-section h2 {
+  margin: 0.1rem 0 1.15rem;
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+  letter-spacing: -0.025em;
+}
+
+.home-bio {
+  max-width: 850px;
+}
+
+.home-bio p:not(.home-eyebrow) {
+  max-width: 78ch;
+  line-height: 1.8;
+}
+
+.home-bio a,
+.research-card h3 a,
+.section-heading__link {
+  text-decoration-color: rgba(23, 107, 115, 0.38);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.home-bio a:hover,
+.research-card h3 a:hover,
+.section-heading__link:hover {
+  color: var(--portfolio-accent-dark);
+  text-decoration-color: currentColor;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+}
+
+.section-heading__link {
+  margin-bottom: 0.2rem;
+  color: var(--portfolio-accent);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.research-grid,
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 235px;
+  padding: 1.35rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.8rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 8px 24px rgba(20, 40, 59, 0.055);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(20, 40, 59, 0.11);
+}
+
+.research-card h3 {
+  margin: 0.35rem 0 0.65rem;
+  font-size: 1.15rem;
+  line-height: 1.42;
+}
+
+.research-card h3 a {
+  color: var(--global-text-color);
+}
+
+.research-card > p:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
+  color: var(--global-masthead-link-color);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.portal-card {
+  position: relative;
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 0.8rem;
+  background: var(--portfolio-tint);
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--portfolio-accent);
+  color: var(--global-text-color);
+}
+
+.portal-card__number {
+  color: var(--portfolio-accent);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.portal-card__title {
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.portal-card__description {
+  margin-top: 0.2rem;
+  color: var(--global-masthead-link-color);
+  font-size: 0.9rem;
+}
+
+.portal-card__arrow {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 1.15rem;
+  color: var(--portfolio-accent);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  /* Let the labeled bottom navigation replace the crowded top-level links. */
+  #site-nav .visible-links > li:not(.persist),
+  #site-nav > button {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    height: auto;
+    min-height: 68px;
+    padding: 0.35rem 0 env(safe-area-inset-bottom);
+  }
+
+  .mobile-nav-link {
+    height: 58px;
+    gap: 0.2rem;
+    font-size: 0.63rem;
+    line-height: 1.15;
+  }
+
+  .mobile-nav-link span {
+    display: block;
+  }
+
+  .mobile-nav-link i {
+    font-size: 1.15rem;
+  }
+
+  body {
+    padding-bottom: 82px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: start;
+    gap: 1rem;
+    padding: 0.75rem 0 1.75rem;
+  }
+
+  .home-hero__portrait {
+    border-radius: 1rem;
+  }
+
+  .home-hero__copy h1 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .home-hero__role {
+    font-size: 0.95rem;
+  }
+
+  .home-hero__summary {
+    grid-column: 1 / -1;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+  }
+
+  .home-hero__actions {
+    grid-column: 1 / -1;
+  }
+
+  .portfolio-button {
+    min-height: 2.6rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.86rem;
+  }
+
+  .home-section {
+    margin: 2.5rem auto;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .research-grid,
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-card {
+    min-height: 0;
+  }
+
+  .portal-card {
+    min-height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-button,
+  .research-card,
+  .portal-card {
+    transition: none;
+  }
+}
