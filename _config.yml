@@ -159,7 +159,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  "/images/Machaalani_Marc_square.jpg"
+og_image                 :  "Logo.jpeg"
 og_description           :  "Portfolio and research publications of Marc Machaalani, MD."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
