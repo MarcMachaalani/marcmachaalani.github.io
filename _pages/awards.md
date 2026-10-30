@@ -1,7 +1,9 @@
 ---
 title: "Honors & Awards"
 permalink: /awards/
-layout: single
+layout: catalog
+folio: "03"
+intro: "Research honors and recognition."
 ---
 
 <ol class="award-list">

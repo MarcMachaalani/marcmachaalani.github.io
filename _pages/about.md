@@ -5,9 +5,10 @@ title: "Marc Machaalani, MD"
 author_profile: false
 ---
 <section class="home-hero" aria-labelledby="home-title">
-  <img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" />
+
   <div class="home-hero__copy">
-      <h1 id="home-title">Marc Machaalani, MD</h1>
+    <p class="home-eyebrow">Medicine &amp; research</p>
+    <h1 id="home-title">Marc Machaalani<span class="degree">, MD</span></h1>
     <p class="home-hero__role">Internal Medicine Resident at Yale</p>
     <p class="home-hero__summary">This is a small personal site I’ve enjoyed building and updating, where I share a little about my training, academic work, and interests.</p>
     <div class="home-hero__actions">
@@ -15,6 +16,7 @@ author_profile: false
       <a class="portfolio-button" href="/talks/">View presentations</a>
     </div>
   </div>
+  <figure class="portrait"><img class="home-hero__portrait" src="/images/Machaalani_Marc_square.jpg" alt="Portrait of Marc Machaalani" /><figcaption>Marc Machaalani <span>New Haven, CT</span></figcaption></figure>
 </section>
 
 <section class="home-section home-bio" aria-labelledby="about-title">
@@ -35,17 +37,17 @@ author_profile: false
   <div class="research-grid">
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publication/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
+      <h3><a href="/publication/2026-06-25-nat-med-histidine">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
       <p>Plasma profiling identifies metabolic signals associated with immunotherapy outcomes across cancer types.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publication/2026-01-07-nature-medicine-smadcam1-mrcc/">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
+      <h3><a href="/publication/2026-01-07-nature-medicine-smadcam1-mrcc">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
       <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Journal of Clinical Oncology · 2025</p>
-      <h3><a href="/publication/2025-08-10-chromophobe-rcc-antitumor-immunity/">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
+      <h3><a href="/publication/2025-08-10-chromophobe-rcc-antitumor-immunity">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
       <p>Integrated single-cell and immunogenomic analyses characterize the tumor microenvironment in chromophobe kidney cancer.</p>
     </article>
   </div>

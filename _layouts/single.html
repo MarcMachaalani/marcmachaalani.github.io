@@ -15,7 +15,7 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-  {% include sidebar.html %}
+  {% unless page.collection == "publications" or page.collection == "talks" or page.collection == "media" %}{% include sidebar.html %}{% endunless %}
   {% if page.collection == "publications" or page.collection == "talks" %}
     {% assign work_kind = "publication" %}{% assign back_url = "/publications/" %}{% assign back_label = "Back to publications" %}
     {% if page.collection == "talks" %}{% assign work_kind = "presentation" %}{% assign back_url = "/talks/" %}{% assign back_label = "Back to presentations" %}{% endif %}
