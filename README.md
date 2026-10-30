@@ -30,6 +30,19 @@ Open [http://localhost:4000](http://localhost:4000). Jekyll rebuilds content cha
 
 The optional JavaScript build scripts are in `package.json`. They are only needed when changing the bundled JavaScript.
 
+## Import publications from PubMed
+
+The helper below previews new records for the author query `Machaalani M[Author]`. It uses the Python standard library and creates publication pages with a summary from the PubMed abstract, a full citation with Marc's name emphasized, and DOI/PubMed links.
+
+Run from the repository root:
+
+```sh
+python3 scripts/import_pubmed_publications.py
+python3 scripts/import_pubmed_publications.py --write
+```
+
+The first command is a preview. Review the records before using `--write`; existing PMIDs and titles are skipped and existing files are never overwritten. To preview selected records, pass `--pmid 12345678 87654321`. PubMed data can be incomplete or matched to the wrong author, so check each preview before adding it.
+
 ## Template and license
 
 This site began with the [Academic Pages](https://github.com/academicpages/academicpages.github.io) project, built on the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) Jekyll theme. Template and theme credits are retained in [LICENSE](LICENSE).
