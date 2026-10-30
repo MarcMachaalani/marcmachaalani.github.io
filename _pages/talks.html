@@ -7,6 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
+<div class="collection-intro">
+  <p>Selected talks and poster presentations, grouped by format and listed newest first. Each entry includes its meeting, date, and a short description where available.</p>
+  <span class="collection-intro__count">{{ site.talks.size }} presentations</span>
+</div>
+
 {% if site.talkmap_link == true %}
 <p style="text-decoration:underline;">
   <a href="/talkmap.html">See a map of all the places I've given a talk!</a>
@@ -18,7 +23,7 @@ author_profile: true
 {% assign posters = site.talks | where: "category", "posters" %}
 {% assign invited = site.talks | where: "category", "invited" %}
 
-<div class="publications-container"> <!-- Changed class to match publications wrapper -->
+<div class="publications-container">
 
   <!-- ORAL PRESENTATIONS -->
   {% if orals.size > 0 %}
@@ -29,7 +34,7 @@ author_profile: true
       </div>
       <hr class="category-divider" />
       
-      <div class="publications-list"> <!-- Reuse publication list styling for grid/spacing -->
+      <div class="publications-list">
         {% for post in orals reversed %}
           <div class="talk-item">
             {% include archive-single-talk.html %}
