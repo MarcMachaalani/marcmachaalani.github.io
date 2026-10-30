@@ -7,7 +7,7 @@ layout: default
 {% if page.url != "/" and site.breadcrumbs %}{% unless paginator %}{% include breadcrumbs.html %}{% endunless %}{% endif %}
 
 <div id="main" role="main">
-  {% include sidebar.html %}
+  {% unless page.collection == "publications" or page.collection == "talks" or page.collection == "media" %}{% include sidebar.html %}{% endunless %}
   <article class="page work-detail work-detail--presentation" itemscope itemtype="http://schema.org/Event">
     {% if page.title %}<meta itemprop="name" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}

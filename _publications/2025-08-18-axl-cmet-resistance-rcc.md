@@ -2,7 +2,8 @@
 title: "Targeting AXL can effectively overcome c-Met-induced therapeutic resistance in renal cancer and promote tumor cell death through increased oxidative stress"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-08-18-axl-cmet-resistance-rcc
+permalink: /publication/2025-08-18-axl-cmet-resistance-rcc/
+redirect_from: /publication/2025-08-18-axl-cmet-resistance-rcc.html
 excerpt: "Preclinical study demonstrating that AXL inhibition overcomes c-Met–driven therapeutic resistance in renal cancer and promotes tumor cell death through enhanced oxidative stress."
 date: 2025-08-18
 venue: "<strong>Cancer Letters</strong>"

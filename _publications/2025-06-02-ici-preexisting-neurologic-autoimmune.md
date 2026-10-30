@@ -2,7 +2,8 @@
 title: "Immune Checkpoint Inhibitors for Patients With Preexisting Autoimmune Neurologic Disorders"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-06-02-ici-preexisting-neurologic-autoimmune
+permalink: /publication/2025-06-02-ici-preexisting-neurologic-autoimmune/
+redirect_from: /publication/2025-06-02-ici-preexisting-neurologic-autoimmune.html
 excerpt: "Multicenter retrospective cohort study evaluating the safety and clinical outcomes of immune checkpoint inhibitors in patients with preexisting autoimmune neurologic disorders."
 date: 2025-06-02
 venue: "<strong>JAMA Network Open</strong>"

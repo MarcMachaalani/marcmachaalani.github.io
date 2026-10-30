@@ -2,7 +2,8 @@
 title: "Integrative Clinical and Molecular Evaluation of Renal Cell Carcinoma with Merlin Protein Deficiency and Biallelic Loss of NF2"
 collection: publications
 category: manuscripts
-permalink: /publications/2026-01-12-clinical-cancer-research-nf2-merlin-rcc
+permalink: /publications/2026-01-12-clinical-cancer-research-nf2-merlin-rcc/
+redirect_from: /publications/2026-01-12-clinical-cancer-research-nf2-merlin-rcc.html
 excerpt: "Integrated clinical, genomic, and transcriptomic analysis of renal cell carcinoma with NF2 biallelic loss and merlin protein deficiency, demonstrating an aggressive phenotype characterized by high proliferation, immune dysfunction, frequent cell-cycle and DNA damage–response alterations, and limited benefit from immunotherapy."
 date: 2026-01-12
 venue: "<strong>Clinical Cancer Research</strong>"

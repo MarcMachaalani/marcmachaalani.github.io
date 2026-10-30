@@ -2,7 +2,8 @@
 title: "International Medical Graduates Representation at International Oncology Conference Meetings: An Analysis of ASCO Annual Meetings"
 collection: publications
 category: manuscripts
-permalink: /publication/2026-04-22-img-representation-asco
+permalink: /publication/2026-04-22-img-representation-asco/
+redirect_from: /publication/2026-04-22-img-representation-asco.html
 excerpt: "Analysis of oral and invited faculty representation of international medical graduates at the ASCO Annual Meetings."
 date: 2026-04-22
 venue: "<strong>JCO Oncology Practice</strong>"

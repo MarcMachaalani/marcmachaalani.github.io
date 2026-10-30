@@ -2,7 +2,8 @@
 title: "Comorbidity burden and effectiveness of immunotherapy in metastatic renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-08-01-comorbidity-immunotherapy-mrcc
+permalink: /publication/2025-08-01-comorbidity-immunotherapy-mrcc/
+redirect_from: /publication/2025-08-01-comorbidity-immunotherapy-mrcc.html
 excerpt: "Multi-institutional study evaluating the impact of comorbidity burden on treatment outcomes and adverse events in patients with metastatic renal cell carcinoma treated with first-line immune checkpoint inhibitor–based combinations."
 date: 2025-08-01
 venue: "<strong>Clinical Genitourinary Cancer</strong>"

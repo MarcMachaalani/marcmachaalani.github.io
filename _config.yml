@@ -27,7 +27,7 @@ author:
   name             : "Marc Machaalani, MD"
   pronouns         : # example: "she/her"  
   bio              : "Internal Medicine Resident"
-  location         : "New Haven, CT"
+  location         :
   employer         : "Yale School of Medicine"
   uri              : # URL
   email            : # 

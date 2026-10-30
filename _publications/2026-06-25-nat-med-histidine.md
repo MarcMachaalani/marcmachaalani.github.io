@@ -2,7 +2,8 @@
 title: "Metabolic determinants of cancer immunotherapy outcomes identified by plasma profiling"
 collection: publications
 category: manuscripts
-permalink: /publication/2026-06-25-nat-med-histidine
+permalink: /publication/2026-06-25-nat-med-histidine/
+redirect_from: /publication/2026-06-25-nat-med-histidine.html
 excerpt: "Multi-cohort study integrating plasma metabolomics, metagenomics, and clinical data to identify metabolic determinants of immunotherapy outcomes, linking histidine with improved survival and long-chain fatty acids and succinate with worse outcomes across advanced cancer types."
 date: 2026-06-25
 venue: "<strong>Nature Medicine</strong>"

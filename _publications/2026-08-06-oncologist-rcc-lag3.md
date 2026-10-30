@@ -2,7 +2,8 @@
 title: "Molecular and immune correlates of lymphocyte activation gene-3 expression in renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2026-08-06-oncologist-rcc-lag3
+permalink: /publication/2026-08-06-oncologist-rcc-lag3/
+redirect_from: /publication/2026-08-06-oncologist-rcc-lag3.html
 excerpt: "Multi-modal analysis of DNA and RNA sequencing data from patients with renal cell carcinoma treated with first-line immunotherapy, identifying molecular and immune correlates of LAG-3 expression and an association between higher LAG-3 expression and improved early real-world response."
 date: 2026-08-06
 venue: "<strong>The Oncologist</strong>"

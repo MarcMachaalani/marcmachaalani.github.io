@@ -2,7 +2,8 @@
 title: "KIM-1 as a prognostic marker in renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-05-01-kim1-prognostic-rcc
+permalink: /publication/2025-05-01-kim1-prognostic-rcc/
+redirect_from: /publication/2025-05-01-kim1-prognostic-rcc.html
 excerpt: "Review and clinical perspective highlighting KIM-1 as a promising noninvasive prognostic biomarker in renal cell carcinoma."
 date: 2025-05-01
 venue: "<strong>European Urology Focus</strong>"
