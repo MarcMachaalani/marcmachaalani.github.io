@@ -4,11 +4,6 @@ permalink: /awards/
 layout: single
 ---
 
-<div class="collection-intro">
-  <p>Recognition received during my medical education and academic work.</p>
-  <span class="collection-intro__count">8 honors</span>
-</div>
-
 <ol class="award-list">
   <li class="award-item">
     <time datetime="2026-02">February 2026</time>
