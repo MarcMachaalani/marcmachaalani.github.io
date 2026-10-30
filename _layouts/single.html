@@ -38,7 +38,7 @@ layout: default
           </p>
         </header>
         <section class="work-detail__body" itemprop="text">
-          {% assign detail_body = content | strip %}{% if detail_body != "" %}{{ content }}{% elsif page.excerpt %}{{ page.excerpt | markdownify }}{% endif %}
+          {% if page.excerpt %}{{ page.excerpt | markdownify }}{% else %}{{ content }}{% endif %}
         </section>
         {% if page.citation %}
           <details class="publication-citation work-detail__citation">
