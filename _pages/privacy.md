@@ -3,6 +3,7 @@ layout: catalog
 title: "Privacy"
 permalink: /privacy/
 intro: "A small site, with minimal data collection."
+section_label: "About this site"
 ---
 
 {% if site.data.services.analytics_enabled %}
@@ -18,3 +19,5 @@ GitHub Pages hosts the public site. GitHub, Cloudflare, and the email provider m
 The private editor uses a short-lived, secure sign-in cookie and GitHub authentication. Its draft changes are saved in this public website repository as pull requests; drafts are therefore public. Do not put private information in site drafts.
 
 Embedded videos and links to other websites have their own privacy practices. You may contact me about information you have sent through the [contact page](/contact/).
+
+The owner editor stores uploaded PDFs and photos privately. Paper PDFs have no public download route. Photos become public only when added to a published page. Uploads used only in an unpublished draft stay private.

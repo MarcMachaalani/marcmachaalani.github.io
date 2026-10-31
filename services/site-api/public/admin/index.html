@@ -6,31 +6,31 @@
   <link rel="stylesheet" href="/admin/admin.css"><script src="/admin/admin.js" defer></script>
 </head>
 <body>
-  <header><a href="https://marcmachaalani.github.io">Marc Machaalani</a><span>Private editor</span><button id="logout" hidden>Sign out</button></header>
+  <header class="editor-header"><a class="editor-brand" href="https://marcmachaalani.github.io"><span aria-hidden="true">MM</span>Marc Machaalani</a><span class="private-label">Private studio</span><button class="quiet" id="logout" hidden>Sign out</button></header>
   <main>
-    <section id="login"><p class="eyebrow">Owner access</p><h1>A quiet place to update your site.</h1>
-      <p>Sign in with your GitHub account to edit pages and publications, save a draft for review, or see broad site usage.</p>
-      <a class="button" href="/auth/login">Sign in with GitHub</a>
-    </section>
+    <section id="login"><p class="eyebrow">Owner access</p><h1>A little room<br>for your next update.</h1><p>Edit your words, collect photos, and keep paper PDFs together. Sign in with your GitHub account to begin.</p><a class="button" href="/auth/login">Sign in with GitHub <span aria-hidden="true">→</span></a></section>
     <div id="workspace" hidden>
-      <h1>Your site</h1><p>Signed in as <strong id="owner"></strong>. Changes become reviewable pull requests before publication.</p>
-      <nav aria-label="Editor sections"><button id="edit-tab" aria-pressed="true">Content</button><button id="usage-tab" aria-pressed="false">Page counts</button></nav>
+      <div class="workspace-heading"><div><p class="eyebrow">Your personal site</p><h1>Make it yours.</h1><p>Signed in as <strong id="owner"></strong>. Save an update as a draft, then review it before publishing.</p></div><a class="text-link" href="https://marcmachaalani.github.io" target="_blank" rel="noopener">View website ↗</a></div>
+      <nav class="studio-tabs" aria-label="Editor sections"><button id="edit-tab" aria-pressed="true">Content</button><button id="media-tab" aria-pressed="false">Media library</button><button id="usage-tab" aria-pressed="false">Page counts</button></nav>
+      <p id="status" role="status" aria-live="polite"></p>
       <section id="content-panel" class="editor-grid">
-        <aside><label for="file-search">Find content</label><input id="file-search" type="search" placeholder="Search pages and publications"><div id="file-list" aria-label="Content files"></div></aside>
+        <aside><label for="file-search">Find a page or paper</label><input id="file-search" type="search" placeholder="Search your content"><div id="file-list" aria-label="Content files"></div></aside>
         <section>
-          <p id="editor-placeholder">Choose a page or publication to edit.</p>
+          <div id="editor-placeholder" class="empty-state"><span class="empty-mark" aria-hidden="true">✎</span><h2>What would you like to update?</h2><p>Choose a page or publication on the left. You can also collect files in your media library first.</p><button class="quiet" id="start-media">Open media library</button></div>
           <form id="editor" hidden>
-            <p class="eyebrow" id="file-path"></p><div id="fields"></div>
-            <label for="body">Page content</label><p class="hint">Markdown and HTML are supported. Existing page layouts are preserved. A preview is attached to the pull request after checks finish.</p>
-            <div class="toolbar"><button type="button" data-insert="bold">Bold</button><button type="button" data-insert="italic">Italic</button><button type="button" data-insert="link">Link</button><button type="button" data-insert="heading">Heading</button></div>
-            <textarea id="body" rows="22" spellcheck="true"></textarea>
-            <p class="hint">Drafts are stored in the public site repository. Keep private information out of them.</p>
-            <button type="submit" id="save">Save draft for review</button><a id="draft-link" target="_blank" rel="noopener" hidden>Open saved draft →</a>
+            <div class="editing-heading"><div><p class="eyebrow" id="file-kind"></p><h2 id="editor-title"></h2></div><span id="save-state" class="save-state">No unsaved changes</span></div>
+            <p id="file-path" class="file-path"></p>
+            <section class="editor-section"><h3>Details</h3><div id="fields" class="field-grid"></div></section>
+            <section id="paper-upload" class="editor-section" hidden><div class="section-title"><div><h3>Paper PDF</h3><p class="hint">A private attachment for this publication. It will not appear as a public download.</p></div><span class="badge">Private</span></div><div id="pdf-current"></div><div id="pdf-drop" class="drop-zone"><p>Drop a PDF here, or choose a file.</p><button type="button" id="pdf-choose" class="quiet">Choose paper PDF</button><button type="button" id="pdf-library" class="text-button">Use a saved PDF</button><p class="hint">PDF · up to 10 MB</p><input id="pdf-file" type="file" accept="application/pdf,.pdf" hidden></div></section>
+            <section class="editor-section"><div class="section-title"><div><h3>Photos on this page</h3><p class="hint">Add a photo, a short image description, and an optional caption. Photos go live when the page draft is published.</p></div></div><div id="gallery-items"></div><div class="button-row"><button type="button" id="gallery-choose" class="quiet">Upload photos</button><button type="button" id="gallery-library" class="text-button">Choose from your library →</button></div><input id="gallery-file" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden></section>
+            <section class="editor-section"><label for="body" class="section-label">Page content</label><p class="hint">Use Markdown for simple text. Pages that already use HTML keep their layout.</p><div class="toolbar"><button type="button" data-insert="bold">Bold</button><button type="button" data-insert="italic">Italic</button><button type="button" data-insert="link">Link</button><button type="button" data-insert="heading">Heading</button></div><textarea id="body" rows="18" spellcheck="true"></textarea></section>
+            <div class="save-bar"><div><button type="submit" id="save" disabled>Save draft for review <span aria-hidden="true">→</span></button><a id="draft-link" target="_blank" rel="noopener" hidden>Review saved draft ↗</a></div><p class="hint">Text and photo captions in a saved draft are public in GitHub. Uploaded paper PDFs remain private.</p></div>
           </form>
         </section>
       </section>
-      <section id="usage-panel" hidden><h2>Page views · last 30 days</h2><p>UTC daily counts, with no visitor IDs or analytics cookies. These are page views, not unique people. Automated traffic may be included.</p><p id="usage-total"></p><div class="analytics-grid"><div><h3>By page</h3><table><thead><tr><th>Page</th><th>Views</th></tr></thead><tbody id="usage-pages"></tbody></table></div><div><h3>By day</h3><table><thead><tr><th>Date (UTC)</th><th>Views</th></tr></thead><tbody id="usage-days"></tbody></table></div></div></section>
+      <section id="media-panel" hidden><div class="section-title"><div><p class="eyebrow">Collect now, publish when ready</p><h2>Your media library</h2><p>Paper PDFs and photos stay private here until you add them to content. PDFs remain private even after a page is published.</p></div></div><div id="library-drop" class="drop-zone library-drop"><span aria-hidden="true" class="upload-mark">↑</span><h3>Drop files here</h3><p>Paper PDFs, lab moments, piano photos, and whatever comes next.</p><button id="library-choose" class="quiet">Choose files</button><p class="hint">PDF up to 10 MB · JPEG, PNG, or WebP photos · photos are resized for the web</p><input id="library-file" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp" multiple hidden></div><div class="library-controls"><label for="asset-filter">Show<select id="asset-filter"><option value="">All files</option><option value="photo">Photos</option><option value="pdf">Paper PDFs</option></select></label><p class="hint" id="storage-used"></p></div><div id="asset-grid" class="asset-grid"></div></section>
+      <section id="usage-panel" hidden><p class="eyebrow">A broad view</p><h2>Page views · last 30 days</h2><p>Daily counts without visitor IDs or analytics cookies. These are page views, not unique people.</p><p id="usage-total" class="usage-total"></p><div class="analytics-grid"><div><h3>By page</h3><table><thead><tr><th>Page</th><th>Views</th></tr></thead><tbody id="usage-pages"></tbody></table></div><div><h3>By day</h3><table><thead><tr><th>Date (UTC)</th><th>Views</th></tr></thead><tbody id="usage-days"></tbody></table></div></div></section>
+      <div id="upload-progress" class="upload-progress" role="status" aria-live="polite" hidden><p id="upload-label">Uploading…</p><progress id="upload-meter" max="100" value="0" aria-label="File upload progress"></progress></div>
     </div>
-    <p id="status" role="status" aria-live="polite"></p>
   </main>
 </body></html>

@@ -140,9 +140,10 @@ test('analytics respects privacy preference headers', async () => {
   assert.equal((await worker.fetch(request('/usage', { path: '/' }, { 'Sec-GPC': '1' }), { ...env, DB: {} })).status, 204);
 });
 test('daily retention deletes aggregates older than the 90-day window', async () => {
-  let sql;
-  await worker.scheduled({}, { DB: { prepare: value => { sql = value; return { run: async () => {} }; } } });
-  assert.match(sql, /DELETE.*-89 days/);
+  const statements = [];
+  await worker.scheduled({}, { DB: { prepare: value => { statements.push(value); return { run: async () => {} }; } } });
+  assert.match(statements[0], /DELETE.*-89 days/);
+  assert.match(statements[1], /DELETE.*complete = 0.*-1 day/);
 });
 test('OAuth callback rejects an account other than the owner', async t => {
   const pending = await sign({ kind: 'oauth', state: 'state', verifier: 'verifier', exp: Date.now() + 60000 }, env);
