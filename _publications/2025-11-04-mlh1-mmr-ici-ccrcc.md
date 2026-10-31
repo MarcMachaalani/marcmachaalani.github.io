@@ -10,4 +10,7 @@ venue: "<strong>European Urology</strong>"
 paperurl: "https://doi.org/10.1016/j.eururo.2025.09.4162"
 citation: "Dawidek MT, Posada Calderon L, Shah PK, Mittal R, Agridag Ucpinar B, Bakouny Z, Meli K, Saad E, Saliby RM, Woo HJ, Khandwala YS, Eid M, Labaki C, <strong>Machaalani M</strong>, Coleman J, Russo P, Kotecha RR, Carlo MI, Akin O, Braun DA, Choueiri TK, Reznik E, Chen YB, Motzer RJ, Voss MH, Hakimi AA. MLH1 mismatch repair deficiency predicts exceptional response to immune checkpoint inhibition in clear-cell renal cell carcinoma. <i>Eur Urol</i>. 2025 Nov 4:S0302-2838(25)04721-9. doi: 10.1016/j.eururo.2025.09.4162. Epub ahead of print. PMID: 41193371."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/41193371/"
+pmid: "41193371"
+article_type: "Journal Article"
+topics: ["Renal cell carcinoma", "Immunotherapy", "Cancer genomics"]
 ---

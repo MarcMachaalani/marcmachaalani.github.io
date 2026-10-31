@@ -182,6 +182,10 @@ include:
   - _pages
   - files
 exclude:
+  - services
+  - tests
+  - docs
+  - scripts
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

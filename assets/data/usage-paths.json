@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /assets/data/usage-paths.json
+---
+[
+{% assign first_path = true %}
+{% for p in site.html_pages %}{% unless p.url contains '/admin' %}{% unless first_path %},{% endunless %}{{ p.url | jsonify }}{% assign first_path = false %}{% endunless %}{% endfor %}
+{% for collection in site.collections %}{% for p in collection.docs %}{% unless first_path %},{% endunless %}{{ p.url | jsonify }}{% assign first_path = false %}{% endfor %}{% endfor %}
+]

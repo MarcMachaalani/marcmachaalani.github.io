@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "marc-site-api",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "assets": { "directory": "public", "binding": "ASSETS", "run_worker_first": true },
+  "observability": { "enabled": false },
+  "vars": {
+    "SITE_ORIGIN": "https://marcmachaalani.github.io",
+    "GITHUB_REPO": "MarcMachaalani/marcmachaalani.github.io",
+    "GITHUB_BRANCH": "master",
+    "OWNER_ID": "103030028"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "marc-site-usage",
+    "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+    "migrations_dir": "migrations"
+  }],
+  "ratelimits": [
+    { "name": "CONTACT_LIMITER", "namespace_id": "1001", "simple": { "limit": 3, "period": 60 } },
+    { "name": "USAGE_LIMITER", "namespace_id": "1002", "simple": { "limit": 60, "period": 60 } }
+  ],
+  "triggers": { "crons": ["17 4 * * *"] }
+}

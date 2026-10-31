@@ -1,0 +1,49 @@
+name: Check PubMed publications
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - scripts/import_pubmed_publications.py
+      - .github/workflows/pubmed-publications.yml
+  schedule:
+    - cron: '23 13 * * 1' # Mondays, 13:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pubmed-publications
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test importer
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Import missing publications
+        run: python scripts/import_pubmed_publications.py --write
+        env:
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+      - name: Open or update publication review
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.PUBMED_PR_TOKEN || github.token }}
+          branch: automation/pubmed-publications
+          delete-branch: true
+          add-paths: _publications/*.md
+          commit-message: 'Import newly indexed PubMed publications'
+          title: 'Review newly indexed PubMed publications'
+          body: |
+            PubMed returned new papers matching `Machaalani M[Author]`.
+
+            Please confirm authorship, citation details, article types, topics, and summaries before merging. Existing curated records are preserved. Topic labels are suggestions derived from titles and PubMed subject headings.
+          draft: false

@@ -1,0 +1,14 @@
+---
+layout: catalog
+title: "Private editor"
+permalink: /admin/
+sitemap: false
+intro: "Owner access to site content and page counts."
+---
+<meta name="robots" content="noindex, nofollow">
+{% if site.data.services.api_base != "" %}
+<p><a class="portfolio-button" href="{{ site.data.services.api_base | escape }}/admin/">Open private editor →</a></p>
+<p>Sign in with your GitHub account. Content drafts are reviewed before publication.</p>
+{% else %}
+<p>The private editor is awaiting service setup.</p>
+{% endif %}

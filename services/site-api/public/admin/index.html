@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><title>Marc · Private editor</title>
+  <link rel="stylesheet" href="/admin/admin.css"><script src="/admin/admin.js" defer></script>
+</head>
+<body>
+  <header><a href="https://marcmachaalani.github.io">Marc Machaalani</a><span>Private editor</span><button id="logout" hidden>Sign out</button></header>
+  <main>
+    <section id="login"><p class="eyebrow">Owner access</p><h1>A quiet place to update your site.</h1>
+      <p>Sign in with your GitHub account to edit pages and publications, save a draft for review, or see broad site usage.</p>
+      <a class="button" href="/auth/login">Sign in with GitHub</a>
+    </section>
+    <div id="workspace" hidden>
+      <h1>Your site</h1><p>Signed in as <strong id="owner"></strong>. Changes become reviewable pull requests before publication.</p>
+      <nav aria-label="Editor sections"><button id="edit-tab" aria-pressed="true">Content</button><button id="usage-tab" aria-pressed="false">Page counts</button></nav>
+      <section id="content-panel" class="editor-grid">
+        <aside><label for="file-search">Find content</label><input id="file-search" type="search" placeholder="Search pages and publications"><div id="file-list" aria-label="Content files"></div></aside>
+        <section>
+          <p id="editor-placeholder">Choose a page or publication to edit.</p>
+          <form id="editor" hidden>
+            <p class="eyebrow" id="file-path"></p><div id="fields"></div>
+            <label for="body">Page content</label><p class="hint">Markdown and HTML are supported. Existing page layouts are preserved. A preview is attached to the pull request after checks finish.</p>
+            <div class="toolbar"><button type="button" data-insert="bold">Bold</button><button type="button" data-insert="italic">Italic</button><button type="button" data-insert="link">Link</button><button type="button" data-insert="heading">Heading</button></div>
+            <textarea id="body" rows="22" spellcheck="true"></textarea>
+            <p class="hint">Drafts are stored in the public site repository. Keep private information out of them.</p>
+            <button type="submit" id="save">Save draft for review</button><a id="draft-link" target="_blank" rel="noopener" hidden>Open saved draft →</a>
+          </form>
+        </section>
+      </section>
+      <section id="usage-panel" hidden><h2>Page views · last 30 days</h2><p>UTC daily counts, with no visitor IDs or analytics cookies. These are page views, not unique people. Automated traffic may be included.</p><p id="usage-total"></p><div class="analytics-grid"><div><h3>By page</h3><table><thead><tr><th>Page</th><th>Views</th></tr></thead><tbody id="usage-pages"></tbody></table></div><div><h3>By day</h3><table><thead><tr><th>Date (UTC)</th><th>Views</th></tr></thead><tbody id="usage-days"></tbody></table></div></div></section>
+    </div>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+</body></html>

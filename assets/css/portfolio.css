@@ -134,3 +134,18 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
   aspect-ratio: 16 / 9;
   border: 0;
 }
+
+/* Publication tools and correspondence share the site's paper and ink palette. */
+[hidden] { display: none !important; }
+.publication-filters { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)) auto; gap: 1rem; align-items: end; padding: 1.5rem 0; margin-top: 1rem; border-block: 1px solid var(--rule); }
+.publication-search { grid-column: 1 / -1; }
+.publication-filters label, .contact-form label { display: block; font-size: .85rem; color: var(--muted); }
+.publication-filters input, .publication-filters select, .contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--rule); border-radius: 0; padding: .7rem; margin-top: .4rem; background: var(--paper); color: var(--ink); font: inherit; }
+.publication-filters button, .contact-form button { cursor: pointer; background: var(--paper); color: var(--ink); font: inherit; }
+#publication-count, .form-note { color: var(--muted); font-size: .85rem; }
+.contact-copy { max-width: 65ch; }
+.contact-form { display: grid; gap: 1.25rem; margin-block: 2rem; }
+.contact-form button { width: fit-content; }
+.contact-form button:disabled { opacity: .6; cursor: wait; }
+.contact-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 740px) { .publication-filters { grid-template-columns: 1fr; } }

@@ -1,0 +1,48 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: services/site-api/package-lock.json
+      - run: npm ci --no-fund --no-audit
+        working-directory: services/site-api
+      - run: npm test && npm run check
+        working-directory: services/site-api
+        env:
+          WRANGLER_SEND_METRICS: 'false'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Build GitHub Pages site
+        run: bundle exec jekyll build --safe
+        env:
+          JEKYLL_ENV: production
+      - name: Upload site preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site
+          retention-days: 7
+      - name: Link preview
+        run: echo 'Download the **site-preview** artifact from this check to inspect the built HTML before merging.' >> "$GITHUB_STEP_SUMMARY"

@@ -11,6 +11,9 @@ Gemfile.lock
 # Ignore files created by npm
 node_modules
 package-lock.json
+!services/site-api/package-lock.json
+__pycache__/
+*.pyc
 
 # Ignore the vendor file at root level and bundle for alternative installation
 /vendor/
