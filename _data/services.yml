@@ -1,5 +1,5 @@
 # Public settings only. Server credentials belong in Cloudflare Worker secrets.
 # Set api_base to the deployed Worker origin, without a trailing slash.
-api_base: ""
-turnstile_site_key: ""
-analytics_enabled: false
+api_base: "https://marc-site-api.marcmachaalani.workers.dev"
+turnstile_site_key: "0x4AAAAAAFuiioA6Epa9lh0N"
+analytics_enabled: true
