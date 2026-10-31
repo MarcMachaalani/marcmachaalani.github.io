@@ -15,7 +15,7 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "marc-site-usage",
-    "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+    "database_id": "5e5fdfd2-09bf-442d-9809-19022974d501",
     "migrations_dir": "migrations"
   }],
   "ratelimits": [
