@@ -15,6 +15,20 @@ author_profile: true
 
 {% include base_path %}
 
+<form class="publication-filters" id="publication-filters" role="search" aria-label="Explore publications" hidden>
+  <label class="publication-search">Search publications
+    <input type="search" name="q" id="publication-query" placeholder="Title, journal, author, or keyword" autocomplete="off">
+  </label>
+  <label>Year<select name="year" id="publication-year"><option value="">All years</option></select></label>
+  <label>Article type<select name="type" id="publication-type"><option value="">All types</option></select></label>
+  <label>Topic<select name="topic" id="publication-topic"><option value="">All topics</option></select></label>
+  <button type="reset" class="portfolio-button">Clear filters</button>
+</form>
+<p id="publication-count" role="status" aria-live="polite"></p>
+<p id="publication-empty" hidden>No publications match these filters. Try a broader search or clear the filters.</p>
+<noscript><p>All publications are listed below. Enable JavaScript to search and filter them.</p></noscript>
+<script defer src="{{ '/assets/js/publications.js' | relative_url }}"></script>
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   <div class="publications-container">

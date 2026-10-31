@@ -10,4 +10,7 @@ venue: "<strong>The Oncologist</strong>"
 paperurl: "https://doi.org/10.1093/oncolo/oyag317"
 citation: "Dudipala H, Dugan AJ, Jariwala U, Ronski K, Mercer J, Saad E, El Masri J, <strong>Machaalani M</strong>, Saleh M, Viets Layng K, Yu Y, Signoretti S, Braun D, Pal SK, Choueiri TK, McKay RR. Molecular and immune correlates of lymphocyte activation gene-3 expression in renal cell carcinoma. <i>The Oncologist</i>. 2026;31(9):oyag317. doi: 10.1093/oncolo/oyag317."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/42578740/"
+pmid: "42578740"
+article_type: "Journal Article"
+topics: ["Renal cell carcinoma", "Immunotherapy", "Biomarkers"]
 ---

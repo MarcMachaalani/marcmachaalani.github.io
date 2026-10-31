@@ -46,3 +46,7 @@ The first command is a preview. Review the records before using `--write`; exist
 ## Template and license
 
 This site began with the [Academic Pages](https://github.com/academicpages/academicpages.github.io) project, built on the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) Jekyll theme. Template and theme credits are retained in [LICENSE](LICENSE).
+
+## Site updates
+
+Publication search and filters run entirely on GitHub Pages. A weekly PubMed action proposes new journal publications through pull requests. Contact delivery, private page counts, and the owner editor are implemented in `services/site-api` and require one-time service activation. See [site services and setup](docs/site-services.md).

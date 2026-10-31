@@ -10,4 +10,7 @@ venue: "<strong>Clinical Genitourinary Cancer</strong>"
 paperurl: "https://doi.org/10.1016/j.clgc.2025.102385"
 citation: "Yekeduz E, Zarba M, Saad E, El Hajj Chehade R, Eid M, Saliby RM, Steiner C, <strong>Machaalani M</strong>, Nawfal R, Semaan K, Ürün Y, Heng DYC, Choueiri TK. Comorbidity burden and effectiveness of immunotherapy in metastatic renal cell carcinoma. <i>Clin Genitourin Cancer</i>. 2025;23(4):102385. doi:10.1016/j.clgc.2025.102385."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/40615325/"
+pmid: "40615325"
+article_type: "Journal Article"
+topics: ["Renal cell carcinoma", "Immunotherapy", "Clinical outcomes"]
 ---

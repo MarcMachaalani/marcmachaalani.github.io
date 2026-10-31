@@ -1,0 +1,27 @@
+---
+layout: catalog
+title: "Contact"
+permalink: /contact/
+intro: "For research collaborations, academic questions, and other inquiries."
+---
+<div class="contact-copy">
+  <p>Send a note using the form below. Please do not include patient information or other sensitive personal information.</p>
+  {% if site.data.services.api_base != "" and site.data.services.turnstile_site_key != "" %}
+  <form id="contact-form" class="contact-form" data-endpoint="{{ site.data.services.api_base | escape }}/contact">
+    <label>Your name<input name="name" autocomplete="name" required maxlength="100"></label>
+    <label>Email address<input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+    <label>Subject<input name="subject" required maxlength="160"></label>
+    <label>Message<textarea name="message" rows="8" required minlength="10" maxlength="5000"></textarea></label>
+    <div class="contact-trap" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="cf-turnstile" data-sitekey="{{ site.data.services.turnstile_site_key | escape }}" data-action="contact" data-theme="auto"></div>
+    <button type="submit" class="portfolio-button portfolio-button--primary">Send message</button>
+    <p id="contact-status" role="status" aria-live="polite"></p>
+    <p class="form-note">Your message is sent by email. <a href="{{ '/privacy/' | relative_url }}">Privacy details</a></p>
+  </form>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="{{ '/assets/js/contact.js' | relative_url }}" defer></script>
+  <noscript><p>Please enable JavaScript to use the contact form.</p></noscript>
+  {% else %}
+  <p>The contact form is being set up. In the meantime, you can find my academic profiles in the footer.</p>
+  {% endif %}
+</div>

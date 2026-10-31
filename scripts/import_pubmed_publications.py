@@ -10,8 +10,10 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -24,30 +26,76 @@ EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 SEARCH_TERM = "Machaalani M[Author]"
 
 
+def normalized_title(value: str) -> str:
+    value = html.unescape(re.sub(r"<[^>]+>", "", value))
+    return re.sub(r"[\W_]+", "", unicodedata.normalize("NFKC", value).casefold())
+
+
 def fetch(url: str) -> bytes:
     request = urllib.request.Request(
         url,
         headers={"User-Agent": "MarcMachaalaniAcademicSite/1.0 (PubMed sync)"},
     )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return response.read()
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return response.read()
+        except OSError:
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
+    raise RuntimeError("Unreachable")
 
 
 def esearch_ids(pmids: list[str] | None) -> list[str]:
     if pmids:
         return pmids
-    query = urllib.parse.urlencode(
-        {
+    ids = []
+    while True:
+        query = urllib.parse.urlencode({
             "db": "pubmed",
             "term": SEARCH_TERM,
             "sort": "pub date",
             "retmax": "200",
+            "retstart": len(ids),
             "retmode": "json",
             "tool": "marcmachaalani_site",
-        }
-    )
-    result = json.loads(fetch(f"{EUTILS}/esearch.fcgi?{query}"))
-    return result["esearchresult"]["idlist"]
+            "email": os.environ.get("NCBI_EMAIL", ""),
+        })
+        result = json.loads(fetch(f"{EUTILS}/esearch.fcgi?{query}"))["esearchresult"]
+        page = result["idlist"]
+        ids.extend(page)
+        if len(ids) >= int(result["count"]):
+            return ids
+        if not page or len(ids) >= 9999:
+            raise ValueError("PubMed search is too large to import safely")
+        time.sleep(0.4)
+
+
+def article_metadata(record: ET.Element) -> tuple[str, list[str]]:
+    types = {node_text(n) for n in record.findall(".//PublicationType")}
+    article_type = next((t for t in (
+        "Meta-Analysis", "Systematic Review", "Review", "Randomized Controlled Trial",
+        "Clinical Trial", "Case Reports", "Editorial", "Letter",
+    ) if t in types), "Journal Article")
+    text = " ".join(node_text(n) for n in record.findall(".//ArticleTitle") + record.findall(".//DescriptorName")).lower()
+    rules = {
+        "Renal cell carcinoma": r"renal cell|kidney (?:cancer|neoplasms)",
+        "Immunotherapy": r"immunotherap|immune checkpoint|antitumor immunity",
+        "Biomarkers": r"biomarker|prognostic marker|liquid biopsy",
+        "Cancer genomics": r"genomic|mutation|epigenetic|mismatch repair|nf2|merlin",
+        "Cancer metabolism": r"metaboli|cachexia|nutrient|amino acid",
+        "Targeted therapies": r"targeted therap|hif.?2|axl|drug repurposing|trastuzumab",
+        "Public health": r"bibliometric|knowledge.*attitude|cardiovascular|hypertension|medical graduates",
+        "Clinical outcomes": r"clinical endpoint|real.world data|comorbidity",
+    }
+    topics = [label for label, pattern in rules.items() if re.search(pattern, text)]
+    return article_type, topics or ["Other research"]
+
+
+def excluded_record(record: ET.Element) -> bool:
+    types = {node_text(n) for n in record.findall(".//PublicationType")}
+    return bool(types & {"Preprint", "Published Erratum", "Retracted Publication", "Retraction of Publication"})
 
 
 def node_text(node: ET.Element | None) -> str:
@@ -183,6 +231,7 @@ def record_markdown(record: ET.Element) -> tuple[str, str, str]:
     venue = f"<strong>{html.escape(journal)}</strong>"
     paper_url = f"https://doi.org/{doi}" if doi else ""
     pubmed_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+    article_type, topics = article_metadata(record)
 
     fields = [
         f"title: {yaml_string(title)}",
@@ -195,6 +244,9 @@ def record_markdown(record: ET.Element) -> tuple[str, str, str]:
         f"paperurl: {yaml_string(paper_url)}" if paper_url else "",
         f"pubmed: {yaml_string(pubmed_url)}",
         f"pmid: {yaml_string(pmid)}",
+        f"doi: {yaml_string(doi)}" if doi else "",
+        f"article_type: {yaml_string(article_type)}",
+        f"topics: {json.dumps(topics, ensure_ascii=False)}",
         f"citation: {yaml_string(citation)}",
     ]
     front_matter = "\n".join(field for field in fields if field)
@@ -209,7 +261,7 @@ def existing_records() -> tuple[set[str], set[str]]:
         content = path.read_text(encoding="utf-8")
         title_match = re.search(r"(?m)^title:\s*[\"']?(.*?)[\"']?\s*$", content)
         if title_match:
-            titles.add(title_match.group(1).strip().casefold())
+            titles.add(normalized_title(title_match.group(1).strip()))
         pmid_match = re.search(r"(?m)^pmid:\s*[\"']?(\d+)", content)
         if pmid_match:
             pmids.add(pmid_match.group(1))
@@ -220,10 +272,32 @@ def existing_records() -> tuple[set[str], set[str]]:
     return pmids, titles
 
 
+def enrich_record(record: ET.Element, write: bool) -> bool:
+    pmid = node_text(record.find("./MedlineCitation/PMID"))
+    article_type, topics = article_metadata(record)
+    for path in PUBLICATIONS_DIR.glob("*.md"):
+        content = path.read_text(encoding="utf-8")
+        if not (re.search(rf"pubmed\.ncbi\.nlm\.nih\.gov/{pmid}(?:/|[\"'])", content)
+                or re.search(rf'(?m)^pmid:\s*[\"\']?{pmid}[\"\']?\s*$', content)):
+            continue
+        additions = []
+        for key, value in (("pmid", pmid), ("article_type", article_type), ("topics", topics)):
+            if not re.search(rf"(?m)^{key}:", content):
+                additions.append(f"{key}: {json.dumps(value, ensure_ascii=False)}")
+        if additions:
+            print(f"Metadata: {path.name}")
+            if write:
+                front, body = content[4:].split("\n---", 1)
+                path.write_text("---\n" + front.rstrip() + "\n" + "\n".join(additions) + "\n---" + body, encoding="utf-8")
+        return True
+    return False
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pmid", nargs="+", help="Import or preview specific PubMed IDs")
     parser.add_argument("--write", action="store_true", help="Create new Markdown files; default is preview only")
+    parser.add_argument("--enrich", action="store_true", help="Fill missing PMID, article type and topics in existing records only")
     args = parser.parse_args()
 
     try:
@@ -239,19 +313,27 @@ def main() -> int:
                 "tool": "marcmachaalani_site",
             }
         )
+        time.sleep(0.4)
         root = ET.fromstring(fetch(f"{EUTILS}/efetch.fcgi?{params}"))
         existing_pmids, existing_titles = existing_records()
         candidates = []
         for record in root.findall("./PubmedArticle"):
+            if args.enrich:
+                enrich_record(record, args.write)
+                continue
+            if excluded_record(record):
+                continue
             filename, title, markdown = record_markdown(record)
             pmid_match = re.search(r"pmid: \"(\d+)\"", markdown)
             pmid = pmid_match.group(1) if pmid_match else ""
-            if pmid in existing_pmids or title.casefold() in existing_titles:
+            if pmid in existing_pmids or normalized_title(title) in existing_titles:
                 continue
             candidates.append((filename, title, markdown))
+            existing_pmids.add(pmid)
+            existing_titles.add(normalized_title(title))
 
         if not candidates:
-            print("No new publications found.")
+            print("Metadata check complete." if args.enrich else "No new publications found.")
             return 0
 
         mode = "Importing" if args.write else "Previewing"
