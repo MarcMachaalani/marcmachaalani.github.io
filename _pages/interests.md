@@ -6,7 +6,7 @@ permalink: /interests/
 
 <main id="main" class="interests-page" markdown="1">
 
-# Beyond medicine
+<header class="interests-heading"><p class="home-eyebrow">Away from the clinic</p><h1>Beyond medicine</h1></header>
 There is quite a bit more to life than medicine. 
 
 I studied piano at the Lebanese National Higher Conservatory of Music from 2006 to 2021, earning a Bachelor's Degree with High Distinction. You can find some of my music on my [YouTube channel](https://www.youtube.com/@MarcMachaalani).

@@ -3,7 +3,11 @@
   <a class="signature" href="{{ '/' | relative_url }}"><span aria-hidden="true">MM</span>{{ site.title }}</a>
   <nav aria-label="Main navigation">
     {% for link in site.data.navigation.main %}
-      <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {% assign active_section = false %}
+      {% if page.collection == 'publications' and link.url == '/publications/' %}{% assign active_section = true %}{% endif %}
+      {% if page.collection == 'talks' and link.url == '/talks/' %}{% assign active_section = true %}{% endif %}
+      {% if page.collection == 'media' and link.url == '/media/' %}{% assign active_section = true %}{% endif %}
+      <a href="{{ link.url | relative_url }}"{% if active_section %} class="is-section-active"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
     {% endfor %}
   </nav>
   <button type="button" class="appearance" aria-label="Dark appearance" aria-pressed="false" title="Toggle dark appearance">◐</button>

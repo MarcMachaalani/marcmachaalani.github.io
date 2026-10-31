@@ -101,3 +101,20 @@ Run `python3 -m unittest discover -s tests -p 'test_*.py'`, then `npm test` and 
 - [Resend send-email API](https://resend.com/docs/api-reference/emails/send-email)
 - [GitHub OAuth flow](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
 - [GitHub workflow triggering restrictions](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow)
+
+## Uploads and photo galleries
+
+The editor now has a **Media library** tab with drag-and-drop uploads and progress feedback. Open a publication to attach a PDF in **Paper PDF**, or collect files in the library first. A saved PDF association is separate from the publisher/DOI link. Paper PDFs stay behind the owner-authenticated API, including after the content draft is published. No public PDF download route or button is provided.
+
+For photos, choose **Upload photos** or **Choose from your library** on any editable page. Add an image description for accessibility and an optional caption. You can reorder or remove photos from the page before saving its draft. Photos are resized to at most 2,200 pixels on their longest edge and re-encoded as WebP in the browser, removing embedded camera metadata. A photo becomes publicly viewable only when its ID appears in a published page's gallery. Unattached uploads and unmerged drafts remain private. Public photo changes can take about 30 seconds to appear.
+
+Files use the existing D1 database in 128 KB chunks, avoiding another storage service. The media library allows 200 MB total, with a 10 MB limit per PDF and 6 MB per prepared photo. It retains uploads until intentionally managed; removing an attachment or gallery item only removes its association and keeps the file in your library. The daily cleanup removes only incomplete uploads older than one day. Larger libraries should move binary files to object storage while keeping the same private API.
+
+Deploy the additive `0002_private_media.sql` migration before updating the Worker:
+
+```sh
+npx wrangler d1 migrations apply marc-site-usage --remote
+npm run deploy
+```
+
+No new secrets or public storage permissions are needed. The private endpoint is `/api/assets/:id`. `/photos/:id` accepts only actual photos listed in the published site's `assets/data/published-photos.json`; even an allowlisted PDF ID is rejected. The public templates never render `private_pdf` attachments.

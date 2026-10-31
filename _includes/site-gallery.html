@@ -1,0 +1,13 @@
+{% if page.gallery and page.gallery.size > 0 %}
+<section class="site-gallery" aria-label="Photo gallery">
+  <div class="section-heading"><div><p class="home-eyebrow">In pictures</p><h2>{{ page.gallery_title | default: 'A few moments' | escape }}</h2></div></div>
+  <div class="site-gallery__grid">
+    {% for photo in page.gallery %}
+    <figure>
+      <img src="{{ site.data.services.api_base | escape }}/photos/{{ photo.id | escape }}" alt="{{ photo.alt | escape }}" loading="lazy" decoding="async">
+      {% if photo.caption != '' %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

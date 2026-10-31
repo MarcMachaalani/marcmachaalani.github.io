@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /assets/data/published-photos.json
+---
+[{% assign first_photo = true %}{% for p in site.pages %}{% for photo in p.gallery %}{% unless first_photo %},{% endunless %}{{ photo.id | jsonify }}{% assign first_photo = false %}{% endfor %}{% endfor %}{% for collection in site.collections %}{% for p in collection.docs %}{% for photo in p.gallery %}{% unless first_photo %},{% endunless %}{{ photo.id | jsonify }}{% assign first_photo = false %}{% endfor %}{% endfor %}{% endfor %}]
