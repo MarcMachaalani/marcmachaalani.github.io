@@ -2,4 +2,4 @@
 layout: null
 permalink: /assets/data/editor-index.json
 ---
-[{% assign first_entry = true %}{% for p in site.pages %}{% if p.path contains '_pages/' %}{% unless first_entry %},{% endunless %}{"path":{{ p.path | jsonify }},"title":{{ p.title | strip_html | jsonify }}}{% assign first_entry = false %}{% endif %}{% endfor %}{% for collection in site.collections %}{% for p in collection.docs %}{% unless first_entry %},{% endunless %}{"path":{{ p.path | jsonify }},"title":{{ p.title | strip_html | jsonify }}}{% assign first_entry = false %}{% endfor %}{% endfor %}]
+{% assign editor_fields = 'title,date,excerpt,venue,article_type,topics,paperurl,pubmed,citation,intro' | split: ',' %}{% assign empty_gallery = '' | split: ',' %}[{% assign first_entry = true %}{% for p in site.pages %}{% if p.path contains '_pages/' %}{% unless first_entry %},{% endunless %}{% include editor-record.json %}{% assign first_entry = false %}{% endif %}{% endfor %}{% for collection in site.collections %}{% for p in collection.docs %}{% unless first_entry %},{% endunless %}{% include editor-record.json %}{% assign first_entry = false %}{% endfor %}{% endfor %}]

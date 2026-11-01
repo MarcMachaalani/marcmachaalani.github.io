@@ -1,6 +1,6 @@
 {% include base_path %}
 
-<article class="media-card">
+<article class="media-card" data-source-path="{{ post.path | escape }}">
   <div class="media-card__meta">
     <span>{{ post.type | default: post.category | capitalize }}</span>
     {% if post.date %}<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>{% endif %}

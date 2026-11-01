@@ -11,6 +11,7 @@ function database() {
   const sql = new DatabaseSync(':memory:');
   sql.exec('PRAGMA foreign_keys=ON');
   sql.exec(readFileSync(new URL('../migrations/0002_private_media.sql',import.meta.url),'utf8'));
+  sql.exec(readFileSync(new URL('../migrations/0003_content.sql',import.meta.url),'utf8'));
   let calls = 0, inBatch = false;
   return { sql, get calls() { return calls; }, resetCalls() { calls = 0; },
     prepare(query) {
@@ -79,7 +80,7 @@ test('staged photos stay private, published allowlisted photos become visible',a
   t.mock.method(globalThis,'fetch',async () => Response.json([]));
   assert.equal((await worker.fetch(new Request(`https://editor.example.com/photos/${saved.id}`),env)).status,404);
   const published = { ...env,SITE_ORIGIN:'https://published-photo.example' };
-  t.mock.method(globalThis,'fetch',async () => Response.json([saved.id]));
+  t.mock.method(globalThis,'fetch',async () => Response.json([{path:'_pages/about.md',url:'/',fields:{title:'Home'},body:'',media:{gallery:[{id:saved.id,alt:'Photo',caption:''}]}}]));
   const response = await worker.fetch(new Request(`https://editor.example.com/photos/${saved.id}`),published);
   assert.equal(response.status,200); assert.equal(response.headers.get('Content-Type'),'image/png');
   assert.deepEqual(new Uint8Array(await response.arrayBuffer()),photo);

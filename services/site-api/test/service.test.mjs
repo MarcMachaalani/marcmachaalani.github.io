@@ -25,7 +25,7 @@ test('sessions reject tampering and expiration', async () => {
   assert.equal(await verify(await sign({ exp: 1 }, env), env), null);
 });
 test('private routes require the owner, including analytics', async () => {
-  for (const path of ['/api/files', '/api/content?path=_pages/about.md', '/api/analytics']) {
+  for (const path of ['/api/files', '/api/content?path=_pages/about.md', '/api/analytics', '/api/publish']) {
     assert.equal((await worker.fetch(request(path), env)).status, 401);
     assert.equal((await worker.fetch(request(path, undefined, await ownerHeaders({ id: 'other' })), env)).status, 401);
   }
@@ -36,6 +36,8 @@ test('writes reject a missing CSRF token and cross-origin requests', async () =>
   assert.equal((await worker.fetch(request('/api/drafts', {}, headers), env)).status, 403);
   const other = { ...await ownerHeaders(), Origin: 'https://evil.example' };
   assert.equal((await worker.fetch(request('/api/drafts', {}, other), env)).status, 403);
+  assert.equal((await worker.fetch(request('/api/publish', {}, headers), env)).status,403);
+  assert.equal((await worker.fetch(request('/api/publish', {}, other), env)).status,403);
 });
 test('editor cannot edit workflows, secrets or path traversal', () => {
   for (const path of ['.github/workflows/x.yml', '_config.yml', '_pages/../about.md', '_publications/../../x.md', '_pages/not-listed.md']) assert.equal(editablePath(path), false);
@@ -52,34 +54,6 @@ test('editing preserves URLs, collections, redirects, and unedited YAML values',
   assert.equal(body, 'New body.\n');
   assert.throws(() => mergeContent(sample, { paperurl: 'javascript:alert(1)' }, ''), /HTTPS/);
   assert.throws(() => mergeContent(sample, { permalink: '/hijack/' }, ''), /Invalid content/);
-});
-test('stale drafts return a conflict before any GitHub writes', async t => {
-  const calls = [];
-  mockFetch(t, async (url, options) => {
-    calls.push({ url, method: options.method });
-    return Response.json(url.includes('/git/ref/') ? { object: { sha: 'head' } } : { sha: 'newer-file-sha' });
-  });
-  const result = await worker.fetch(request('/api/drafts', { path: '_pages/about.md', sha: 'old', fields: {}, body: 'New' }, await ownerHeaders()), env);
-  assert.equal(result.status, 409);
-  assert.ok(calls.every(call => call.method === 'GET'));
-});
-test('saving a draft creates a branch and pull request without moving master', async t => {
-  const calls = [];
-  mockFetch(t, async (url, options) => {
-    const data = options.body ? JSON.parse(options.body) : undefined;
-    calls.push({ url, method: options.method, data });
-    if (url.includes('/git/ref/')) return Response.json({ object: { sha: 'head' } });
-    if (url.includes('/contents/')) return Response.json({ sha: 'file', content: Buffer.from(sample).toString('base64') });
-    if (url.includes('/git/commits/head')) return Response.json({ tree: { sha: 'tree' } });
-    if (url.endsWith('/pulls')) return Response.json({ html_url: 'https://github.com/owner/repo/pull/1', number: 1 });
-    return Response.json({ sha: 'new-object' });
-  });
-  const result = await worker.fetch(request('/api/drafts', { path: '_publications/paper.md', sha: 'file', fields: { title: 'Changed' }, body: 'New body' }, await ownerHeaders()), env);
-  assert.equal(result.status, 201);
-  const ref = calls.find(call => call.url.endsWith('/git/refs'));
-  assert.match(ref.data.ref, /^refs\/heads\/editor\//);
-  assert.ok(!calls.some(call => call.method === 'PATCH' || call.url.includes('/merges')));
-  assert.equal(calls.find(call => call.url.endsWith('/pulls')).data.draft, true);
 });
 test('contact rejects foreign origins and never enables credentialed CORS', async () => {
   const response = await worker.fetch(request('/contact', message, { Origin: 'https://evil.example' }), env);

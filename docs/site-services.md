@@ -8,7 +8,7 @@ The `Check PubMed publications` GitHub Action runs Mondays at **13:23 UTC** and 
 
 In repository Settings → Actions → General, enable **Allow GitHub Actions to create and approve pull requests** if the workflow reports that pull-request creation is blocked. The workflow requests `contents: write` and `pull-requests: write` for this repository. GitHub disables scheduled workflows on inactive public repositories after 60 days; re-enable it if necessary.
 
-The default `GITHUB_TOKEN` can create the publication PR, but GitHub does not start other workflows from its events. If you want automatic preview checks on these PRs, add an optional repository secret `PUBMED_PR_TOKEN`: a fine-grained token restricted to this repository with Contents and Pull requests read/write. Otherwise manually run Site checks on the publication branch before merging. The editor uses its separate token, which does trigger checks.
+The default `GITHUB_TOKEN` can create the publication PR, but GitHub does not start other workflows from its events. If you want automatic preview checks on these PRs, add an optional repository secret `PUBMED_PR_TOKEN`: a fine-grained token restricted to this repository with Contents and Pull requests read/write. Otherwise manually run Site checks on the publication branch before merging. Content edits in the private editor are stored in D1 and do not use these tokens.
 
 Optional: add `NCBI_EMAIL` as a GitHub Actions secret for an NCBI contact address. No PubMed key is required. To inspect records manually:
 
@@ -26,7 +26,7 @@ Your personal email can receive messages. You need a Cloudflare account for the 
 2. In Resend, create a sending API key. Pick a fixed From address allowed by your account (`Website <onboarding@resend.dev>` for the testing sender, or an address on a verified sender domain).
 3. In Cloudflare Turnstile, create a **Managed** widget for `marcmachaalani.github.io`. Keep its secret for the Worker; its site key is public.
 4. Create a [GitHub OAuth app](https://github.com/settings/applications/new) for owner sign-in. Set its Homepage URL to the Worker `/admin/` URL and callback to `https://YOUR-WORKER.workers.dev/auth/callback`. The login requests no repository OAuth scope.
-5. Create a **fine-grained GitHub token** limited to `MarcMachaalani/marcmachaalani.github.io`, granting **Contents: read/write** and **Pull requests: read/write**, with a suitable expiration. The Worker uses this token only server-side to create content draft branches and PRs. No Actions, Secrets, Administration or Workflows access is needed. Renew it before expiration.
+5. No repository write token is required for the editor. GitHub OAuth is used only to verify the owner’s identity.
 
 ## Deploy the Worker
 
@@ -48,7 +48,6 @@ npx wrangler secret put CONTACT_TO
 npx wrangler secret put CONTACT_FROM
 npx wrangler secret put GITHUB_CLIENT_ID
 npx wrangler secret put GITHUB_CLIENT_SECRET
-npx wrangler secret put GITHUB_CONTENT_TOKEN
 npx wrangler secret put SESSION_SECRET
 npm test
 npm run check
@@ -57,7 +56,7 @@ npm run deploy
 
 `SESSION_SECRET` must be a randomly generated string of at least 32 characters. Use a password manager to generate and store it. `CONTACT_TO` is your receiving personal email. `CONTACT_FROM` is the fixed provider-approved sender. The receiving address and service credentials are never exposed to visitors.
 
-Keep `OWNER_ID` as `103030028` (MarcMachaalani). The editor uses an eight-hour signed, Secure, HttpOnly, SameSite cookie and CSRF checks. The OAuth token is used only to verify identity and is not stored. The content token stays in Worker secrets. All editor API routes require the owner ID; the login-page HTML itself is public. Only designated content files can be changed through the editor.
+Keep `OWNER_ID` as `103030028` (MarcMachaalani). The editor uses an eight-hour signed, Secure, HttpOnly, SameSite cookie and CSRF checks. The OAuth token is used only to verify identity and is not stored. Draft and published content live in Cloudflare D1. All editor API routes require the owner ID; the login-page HTML itself is public. Only designated content files can be changed through the editor.
 
 ## Activate the public pages
 
@@ -74,15 +73,19 @@ Merge those public settings and the database ID into the repository. The contact
 Confirm all of the following after activation:
 
 - Submit one test message and confirm it arrives in the receiving inbox; an invalid/expired Turnstile token must be rejected.
-- Open `/admin/`, sign in as MarcMachaalani, edit a sentence, save a draft, and inspect the resulting PR and its Site checks artifact. Another GitHub account must get a denial.
+- Open `/admin/`, sign in as MarcMachaalani, edit a sentence, save a private draft, and publish it within the editor. Another GitHub account must get a denial.
 - Visit a public page, then check Page counts in the private editor. Counts record only canonical paths from the built site's page allowlist.
 - Confirm the Worker daily cleanup cron is enabled and both rate-limit bindings are present.
 
 ## Daily editing
 
-Open `https://marcmachaalani.github.io/admin/` → **Open private editor** → **Sign in with GitHub**. Select a page or publication, edit its fields and body, then **Save draft for review**. The editor preserves permalinks, redirects, and other unedited metadata. It detects conflicts if the published file changed while you were editing. Each save creates a new draft PR; it does not overwrite an earlier draft. Publishing remains the repository's review-and-merge step.
+Open `https://marcmachaalani.github.io/admin/` → **Open private editor** → **Sign in with GitHub**. Select a page or publication and edit its fields and visual text blocks. Select words and choose **Bold**, **Italic**, or **Link**. The Advanced source panel remains available for layout edits.
 
-The content editor is authenticated, but this is a **public repository**: draft PRs and their content are public. This workflow is for editing public site content, not for storing private notes. It supports existing pages, publications, talks, and media records. New papers are created by the PubMed importer.
+**Save private draft** keeps edits in Cloudflare D1 without changing the public site. **Publish changes** saves any unsaved edits and makes that exact version available to visitors immediately. Neither action creates a commit, branch, or pull request. An open stale tab gets a conflict instead of overwriting newer content. Existing URLs and generated lists are protected. The previous published snapshot is retained in the document row; D1 backups provide additional recovery.
+
+GitHub Pages still hosts layouts, code, and a complete baseline of the website. A small script loads the latest published content from Cloudflare, with the static baseline as a fallback if the content service is unavailable or JavaScript is disabled. GitHub sign-in verifies identity only. The editor no longer needs a GitHub content token. Existing GitHub draft PRs remain public and are not migrated automatically.
+
+Apply migration `0003_content.sql` before deploying this version of the Worker. The bundled `src/content-seed.json` provides initial content without repository API access; rebuild it with `node scripts/seed.mjs` from the service directory after intentional baseline changes. The public editor manifest also picks up newly imported PubMed records. Published D1 overrides always take precedence over baseline content.
 
 ## Privacy and limits
 
@@ -106,7 +109,7 @@ Run `python3 -m unittest discover -s tests -p 'test_*.py'`, then `npm test` and 
 
 The editor now has a **Media library** tab with drag-and-drop uploads and progress feedback. Open a publication to attach a PDF in **Paper PDF**, or collect files in the library first. A saved PDF association is separate from the publisher/DOI link. Paper PDFs stay behind the owner-authenticated API, including after the content draft is published. No public PDF download route or button is provided.
 
-For photos, choose **Upload photos** or **Choose from your library** on any editable page. Add an image description for accessibility and an optional caption. You can reorder or remove photos from the page before saving its draft. Photos are resized to at most 2,200 pixels on their longest edge and re-encoded as WebP in the browser, removing embedded camera metadata. A photo becomes publicly viewable only when its ID appears in a published page's gallery. Unattached uploads and unmerged drafts remain private. Public photo changes can take about 30 seconds to appear.
+For photos, choose **Upload photos** or **Choose from your library** on any editable page. Add an image description for accessibility and an optional caption. You can reorder or remove photos from the page before saving its draft. Photos are resized to at most 2,200 pixels on their longest edge and re-encoded as WebP in the browser, removing embedded camera metadata. A photo becomes publicly viewable only when its ID appears in a published page's gallery. Unattached uploads and unpublished drafts remain private. Public photo permission is checked against the current published D1 snapshot and the baseline for pages with no published override.
 
 Files use the existing D1 database in 128 KB chunks, avoiding another storage service. The media library allows 200 MB total, with a 30 MB limit per PDF and 6 MB per prepared photo. It retains uploads until intentionally managed; removing an attachment or gallery item only removes its association and keeps the file in your library. The daily cleanup removes only incomplete uploads older than one day. Larger libraries should move binary files to object storage while keeping the same private API.
 

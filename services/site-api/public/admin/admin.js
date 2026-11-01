@@ -35,9 +35,11 @@
     dirty = Boolean(current) && snapshot() !== savedSnapshot;
     $('#save-state').textContent = dirty ? 'Unsaved changes' : 'No unsaved changes';
     $('#save-state').classList.toggle('dirty',dirty); $('#save').disabled = !dirty || saving || uploading;
+    $('#publish').disabled = !current || saving || uploading || (!dirty && current.revision === current.published_revision);
+    if (current) $('#publish-state').textContent = current.revision > current.published_revision ? 'Private draft saved. Publish when you are ready.' : current.published_at ? 'Published ' + new Date(current.published_at).toLocaleString() + '. Drafts and paper PDFs stay private.' : 'Drafts stay private until you publish. Paper PDFs always stay private.';
   }
   async function load(path) {
-    if (uploading) { status('Please wait for your upload to finish.'); return false; }
+    if (uploading || saving) { status('Please wait for your upload or save to finish.'); return false; }
     if (dirty && !confirm('Discard your unsaved changes and open another page?')) return false;
     const sequence = ++loading; status('Opening your content…');
     try {
@@ -57,7 +59,7 @@
         if (['paperurl','pubmed','citation'].includes(name)) advancedFields.append(label); else $('#fields').append(label);
       });
       if (advancedFields.childElementCount) $('#fields').append(advanced);
-      $('#body').value = current.body; $('#paper-upload').hidden = !path.startsWith('_publications/');
+      $('#body').value = current.body; richEditor.load(current,$('#body'),checkDirty); $('#paper-upload').hidden = !path.startsWith('_publications/');
       $('#editor').hidden = false; $('#editor-placeholder').hidden = true; $('#draft-link').hidden = true;
       renderPdf(); renderGallery(); savedSnapshot = snapshot(); checkDirty(); fileList(); renderAssets(); status('');
       return true;
@@ -100,7 +102,7 @@
       media.gallery.push({ id:asset.id, alt:'', caption:'' }); renderGallery();
     }
     checkDirty(); tab('content'); renderAssets();
-    status(asset.kind === 'pdf' ? 'PDF attached privately. Save the draft to keep it with this publication.' : 'Photo added. Write a short image description, then save your draft.');
+    status(asset.kind === 'pdf' ? 'PDF attached privately. Save a private draft or publish to keep it with this publication.' : 'Photo added. Write a short image description, then save your draft.');
   }
   function paperOptions() {
     const select = $('#pdf-paper-select'), previous = select.value;
@@ -206,21 +208,51 @@
   $('#asset-filter').addEventListener('change',renderAssets); $('#file-search').addEventListener('input',fileList);
   $('#editor').addEventListener('input',checkDirty);
   window.addEventListener('beforeunload',event => { if (dirty || uploading) { event.preventDefault(); event.returnValue = ''; } });
-  $('#editor').addEventListener('submit',async event => {
-    event.preventDefault(); if (!dirty || saving || uploading) return; saving = true; checkDirty(); status('Saving your draft…');
-    const fields = {}; $('#fields').querySelectorAll('input,textarea').forEach(input => { if (input.value !== (current.fields[input.name] || '')) fields[input.name] = input.value; });
-    const request = { path:current.path, sha:current.sha, fields, body:$('#body').value, media };
+  async function saveDraft() {
+    const fields = {}; $('#fields').querySelectorAll('input,textarea').forEach(input => { fields[input.name] = input.value; });
     const submittedSnapshot = snapshot();
-    try {
-      const result = await api('/api/drafts',request); savedSnapshot = submittedSnapshot;
-      $('#draft-link').href = result.url; $('#draft-link').hidden = false;
-      status(`Draft #${result.number} is ready to review. Your page and photos publish after approval; its paper PDF stays private.`);
-    } catch (error) { status(error.message); }
+    const result = await api('/api/drafts',{path:current.path,revision:current.revision,fields,body:$('#body').value,media});
+    current.revision = result.revision; current.fields = {...current.fields,...fields}; current.body = $('#body').value;
+    savedSnapshot = submittedSnapshot;
+  }
+  $('#editor').addEventListener('submit',async event => {
+    event.preventDefault(); if (!dirty || saving || uploading) return;
+    if (!$('#source-mode').open && !$('#editor').reportValidity()) return;
+    saving = true; checkDirty(); status('Saving your private draft…');
+    try { await saveDraft(); status('Private draft saved. Use Publish changes when you are ready.'); }
+    catch (error) { status(error.message); }
     finally { saving = false; checkDirty(); }
   });
+  $('#publish').addEventListener('click',async () => {
+    if (!current || saving || uploading || !$('#editor').reportValidity()) return;
+    saving = true; checkDirty(); status('Publishing your changes…');
+    // Hold the form still so the published snapshot always matches what was submitted.
+    const controls = Array.from($('#editor').querySelectorAll('input,textarea,button,[contenteditable]'));
+    controls.forEach(control => { if (control.hasAttribute('contenteditable')) control.contentEditable = 'false'; else control.disabled = true; });
+    try {
+      if (dirty) await saveDraft();
+      const result = await api('/api/publish',{path:current.path,revision:current.revision});
+      current.published_revision = result.published_revision; current.published_at = new Date().toISOString();
+      $('#draft-link').href = 'https://marcmachaalani.github.io' + current.url; $('#draft-link').hidden = false;
+      status('Published. Your changes are live on the website; its paper PDF stays private.');
+    } catch (error) { status(error.message); }
+    finally { controls.forEach(control => { if (control.hasAttribute('contenteditable')) control.contentEditable = 'true'; else control.disabled = false; }); saving = false; checkDirty(); }
+  });
+  async function applySource() {
+    if (!current || richEditor.matchesSource()) return;
+    const path = current.path, body = $('#body').value;
+    try {
+      const result = await api('/api/preview',{body});
+      if (current.path !== path || $('#body').value !== body) return;
+      richEditor.load({...current,html:result.html},$('#body'),checkDirty); checkDirty();
+    } catch (error) { status(error.message); }
+  }
+  $('#source-preview').addEventListener('click',applySource);
+  $('#source-mode').addEventListener('toggle',() => { $('#visual-content').hidden = $('#source-mode').open; if (!$('#source-mode').open) applySource(); });
   document.querySelectorAll('[data-insert]').forEach(control => control.addEventListener('click',() => {
-    const area = $('#body'); const selected = area.value.slice(area.selectionStart,area.selectionEnd) || 'text';
-    const samples = { bold:`**${selected}**`, italic:`*${selected}*`, link:`[${selected}](https://example.com)`, heading:`\n## ${selected}\n` };
+    const area = $('#body'); const raw = area.value.slice(area.selectionStart,area.selectionEnd) || 'text';
+    const selected = raw.trim() || 'text', html = /<[a-z][\s>]/i.test(area.value) || /<\/?[a-z][^>]*>/i.test(area.value);
+    const samples = html ? {bold:`<strong>${selected}</strong>`,italic:`<em>${selected}</em>`,link:`<a href="https://example.com">${selected}</a>`,heading:`<h2>${selected}</h2>`} : {bold:`**${selected}**`,italic:`*${selected}*`,link:`[${selected}](https://example.com)`,heading:`\n## ${selected}\n`};
     area.setRangeText(samples[control.dataset.insert],area.selectionStart,area.selectionEnd,'select'); area.focus(); checkDirty();
   }));
   async function tab(name) {
