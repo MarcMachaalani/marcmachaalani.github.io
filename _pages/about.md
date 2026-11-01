@@ -79,11 +79,5 @@ author_profile: false
       <span class="portal-card__description">Research honors and recognition.</span>
       <span class="portal-card__arrow" aria-hidden="true">→</span>
     </a>
-    <a class="portal-card" href="/media/">
-      <span class="portal-card__number" aria-hidden="true">04</span>
-      <span class="portal-card__title">Media</span>
-      <span class="portal-card__description">Interviews and other coverage.</span>
-      <span class="portal-card__arrow" aria-hidden="true">→</span>
-    </a>
   </div>
 </section>

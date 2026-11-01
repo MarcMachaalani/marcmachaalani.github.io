@@ -1,6 +1,7 @@
 export const MEDIA_CAPACITY = 200 * 1024 * 1024;
-export const LIMITS = { pdf: 10 * 1024 * 1024, photo: 6 * 1024 * 1024 };
+export const LIMITS = { pdf: 30 * 1024 * 1024, photo: 6 * 1024 * 1024 };
 const CHUNK_SIZE = 128 * 1024;
+const CHUNKS_PER_BATCH = 8;
 const assetPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 export const validAssetId = id => typeof id === 'string' && assetPattern.test(id);
 function fail(status, message) { const error = new Error(message); error.status = status; error.publicMessage = true; throw error; }
@@ -37,38 +38,67 @@ export async function upload(request, env) {
   if (Number(request.headers.get('Content-Length')) > limit) fail(413, `This ${kind === 'pdf' ? 'PDF' : 'photo'} is too large.`);
   const reader = request.body?.getReader();
   if (!reader) fail(400, 'Choose a file first.');
-  const chunks = []; let size = 0;
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    size += value.length;
-    if (size > limit) { await reader.cancel(); fail(413, `Keep PDFs below 10 MB and photos below 6 MB.`); }
-    chunks.push(value);
-  }
-  if (!size) fail(400, 'This file is empty.');
-  const bytes = new Uint8Array(size); let offset = 0;
-  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
-  const mime = detectFile(bytes, kind);
-  const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), n => n.toString(16).padStart(2, '0')).join('');
-  const existing = await env.DB.prepare(`SELECT ${selectFields} FROM media_assets WHERE kind = ? AND sha256 = ? AND complete = 1 LIMIT 1`).bind(kind, digest).first();
-  if (existing) return { ...existing, reused: true };
   const storage = await env.DB.prepare('SELECT COALESCE(SUM(bytes), 0) AS used FROM media_assets').first();
-  if (storage.used + size > MEDIA_CAPACITY) fail(413, 'Your media library is full. Contact the site maintainer to increase its storage.');
-  const id = crypto.randomUUID();
-  await env.DB.prepare('INSERT INTO media_assets (id, kind, filename, mime, bytes, sha256) VALUES (?, ?, ?, ?, ?, ?)').bind(id, kind, filename, mime, size, digest).run();
+  const digestStream = new crypto.DigestStream('SHA-256');
+  digestStream.digest.catch(() => {});
+  const digestWriter = digestStream.getWriter();
+  let id, size = 0, mime, offset = 0, part = 0, storedBytes = 0;
+  let buffer = new Uint8Array(CHUNK_SIZE), pending = [];
+  const prefix = new Uint8Array(12); let prefixSize = 0;
+  async function begin() {
+    mime = detectFile(prefix.slice(0, prefixSize), kind);
+    id = crypto.randomUUID();
+    await env.DB.prepare('INSERT INTO media_assets (id, kind, filename, mime, bytes, sha256) VALUES (?, ?, ?, ?, ?, ?)').bind(id, kind, filename, mime, 0, '').run();
+  }
+  function queueChunk(bytes) {
+    storedBytes += bytes.length;
+    pending.push(env.DB.prepare('INSERT INTO media_chunks (asset_id, part, data) VALUES (?, ?, ?)').bind(id, part++, bytes.buffer));
+  }
+  async function flush() {
+    if (!pending.length) return;
+    pending.push(env.DB.prepare('UPDATE media_assets SET bytes = ? WHERE id = ?').bind(storedBytes, id));
+    await env.DB.batch(pending); pending = [];
+  }
   try {
-    // Small batches stay within request and row limits; an upload is visible only when complete.
-    for (let start = 0; start < size; start += CHUNK_SIZE * 4) {
-      const statements = [];
-      for (let pos = start; pos < Math.min(start + CHUNK_SIZE * 4, size); pos += CHUNK_SIZE) {
-        statements.push(env.DB.prepare('INSERT INTO media_chunks (asset_id, part, data) VALUES (?, ?, ?)').bind(id, pos / CHUNK_SIZE, bytes.slice(pos, pos + CHUNK_SIZE).buffer));
+    // Hash and store the incoming stream in bounded batches; never buffer the whole PDF.
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.length;
+      if (size > limit) fail(413, 'Keep PDFs at or below 30 MB and photos at or below 6 MB.');
+      if (storage.used + size > MEDIA_CAPACITY) fail(413, 'Your media library is full. Contact the site maintainer to increase its storage.');
+      await digestWriter.write(value);
+      if (prefixSize < prefix.length) {
+        const count = Math.min(prefix.length - prefixSize, value.length);
+        prefix.set(value.subarray(0, count), prefixSize); prefixSize += count;
+        if (prefixSize === prefix.length) await begin();
       }
-      await env.DB.batch(statements);
+      for (let position = 0; position < value.length;) {
+        const count = Math.min(CHUNK_SIZE - offset, value.length - position);
+        buffer.set(value.subarray(position, position + count), offset); offset += count; position += count;
+        if (offset === CHUNK_SIZE) {
+          queueChunk(buffer); buffer = new Uint8Array(CHUNK_SIZE); offset = 0;
+          if (pending.length === CHUNKS_PER_BATCH) await flush();
+        }
+      }
     }
-    await env.DB.prepare('UPDATE media_assets SET complete = 1 WHERE id = ?').bind(id).run();
+    if (!size) fail(400, 'This file is empty.');
+    if (!id) await begin();
+    if (offset) queueChunk(buffer.slice(0, offset));
+    await flush();
+    await digestWriter.close();
+    const digest = Array.from(new Uint8Array(await digestStream.digest), n => n.toString(16).padStart(2, '0')).join('');
+    const existing = await env.DB.prepare(`SELECT ${selectFields} FROM media_assets WHERE kind = ? AND sha256 = ? AND complete = 1 LIMIT 1`).bind(kind, digest).first();
+    if (existing) {
+      await env.DB.prepare('DELETE FROM media_assets WHERE id = ? AND complete = 0').bind(id).run();
+      return { ...existing, reused: true };
+    }
+    await env.DB.prepare('UPDATE media_assets SET sha256 = ?, complete = 1 WHERE id = ?').bind(digest, id).run();
     return assetInfo(env, id);
   } catch (error) {
-    await env.DB.prepare('DELETE FROM media_assets WHERE id = ? AND complete = 0').bind(id).run();
+    await reader.cancel().catch(() => {});
+    await digestWriter.abort(error).catch(() => {});
+    if (id) await env.DB.prepare('DELETE FROM media_assets WHERE id = ? AND complete = 0').bind(id).run();
     throw error;
   }
 }
@@ -78,7 +108,7 @@ export async function assetResponse(env, id, photoOnly = false) {
   let nextPart = 0, sent = 0;
   const stream = new ReadableStream({
     async pull(controller) {
-      const { results } = await env.DB.prepare('SELECT part, data FROM media_chunks WHERE asset_id = ? AND part >= ? ORDER BY part LIMIT 4').bind(id, nextPart).all();
+      const { results } = await env.DB.prepare('SELECT part, data FROM media_chunks WHERE asset_id = ? AND part >= ? ORDER BY part LIMIT 8').bind(id, nextPart).all();
       if (!results.length) { controller.error(new Error('Upload data is incomplete.')); return; }
       for (const chunk of results) {
         if (chunk.part !== nextPart++) { controller.error(new Error('Upload data is incomplete.')); return; }

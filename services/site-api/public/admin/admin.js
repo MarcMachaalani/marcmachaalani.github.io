@@ -2,6 +2,7 @@
   'use strict';
   const $ = selector => document.querySelector(selector);
   let csrf, files = [], assets = [], current, media, dirty = false, saving = false, savedSnapshot = '', loading = 0, uploading = false;
+  let pendingPdf = null;
   const labels = { title:'Title', date:'Publication date', excerpt:'Summary', venue:'Journal or venue', article_type:'Article type', topics:'Topics (separate with commas)', paperurl:'Publisher or DOI link', pubmed:'PubMed link', citation:'Citation', intro:'Page introduction' };
   const pageNames = { 'about.md':'Home page', 'interests.md':'Beyond medicine', 'awards.md':'Honors & awards', 'publications.html':'Publications page', 'talks.html':'Presentations page', 'media.html':'Media page', 'contact.html':'Contact page' };
   const status = message => { $('#status').textContent = message; };
@@ -36,11 +37,11 @@
     $('#save-state').classList.toggle('dirty',dirty); $('#save').disabled = !dirty || saving || uploading;
   }
   async function load(path) {
-    if (uploading) { status('Please wait for your upload to finish.'); return; }
-    if (dirty && !confirm('Discard your unsaved changes and open another page?')) return;
+    if (uploading) { status('Please wait for your upload to finish.'); return false; }
+    if (dirty && !confirm('Discard your unsaved changes and open another page?')) return false;
     const sequence = ++loading; status('Opening your content…');
     try {
-      const loaded = await api('/api/content?path=' + encodeURIComponent(path)); if (sequence !== loading) return;
+      const loaded = await api('/api/content?path=' + encodeURIComponent(path)); if (sequence !== loading) return false;
       current = loaded; media = structuredClone(current.media || { private_pdf:null, gallery:[] });
       $('#file-path').textContent = current.path;
       $('#file-kind').textContent = path.startsWith('_publications/') ? 'Publication' : path.startsWith('_pages/') ? 'Page' : 'Academic record';
@@ -59,7 +60,8 @@
       $('#body').value = current.body; $('#paper-upload').hidden = !path.startsWith('_publications/');
       $('#editor').hidden = false; $('#editor-placeholder').hidden = true; $('#draft-link').hidden = true;
       renderPdf(); renderGallery(); savedSnapshot = snapshot(); checkDirty(); fileList(); renderAssets(); status('');
-    } catch (error) { status(error.message); }
+      return true;
+    } catch (error) { status(error.message); return false; }
   }
   function renderPdf() {
     const target = $('#pdf-current'); target.replaceChildren(); if (!media?.private_pdf) return;
@@ -100,6 +102,35 @@
     checkDirty(); tab('content'); renderAssets();
     status(asset.kind === 'pdf' ? 'PDF attached privately. Save the draft to keep it with this publication.' : 'Photo added. Write a short image description, then save your draft.');
   }
+  function paperOptions() {
+    const select = $('#pdf-paper-select'), previous = select.value;
+    const query = $('#pdf-paper-search').value.trim().toLowerCase(); select.replaceChildren();
+    const papers = files.filter(file => file.path.startsWith('_publications/') && (file.title + ' ' + file.path).toLowerCase().includes(query));
+    papers.forEach(file => { const option = new Option(file.title || nameFor(file.path),file.path); select.add(option); });
+    select.value = previous || (current?.path.startsWith('_publications/') ? current.path : '');
+    $('#pdf-paper-status').textContent = papers.length ? '' : 'No papers match this search.';
+    $('#pdf-paper-attach').disabled = !papers.length;
+  }
+  function choosePaper(asset) {
+    if (uploading || saving) { status('Please wait for the current upload or save to finish.'); return; }
+    pendingPdf = asset; $('#pdf-paper-search').value = ''; $('#pdf-paper-filename').textContent = asset.filename;
+    $('#pdf-paper-select').value = current?.path.startsWith('_publications/') ? current.path : '';
+    paperOptions(); $('#pdf-paper-dialog').showModal();
+  }
+  $('#pdf-paper-search').addEventListener('input',paperOptions);
+  $('#pdf-paper-cancel').addEventListener('click',() => $('#pdf-paper-dialog').close());
+  $('#pdf-paper-dialog').addEventListener('close',() => { pendingPdf = null; });
+  $('#pdf-paper-form').addEventListener('submit',async event => {
+    event.preventDefault(); const target = $('#pdf-paper-select').value, asset = pendingPdf;
+    if (!target || !asset) return;
+    $('#pdf-paper-attach').disabled = true; $('#pdf-paper-status').textContent = 'Opening the selected paper…';
+    if (current?.path !== target && !await load(target)) {
+      $('#pdf-paper-status').textContent = 'The paper was not opened. Try again, or cancel to keep your current edits.';
+      $('#pdf-paper-attach').disabled = false; return;
+    }
+    useAsset(asset); $('#pdf-paper-dialog').close();
+    $('#pdf-current').scrollIntoView({ block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
   async function refreshAssets() {
     const result = await api('/api/assets'); assets = result.assets;
     $('#storage-used').textContent = `${assets.length} files · ${bytesLabel(result.used)} of ${bytesLabel(result.capacity)}`;
@@ -115,7 +146,9 @@
       else card.append(element('div','asset-card__file','PDF'));
       const copy = element('div','asset-card__info'); copy.append(element('strong','',asset.filename),element('p','hint',`${bytesLabel(asset.bytes)} · ${asset.kind === 'pdf' ? 'Private paper PDF' : 'Photo'}`));
       const selected = asset.kind === 'pdf' ? media?.private_pdf === asset.id : media?.gallery.some(photo => photo.id === asset.id);
-      const attach = button(selected ? 'Added to selected content' : asset.kind === 'pdf' ? 'Attach to selected paper' : 'Add to selected page', () => useAsset(asset)); attach.disabled = Boolean(selected); copy.append(attach);
+      const attach = asset.kind === 'pdf' ? button(selected ? 'Attach to another paper…' : 'Attach to a paper…', () => choosePaper(asset)) : button(selected ? 'Added to selected content' : 'Add to selected page', () => useAsset(asset));
+      if (asset.kind === 'pdf' && selected) copy.append(element('p','hint','Attached to the open publication.'));
+      if (asset.kind !== 'pdf') attach.disabled = Boolean(selected); copy.append(attach);
       if (asset.kind === 'pdf') { const link = element('a','text-link','View private PDF ↗'); link.href = '/api/assets/' + asset.id; link.target = '_blank'; link.rel = 'noopener'; copy.append(link); }
       card.append(copy); target.append(card);
     });
@@ -130,7 +163,7 @@
   }
   function sendFile(file,kind) {
     return new Promise((resolve,reject) => {
-      const xhr = new XMLHttpRequest(); xhr.open('POST','/api/assets?kind=' + kind); xhr.timeout = 90000;
+      const xhr = new XMLHttpRequest(); xhr.open('POST','/api/assets?kind=' + kind); xhr.timeout = 180000;
       xhr.setRequestHeader('X-CSRF-Token',csrf); xhr.setRequestHeader('X-File-Name',encodeURIComponent(file.name)); xhr.setRequestHeader('Content-Type',file.type || 'application/octet-stream');
       xhr.upload.onprogress = event => { if (event.lengthComputable) $('#upload-meter').value = Math.round(event.loaded / event.total * 95); };
       xhr.onerror = () => reject(new Error('The upload did not finish. Check your connection and try again.'));
@@ -148,7 +181,7 @@
       for (const original of incoming) {
         const kind = original.type === 'application/pdf' || /\.pdf$/i.test(original.name) ? 'pdf' : 'photo';
         if (attachKind && kind !== attachKind) throw new Error(attachKind === 'pdf' ? 'Choose a PDF for this publication.' : 'Choose a JPEG, PNG, or WebP photo.');
-        if (kind === 'pdf' && original.size > 10 * 1024 * 1024) throw new Error('Please keep each paper PDF below 10 MB.');
+        if (kind === 'pdf' && original.size > 30 * 1024 * 1024) throw new Error('Please keep each paper PDF below 30 MB.');
         if (kind === 'photo' && original.size > 40 * 1024 * 1024) throw new Error('Please choose a photo below 40 MB before resizing.');
         $('#upload-label').textContent = `Preparing ${original.name}…`; $('#upload-meter').value = 0;
         const file = kind === 'photo' ? await preparePhoto(original) : original;
