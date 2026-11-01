@@ -30,6 +30,9 @@ layout: compress
       </footer>
     </div>
 
+    {% if site.data.services.api_base != "" %}
+      <script defer src="{{ '/assets/js/site-content.js' | relative_url }}" data-endpoint="{{ site.data.services.api_base | escape }}" data-path="{{ page.path | escape }}"></script>
+    {% endif %}
     {% if journal %}{% include analytics.html %}{% else %}{% include scripts.html %}{% endif %}
     {% if site.data.services.analytics_enabled and site.data.services.api_base != "" %}
       <script defer src="{{ '/assets/js/usage.js' | relative_url }}" data-endpoint="{{ site.data.services.api_base | escape }}/usage"></script>

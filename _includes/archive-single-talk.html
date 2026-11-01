@@ -12,7 +12,7 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+<div class="{{ include.type | default: "list" }}__item" data-source-path="{{ post.path | escape }}">
 <article class="archive__item presentation-record" itemscope itemtype="http://schema.org/Event">
 
     {% if include.type == "grid" and teaser %}
@@ -59,7 +59,7 @@ alt="">
 
     {% if post.excerpt %}
 <p class="archive__item-excerpt" itemprop="description">
-        {{ post.excerpt | markdownify }}
+        {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}
 </p>
     {% endif %}
 
@@ -67,7 +67,7 @@ alt="">
     {% if post.citation %}
 <details class="publication-citation">
 <summary><span class="citation-toggle-text">Citation</span></summary>
-<p>{{ post.citation | markdownify }}</p>
+<p>{{ post.citation | markdownify | remove: '<p>' | remove: '</p>' }}</p>
 </details>
     {% endif %}
 

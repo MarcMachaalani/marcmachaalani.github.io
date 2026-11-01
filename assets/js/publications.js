@@ -3,19 +3,24 @@
   const form = document.querySelector('#publication-filters');
   if (!form) return;
   const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const entries = Array.from(document.querySelectorAll('[data-publication]'), element => {
+  const collect = () => Array.from(document.querySelectorAll('[data-publication]'), element => {
     const topics = JSON.parse(element.dataset.topics || 'null') || [];
     return { element, year: element.dataset.year, type: element.dataset.articleType,
       topics, text: normalize(element.textContent + ' ' + topics.join(' ') + ' ' + element.dataset.articleType) };
   });
+  let entries = collect();
   const controls = { q: form.elements.q, year: form.elements.year, type: form.elements.type, topic: form.elements.topic };
   const fill = (select, values, descending = false) => {
     const sorted = Array.from(new Set(values)).sort((a, b) => descending ? b.localeCompare(a) : a.localeCompare(b));
     sorted.forEach(value => select.add(new Option(value, value)));
   };
-  fill(controls.year, entries.map(entry => entry.year), true);
-  fill(controls.type, entries.map(entry => entry.type));
-  fill(controls.topic, entries.flatMap(entry => entry.topics));
+  function refresh() {
+    entries = collect();
+    for (const select of [controls.year,controls.type,controls.topic]) while (select.options.length > 1) select.remove(1);
+    fill(controls.year,entries.map(entry => entry.year),true); fill(controls.type,entries.map(entry => entry.type)); fill(controls.topic,entries.flatMap(entry => entry.topics));
+    readLocation(); apply(false);
+  }
+  document.addEventListener('site-content-updated',refresh);
   function readLocation() {
     const params = new URLSearchParams(location.search);
     Object.entries(controls).forEach(([key, input]) => { input.value = params.get(key) || ''; });
@@ -46,7 +51,6 @@
   form.addEventListener('input', () => apply());
   form.addEventListener('reset', () => setTimeout(apply, 0));
   window.addEventListener('popstate', () => { readLocation(); apply(false); });
-  readLocation();
-  apply(false);
+  refresh();
   form.hidden = false;
 })();

@@ -16,7 +16,7 @@ When enabled, the contact form sends your name, email address, subject, and mess
 
 GitHub Pages hosts the public site. GitHub, Cloudflare, and the email provider may process connection information and retain operational logs under their own policies. The application's analytics database contains no connection logs.
 
-The private editor uses a short-lived, secure sign-in cookie and GitHub authentication. Its draft changes are saved in this public website repository as pull requests; drafts are therefore public. Do not put private information in site drafts.
+The private editor uses a short-lived, secure sign-in cookie and GitHub authentication. Drafts are stored privately in Cloudflare D1. Only the version the owner publishes is returned to visitors. Content edits do not create GitHub commits or pull requests. GitHub Pages continues to host the site’s layout and a baseline copy of the content.
 
 Embedded videos and links to other websites have their own privacy practices. You may contact me about information you have sent through the [contact page](/contact/).
 

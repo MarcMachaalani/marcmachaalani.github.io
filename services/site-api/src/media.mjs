@@ -1,3 +1,4 @@
+import { photoPublished } from './content.mjs';
 export const MEDIA_CAPACITY = 200 * 1024 * 1024;
 export const LIMITS = { pdf: 30 * 1024 * 1024, photo: 6 * 1024 * 1024 };
 const CHUNK_SIZE = 128 * 1024;
@@ -151,17 +152,8 @@ export async function checkMediaAssets(env, path, media) {
   }
   return value;
 }
-let publishedPhotos = { origin: '', expires: 0, ids: new Set() };
 export async function publicPhoto(request, env) {
   const id = new URL(request.url).pathname.slice('/photos/'.length);
-  if (!validAssetId(id)) fail(404, 'Photo not found.');
-  if (publishedPhotos.origin !== env.SITE_ORIGIN || publishedPhotos.expires < Date.now()) {
-    const result = await fetch(`${env.SITE_ORIGIN}/assets/data/published-photos.json`, { cf: { cacheTtl: 30 }, signal: AbortSignal.timeout(5000) });
-    if (!result.ok) fail(404, 'Photo not found.');
-    const ids = await result.json();
-    if (!Array.isArray(ids) || ids.length > 10000) fail(404, 'Photo not found.');
-    publishedPhotos = { origin: env.SITE_ORIGIN, expires: Date.now() + 30000, ids: new Set(ids) };
-  }
-  if (!publishedPhotos.ids.has(id)) fail(404, 'Photo not found.');
-  return assetResponse(env, id, true);
+  if (!validAssetId(id) || !await photoPublished(env,id)) fail(404,'Photo not found.');
+  return assetResponse(env,id,true);
 }

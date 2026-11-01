@@ -1,4 +1,5 @@
 import { parseDocument } from 'yaml';
+import * as contentStore from './content.mjs';
 import { library, upload, assetResponse, publicPhoto, validateMedia, checkMediaAssets } from './media.mjs';
 
 const encoder = new TextEncoder();
@@ -8,19 +9,6 @@ const OAUTH = '__Host-marc-oauth';
 const EDITABLE_PAGES = new Set(['about.md', 'interests.md', 'awards.md', 'publications.html', 'talks.html', 'media.html', 'contact.html']);
 const FIELDS = ['title', 'date', 'excerpt', 'venue', 'article_type', 'topics', 'paperurl', 'pubmed', 'citation', 'intro'];
 let pathCache = { expires: 0, origin: '', paths: new Set() };
-let titleCache = { expires: 0, origin: '', titles: new Map() };
-
-async function contentTitles(env) {
-  if (titleCache.origin === env.SITE_ORIGIN && titleCache.expires > Date.now()) return titleCache.titles;
-  try {
-    const result = await fetch(`${env.SITE_ORIGIN}/assets/data/editor-index.json`, { cf: { cacheTtl: 120 }, signal: AbortSignal.timeout(5000) });
-    if (!result.ok) return new Map();
-    const entries = await result.json();
-    if (!Array.isArray(entries) || entries.length > 10000) return new Map();
-    titleCache = { origin: env.SITE_ORIGIN, expires: Date.now() + 120000, titles: new Map(entries.filter(item => typeof item.path === 'string' && typeof item.title === 'string').map(item => [item.path, item.title])) };
-    return titleCache.titles;
-  } catch { return new Map(); }
-}
 
 class HttpError extends Error {
   constructor(status, message) { super(message); this.status = status; }
@@ -135,7 +123,7 @@ async function usage(request, env) {
     .bind(new Date().toISOString().slice(0, 10), data.path).run();
   return new Response(null, { status: 204 });
 }
-async function github(env, path, method = 'GET', data, token = env.GITHUB_CONTENT_TOKEN) {
+async function github(env, path, method = 'GET', data, token) {
   required({ token }, ['token']);
   const result = await fetch(`https://api.github.com${path}`, { method,
     headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'MarcSiteEditor', 'Content-Type': 'application/json' },
@@ -153,7 +141,7 @@ async function login(request, env) {
   const url = new URL('https://github.com/login/oauth/authorize');
   url.search = new URLSearchParams({ client_id: env.GITHUB_CLIENT_ID, redirect_uri: new URL('/auth/callback', request.url).href,
     state, code_challenge: challenge, code_challenge_method: 'S256' }).toString();
-  // No repository OAuth scope: writes use a separate repository-scoped token.
+  // GitHub verifies identity only. Content is saved and published in D1.
   return new Response(null, { status: 302, headers: { Location: url.href, 'Set-Cookie': setCookie(OAUTH, payload, 600) } });
 }
 async function callback(request, env) {
@@ -212,46 +200,9 @@ export function mergeContent(original, fields, body, media) {
   }
   return `---\n${doc.toString({ lineWidth: 0 })}---\n${body}`;
 }
-function repoPath(env) {
-  if (!/^[\w.-]+\/[\w.-]+$/.test(env.GITHUB_REPO || '')) fail(503, 'Repository is not configured.');
-  return `/repos/${env.GITHUB_REPO}`;
-}
-async function content(request, env) {
-  const path = new URL(request.url).searchParams.get('path');
-  if (!editablePath(path)) fail(400, 'This file cannot be edited here.');
-  const file = await github(env, `${repoPath(env)}/contents/${path}?ref=${encodeURIComponent(env.GITHUB_BRANCH)}`);
-  if (file.encoding !== 'base64' || file.size > 150000) fail(400, 'This file is too large to edit here.');
-  const original = decoder.decode(Uint8Array.from(atob(file.content.replace(/\s/g, '')), ch => ch.charCodeAt(0)));
-  const parsed = splitContent(original);
-  return json({ path, sha: file.sha, fields: parsed.fields, body: parsed.body, media: parsed.media });
-}
-async function draft(request, env) {
-  const data = await readJson(request, 150000);
-  if (!editablePath(data.path)) fail(400, 'This file cannot be edited here.');
-  const base = repoPath(env);
-  const branch = encodeURIComponent(env.GITHUB_BRANCH);
-  // Read the current branch once; build a commit from that snapshot to avoid overwriting newer edits.
-  const ref = await github(env, `${base}/git/ref/heads/${branch}`);
-  const file = await github(env, `${base}/contents/${data.path}?ref=${ref.object.sha}`);
-  if (file.sha !== data.sha) fail(409, 'This page changed since you opened it. Reload it before saving your draft.');
-  const original = decoder.decode(Uint8Array.from(atob(file.content.replace(/\s/g, '')), ch => ch.charCodeAt(0)));
-  if (data.media !== undefined) await checkMediaAssets(env, data.path, data.media);
-  const updated = mergeContent(original, data.fields, data.body, data.media);
-  if (updated === original) fail(400, 'There are no changes to save.');
-  const parent = await github(env, `${base}/git/commits/${ref.object.sha}`);
-  const blob = await github(env, `${base}/git/blobs`, 'POST', { content: updated, encoding: 'utf-8' });
-  const tree = await github(env, `${base}/git/trees`, 'POST', { base_tree: parent.tree.sha,
-    tree: [{ path: data.path, mode: '100644', type: 'blob', sha: blob.sha }] });
-  const title = `Edit ${data.path}`;
-  const commit = await github(env, `${base}/git/commits`, 'POST', { message: title, tree: tree.sha, parents: [ref.object.sha] });
-  const head = `editor/${crypto.randomUUID()}`;
-  await github(env, `${base}/git/refs`, 'POST', { ref: `refs/heads/${head}`, sha: commit.sha });
-  const pr = await github(env, `${base}/pulls`, 'POST', { title, head, base: env.GITHUB_BRANCH, draft: true,
-    body: `Content draft created in the private site editor.\n\nEdited file: ${data.path}\n\nReview the diff and preview check before publishing.` });
-  return json({ url: pr.html_url, number: pr.number }, 201);
-}
 async function route(request, env) {
   const url = new URL(request.url);
+  if (url.pathname === '/content' && request.method === 'GET') return json(await contentStore.published(env, url.searchParams.get('path')));
   if (url.pathname.startsWith('/photos/') && request.method === 'GET') return publicPhoto(request, env);
   const publicRoute = ['/contact', '/usage'].includes(url.pathname);
   if (publicRoute) {
@@ -269,14 +220,20 @@ async function route(request, env) {
     if (/^\/api\/assets\/[0-9a-f-]+$/.test(url.pathname) && request.method === 'GET') return assetResponse(env, url.pathname.split('/').pop());
     if (url.pathname === '/api/session' && request.method === 'GET') return json({ login: owner.login, csrf: owner.csrf });
     if (url.pathname === '/api/logout' && request.method === 'POST') return new Response(null, { status: 204, headers: { 'Set-Cookie': setCookie(SESSION, '', 0) } });
-    if (url.pathname === '/api/files' && request.method === 'GET') {
-      const tree = await github(env, `${repoPath(env)}/git/trees/${encodeURIComponent(env.GITHUB_BRANCH)}?recursive=1`);
-      if (tree.truncated) fail(502, 'Repository file list was truncated.');
-      const titles = await contentTitles(env);
-      return json(tree.tree.filter(item => item.type === 'blob' && editablePath(item.path)).map(item => ({ path: item.path, title: titles.get(item.path) || '' })));
+    if (url.pathname === '/api/files' && request.method === 'GET') return json(await contentStore.files(env));
+    if (url.pathname === '/api/content' && request.method === 'GET') return json(await contentStore.document(env,url.searchParams.get('path')));
+    if (url.pathname === '/api/drafts' && request.method === 'POST') {
+      const data = await readJson(request,200000);
+      if (!contentStore.editable(data.path)) fail(400,'This content cannot be edited here.');
+      const media = await checkMediaAssets(env,data.path,data.media);
+      return json(await contentStore.save(env,data,media),201);
     }
-    if (url.pathname === '/api/content' && request.method === 'GET') return content(request, env);
-    if (url.pathname === '/api/drafts' && request.method === 'POST') return draft(request, env);
+    if (url.pathname === '/api/publish' && request.method === 'POST') return json(await contentStore.publish(env,await readJson(request,2048)));
+    if (url.pathname === '/api/preview' && request.method === 'POST') {
+      const data = await readJson(request,150000);
+      if (typeof data.body !== 'string' || data.body.length > 100000) fail(400,'Invalid content.');
+      return json({html:contentStore.renderBody(data.body)});
+    }
     if (url.pathname === '/api/analytics' && request.method === 'GET') {
       required(env, ['DB']);
       const [pages, days] = await env.DB.batch([
@@ -305,6 +262,7 @@ export default {
     headers.set('Referrer-Policy', 'no-referrer');
     headers.set('X-Frame-Options', 'DENY');
     headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data: blob:; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+    if (new URL(request.url).pathname === '/content') headers.set('Access-Control-Allow-Origin',env.SITE_ORIGIN);
     if (['/contact', '/usage'].includes(new URL(request.url).pathname)) {
       headers.set('Vary', 'Origin');
       if (request.headers.get('Origin') === env.SITE_ORIGIN) {
