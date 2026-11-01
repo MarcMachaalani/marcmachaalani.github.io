@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import './helpers/digest-stream.mjs';
 import worker, { sign, mergeContent, splitContent } from '../src/index.mjs';
 import { upload, library, detectFile, assetResponse, checkMediaAssets, validateMedia } from '../src/media.mjs';
 
@@ -9,16 +11,17 @@ function database() {
   const sql = new DatabaseSync(':memory:');
   sql.exec('PRAGMA foreign_keys=ON');
   sql.exec(readFileSync(new URL('../migrations/0002_private_media.sql',import.meta.url),'utf8'));
-  return { sql,
+  let calls = 0, inBatch = false;
+  return { sql, get calls() { return calls; }, resetCalls() { calls = 0; },
     prepare(query) {
       let values = [];
       const prepared = { bind(...args) { values = args.map(value => value instanceof ArrayBuffer ? new Uint8Array(value) : value); return prepared; },
-        async first() { return sql.prepare(query).get(...values) || null; },
-        async all() { return { results:sql.prepare(query).all(...values) }; },
-        async run() { return sql.prepare(query).run(...values); } };
+        async first() { if (!inBatch) calls++; return sql.prepare(query).get(...values) || null; },
+        async all() { if (!inBatch) calls++; return { results:sql.prepare(query).all(...values) }; },
+        async run() { if (!inBatch) calls++; return sql.prepare(query).run(...values); } };
       return prepared;
     },
-    async batch(statements) { return Promise.all(statements.map(statement => statement.all())); }
+    async batch(statements) { calls++; inBatch = true; try { return await Promise.all(statements.map(statement => statement.all())); } finally { inBatch = false; } }
   };
 }
 const base = { SITE_ORIGIN:'https://marcmachaalani.github.io', OWNER_ID:'103030028', SESSION_SECRET:'a-long-random-test-secret-32-characters' };
@@ -62,7 +65,7 @@ test('upload route stores and returns private metadata for the owner',async () =
 test('rejects renamed HTML/SVG files, empty uploads, traversal names and oversized bodies',async () => {
   const env = { ...base,DB:database() };
   for (const req of [fileRequest('pdf','<html>fake PDF</html>'),fileRequest('photo','<svg>fake</svg>'),fileRequest('pdf',new Uint8Array()),fileRequest('pdf',pdf,'../secret.pdf')]) await assert.rejects(upload(req,env));
-  await assert.rejects(upload(fileRequest('pdf',pdf,'Big.pdf',{ 'Content-Length':String(11 * 1024 * 1024) }),env),/too large/);
+  await assert.rejects(upload(fileRequest('pdf',pdf,'Big.pdf',{ 'Content-Length':String(31 * 1024 * 1024) }),env),/too large/);
   assert.equal((await library(env)).assets.length,0);
 });
 test('PDFs cannot be served as public photos even with a malicious allowlist',async t => {
@@ -108,4 +111,30 @@ test('a failed chunk write cleans up incomplete private assets',async () => {
 test('file signatures determine the served type, never an arbitrary request type',() => {
   assert.equal(detectFile(pdf,'pdf'),'application/pdf'); assert.equal(detectFile(photo,'photo'),'image/png');
   assert.throws(() => detectFile(new TextEncoder().encode('<script>alert(1)</script>'),'photo'));
+});
+test('a full 30 MB streamed PDF uploads and opens within the free-plan query budget',async () => {
+  const DB = database(), env = { ...base,DB }, size = 30 * 1024 * 1024;
+  const expectedHash = createHash('sha256'); let produced = 0;
+  const body = new ReadableStream({ pull(controller) {
+    if (produced === size) { controller.close(); return; }
+    const bytes = new Uint8Array(Math.min(64 * 1024,size - produced)).fill(65);
+    if (!produced) bytes.set(pdf); produced += bytes.length; expectedHash.update(bytes); controller.enqueue(bytes);
+  }});
+  const request = new Request('https://editor.example.com/api/assets?kind=pdf',{ method:'POST',headers:{ 'X-File-Name':'Large.pdf','Content-Length':String(size) },body,duplex:'half' });
+  const saved = await upload(request,env); assert.equal(saved.bytes,size); assert.ok(DB.calls < 50,`Upload used ${DB.calls} queries`);
+  DB.resetCalls();
+  const response = await assetResponse(env,saved.id); const bytes = new Uint8Array(await response.arrayBuffer());
+  assert.equal(bytes.length,size); assert.equal(createHash('sha256').update(bytes).digest('hex'),expectedHash.digest('hex'));
+  assert.ok(DB.calls < 50,`Read used ${DB.calls} queries`);
+});
+test('streaming size violations remove every partial chunk',async () => {
+  const DB = database(), env = { ...base,DB }; let produced = 0;
+  const body = new ReadableStream({ pull(controller) {
+    if (produced++ === 7) { controller.close(); return; }
+    const bytes = new Uint8Array(1024 * 1024).fill(65); if (produced === 1) bytes.set(photo); controller.enqueue(bytes);
+  }});
+  const request = new Request('https://editor.example.com/api/assets?kind=photo',{ method:'POST',headers:{ 'X-File-Name':'Too-large.png' },body,duplex:'half' });
+  await assert.rejects(upload(request,env),/6 MB/);
+  assert.equal(DB.sql.prepare('SELECT COUNT(*) AS count FROM media_assets').get().count,0);
+  assert.equal(DB.sql.prepare('SELECT COUNT(*) AS count FROM media_chunks').get().count,0);
 });

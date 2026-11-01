@@ -108,7 +108,7 @@ The editor now has a **Media library** tab with drag-and-drop uploads and progre
 
 For photos, choose **Upload photos** or **Choose from your library** on any editable page. Add an image description for accessibility and an optional caption. You can reorder or remove photos from the page before saving its draft. Photos are resized to at most 2,200 pixels on their longest edge and re-encoded as WebP in the browser, removing embedded camera metadata. A photo becomes publicly viewable only when its ID appears in a published page's gallery. Unattached uploads and unmerged drafts remain private. Public photo changes can take about 30 seconds to appear.
 
-Files use the existing D1 database in 128 KB chunks, avoiding another storage service. The media library allows 200 MB total, with a 10 MB limit per PDF and 6 MB per prepared photo. It retains uploads until intentionally managed; removing an attachment or gallery item only removes its association and keeps the file in your library. The daily cleanup removes only incomplete uploads older than one day. Larger libraries should move binary files to object storage while keeping the same private API.
+Files use the existing D1 database in 128 KB chunks, avoiding another storage service. The media library allows 200 MB total, with a 30 MB limit per PDF and 6 MB per prepared photo. It retains uploads until intentionally managed; removing an attachment or gallery item only removes its association and keeps the file in your library. The daily cleanup removes only incomplete uploads older than one day. Larger libraries should move binary files to object storage while keeping the same private API.
 
 Deploy the additive `0002_private_media.sql` migration before updating the Worker:
 
@@ -118,3 +118,7 @@ npm run deploy
 ```
 
 No new secrets or public storage permissions are needed. The private endpoint is `/api/assets/:id`. `/photos/:id` accepts only actual photos listed in the published site's `assets/data/published-photos.json`; even an allowlisted PDF ID is rejected. The public templates never render `private_pdf` attachments.
+
+The 30 MB PDF limit is enforced in both the editor and server. Uploads are hashed incrementally and written in bounded batches; reads also use bounded batches so a maximum-size PDF stays within Cloudflare's free-plan database query limits. The 200 MB library cap is a separate, conservative application setting, leaving headroom below the 500 MB free-plan D1 database size limit for indexes, site counts and database overhead.
+
+From the Media library, **Attach to a paper…** opens a searchable publication picker. Choose a paper, click **Attach PDF**, then save its draft. You do not need to open a paper before starting.

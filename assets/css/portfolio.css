@@ -62,9 +62,8 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 .section-heading, .colophon { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 .section-heading__link, .work-detail__back { font-size: .88rem; }
 .research-grid, .portal-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2rem; }
-.research-grid { counter-reset: paper; grid-template-columns: repeat(2,minmax(0,1fr)); }
-.research-card { border-top: 2px solid var(--accent); padding-top: 1rem; counter-increment: paper; }
-.research-card::before { content: counter(paper,decimal-leading-zero); color: var(--muted); font: italic 1.65rem var(--serif); }
+.research-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.research-card { border-top: 2px solid var(--accent); padding-top: 1rem; }
 .research-card h3, .media-card__title, .archive__item-title { font-size: clamp(1.35rem,2.3vw,1.85rem); margin: .65rem 0; }
 .research-card a, .archive__item-title a, .media-card__title a { text-decoration: none; }
 .research-card p:last-child, .portal-card__description, .media-card__excerpt { color: var(--muted); }
@@ -183,7 +182,7 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .research-card { padding-top: 1.1rem; }
 .research-card h3 a, .archive__item-title a, .media-card__title a { transition: color 180ms ease; }
 .research-card h3 a:hover, .archive__item-title a:hover, .media-card__title a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
-.portal-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1rem; }
+.portal-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
 .portal-card { padding: 1.35rem; border: 1px solid var(--rule); border-radius: var(--radius); transition: background 180ms ease, transform 240ms var(--ease), border-color 180ms ease, box-shadow 240ms ease; }
 .portal-card__number { color: var(--muted); font: italic 1.2rem var(--serif); margin-bottom: 1.4rem; }
 .portal-card__title { font-size: 1.4rem; }
@@ -264,3 +263,13 @@ body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 .journal .page:not(.work-detail)>.page__inner-wrap>header { padding-block:clamp(2.5rem,5vw,4rem); border-bottom:1px solid var(--rule); margin-bottom:2rem; }
 .journal .page__content { line-height:1.85; }
 @media (max-width:740px) { .journal-head nav { justify-content:space-between; gap:.4rem; } .journal-head nav a { font-size:clamp(.72rem,3.1vw,.82rem); } }
+
+/* Keep a single divider between the awards introduction and its first entry. */
+.award-list { margin-top: 0; }
+.award-item:first-child { border-top: 0; padding-top: 0; }
+/* An inset chevron stays aligned consistently across browser select controls. */
+.publication-filters select { appearance: none; -webkit-appearance: none; padding-right: 2.8rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%23182d27' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: .8rem .55rem; }
+html[data-theme="dark"] .publication-filters select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='m2 2 5 5 5-5' fill='none' stroke='%23f3efe1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+@media (forced-colors: active) { .publication-filters select { appearance: auto; background-image: none !important; } }
+.home-links .portal-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media (max-width:740px) { .home-links .portal-grid { grid-template-columns: 1fr; } }
