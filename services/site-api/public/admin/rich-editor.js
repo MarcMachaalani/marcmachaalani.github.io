@@ -1,5 +1,5 @@
 (() => {
-  let template, blocks = [], target, changed, renderedSource = ''; 
+  let template, blocks = [], target, changed, renderedSource = '';
   const el = (tag,text) => { const node = document.createElement(tag); if (text) node.textContent = text; return node; };
   function sync() {
     blocks.forEach(({source,input}) => { source.innerHTML = input.innerHTML; });
@@ -14,6 +14,16 @@
     const container = node => node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
     const existing = container(range.startContainer).closest(tag), end = container(range.endContainer).closest(tag);
     if (existing && existing === end && input.contains(existing) && tag !== 'a') { existing.replaceWith(...existing.childNodes); sync(); return; }
+    if (tag !== 'a') {
+      const fragment = range.cloneContents(), texts = document.createTreeWalker(fragment,NodeFilter.SHOW_TEXT);
+      let text, allFormatted = Boolean(fragment.textContent.trim());
+      while ((text = texts.nextNode())) if (text.textContent.trim() && !text.parentElement?.closest(tag)) allFormatted = false;
+      if (allFormatted) {
+        const contents = range.extractContents();
+        contents.querySelectorAll(tag).forEach(node => node.replaceWith(...node.childNodes)); range.insertNode(contents);
+        input.querySelectorAll(tag).forEach(node => { if (!node.textContent) node.remove(); }); sync(); return;
+      }
+    }
     let wrapper;
     if (tag === 'a') {
       const url = prompt('Link address (https://… or mailto:…)'); if (!url) return;
