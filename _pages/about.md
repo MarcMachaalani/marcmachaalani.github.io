@@ -3,6 +3,7 @@ layout: splash
 permalink: /
 title: "Marc Machaalani, MD"
 author_profile: false
+social_description: "Marc Machaalani, MD, is an internal medicine resident at Yale."
 description: "Marc Machaalani, MD, is an internal medicine resident at Yale. His genitourinary oncology research focuses on kidney cancer, biomarkers, and immunotherapy."
 ---
 <section class="home-hero" aria-labelledby="home-title">
