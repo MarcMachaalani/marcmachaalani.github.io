@@ -3,7 +3,7 @@
   let preference;
   try { preference = localStorage.getItem('theme'); } catch {}
   function apply() {
-    const dark = preference ? preference === 'dark' : system.matches;
+    const dark = preference === 'dark' || (preference !== 'light' && system.matches);
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     document.querySelector('.appearance')?.setAttribute('aria-pressed', String(dark));
   }
@@ -11,7 +11,7 @@
   system.addEventListener('change', apply);
   document.addEventListener('DOMContentLoaded', () => {
     apply();
-    document.querySelector('.appearance').addEventListener('click', () => {
+    document.querySelector('.appearance')?.addEventListener('click', () => {
       preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
       try { localStorage.setItem('theme', preference); } catch {}
       apply();
