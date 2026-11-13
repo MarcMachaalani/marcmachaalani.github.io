@@ -28,7 +28,7 @@ bundle exec jekyll serve --livereload
 
 Open [http://localhost:4000](http://localhost:4000). Jekyll rebuilds content changes automatically; restart the server after changing `_config.yml`.
 
-The optional JavaScript build scripts are in `package.json`. They are only needed when changing the bundled JavaScript.
+Jekyll serves the JavaScript files in `assets/js/` directly.
 
 ## Import publications from PubMed
 
