@@ -226,7 +226,7 @@ def record_markdown(record: ET.Element) -> tuple[str, str, str]:
         citation += f" doi: {html.escape(doi)}."
 
     file_stem = f"{date_value}-{slugify(title)}"
-    permalink = f"/publication/{file_stem}/"
+    permalink = f"/publications/{file_stem}/"
     excerpt = excerpt_from_abstract(article)
     venue = f"<strong>{html.escape(journal)}</strong>"
     paper_url = f"https://doi.org/{doi}" if doi else ""

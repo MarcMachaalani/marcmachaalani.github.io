@@ -2,8 +2,10 @@
 title: "Knowledge, Attitude, and Practice Toward Cardiovascular Diseases in the Lebanese Population"
 collection: publications
 category: manuscripts
-permalink: /publication/2022-07-29-cvd-kap-lebanon/
-redirect_from: /publication/2022-07-29-cvd-kap-lebanon.html
+permalink: /publications/2022-07-29-cvd-kap-lebanon/
+redirect_from:
+  - /publication/2022-07-29-cvd-kap-lebanon.html
+  - /publication/2022-07-29-cvd-kap-lebanon/
 excerpt: "Case-control study assessing cardiovascular disease knowledge, attitudes, and preventive practices among Lebanese adults."
 date: 2022-07-29
 venue: "<strong>Global Heart</strong>"

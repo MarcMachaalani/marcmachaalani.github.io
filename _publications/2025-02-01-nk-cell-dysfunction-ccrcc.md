@@ -2,8 +2,10 @@
 title: "Progressive natural killer cell dysfunction in advanced-stage clear-cell renal cell carcinoma and association with clinical outcomes"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-02-01-nk-cell-dysfunction-ccrcc/
-redirect_from: /publication/2025-02-01-nk-cell-dysfunction-ccrcc.html
+permalink: /publications/2025-02-01-nk-cell-dysfunction-ccrcc/
+redirect_from:
+  - /publication/2025-02-01-nk-cell-dysfunction-ccrcc.html
+  - /publication/2025-02-01-nk-cell-dysfunction-ccrcc/
 excerpt: "Single-cell and functional immunogenomic analysis identifying progressive tumor-resident NK cell dysfunction as a predictor of poor outcomes in advanced clear-cell renal cell carcinoma."
 date: 2025-02-01
 venue: "<strong>ESMO Open</strong>"

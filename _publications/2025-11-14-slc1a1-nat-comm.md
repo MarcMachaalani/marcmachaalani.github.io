@@ -2,8 +2,10 @@
 title: "The SLC1A1/EAAT3 dicarboxylic amino acid transporter is an epigenetically dysregulated nutrient carrier that sustains oncogenic metabolic programs"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-11-14-slc1a1-nat-comm/
-redirect_from: /publication/2025-11-14-slc1a1-nat-comm.html
+permalink: /publications/2025-11-14-slc1a1-nat-comm/
+redirect_from:
+  - /publication/2025-11-14-slc1a1-nat-comm.html
+  - /publication/2025-11-14-slc1a1-nat-comm/
 excerpt: "Mechanistic study identifying SLC1A1/EAAT3 as an epigenetically regulated metabolic dependency in clear cell renal cell carcinoma that sustains oncogenic metabolism, promotes immune exclusion, and drives metastatic progression."
 date: 2025-11-14
 venue: "<strong>Nature Communications</strong>"

@@ -3,6 +3,7 @@ layout: splash
 permalink: /
 title: "Marc Machaalani, MD"
 author_profile: false
+description: "Marc Machaalani, MD, is an internal medicine resident at Yale. His genitourinary oncology research focuses on kidney cancer, biomarkers, and immunotherapy."
 ---
 <section class="home-hero" aria-labelledby="home-title">
 
@@ -20,7 +21,7 @@ author_profile: false
 <section class="home-section home-bio" aria-labelledby="about-title">
   <p class="home-eyebrow">About</p>
   <h2 id="about-title">A little about me</h2>
-  <p>I earned my medical degree from <strong>Lebanese University</strong> in 2023. From 2023 to 2026, I completed a postdoctoral fellowship in genitourinary oncology at <strong>Dana-Farber Cancer Institute</strong> and <strong>Harvard Medical School</strong>, mentored by <a href="https://labs.dana-farber.org/choueirilab/">Pr. Toni K. Choueiri</a>. I am now part of the <a href="https://medicine.yale.edu/internal-medicine/education/residency/"><strong>Yale Traditional Internal Medicine Residency Program</strong></a>.</p>
+  <p>I earned my medical degree from <strong>Lebanese University</strong> in 2023. From 2023 to 2026, I completed a postdoctoral fellowship in genitourinary oncology at <strong>Dana-Farber Cancer Institute</strong> and <strong>Harvard Medical School</strong>, mentored by <a href="https://labs.dana-farber.org/choueirilab/">Dr. Toni K. Choueiri</a>. I am now part of the <a href="https://medicine.yale.edu/internal-medicine/education/residency/"><strong>Yale Traditional Internal Medicine Residency Program</strong></a>.</p>
   <p>My research has included integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, with work spanning tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics. Selected publications are included below.</p>
   <p>From 2006 to 2021, I also studied piano at the Lebanese National Higher Conservatory of Music under the tutelage of Loucine Panjarian, earning a Bachelor’s Degree with High Distinction.</p>
 </section>
@@ -36,7 +37,7 @@ author_profile: false
   <div class="research-grid">
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publication/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
+      <h3><a href="/publications/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
       <p>Plasma profiling identifies metabolic signals associated with immunotherapy outcomes across cancer types.</p>
     </article>
     <article class="research-card">
@@ -46,12 +47,12 @@ author_profile: false
     </article>
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2025</p>
-      <h3><a href="/publication/2025-11-28-hif2-cachexia-rcc/">Targeting of HIF2-driven cachexia in kidney cancer</a></h3>
+      <h3><a href="/publications/2025-11-28-hif2-cachexia-rcc/">Targeting of HIF2-driven cachexia in kidney cancer</a></h3>
       <p>This study examines how HIF2 signaling contributes to weight loss and high calcium levels in clear cell kidney cancer.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Journal of Clinical Oncology · 2025</p>
-      <h3><a href="/publication/2025-08-10-chromophobe-rcc-antitumor-immunity/">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
+      <h3><a href="/publications/2025-08-10-chromophobe-rcc-antitumor-immunity/">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
       <p>Integrated single-cell and immunogenomic analyses characterize the tumor microenvironment in chromophobe kidney cancer.</p>
     </article>
   </div>

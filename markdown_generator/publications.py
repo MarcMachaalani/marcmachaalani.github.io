@@ -75,7 +75,7 @@ for row, item in publications.iterrows():
     # TODO Update to use the category assigned in the TSV file
     md += """collection: manuscripts"""
     
-    md += """\npermalink: /publication/""" + html_filename
+    md += """\npermalink: /publications/""" + html_filename
     
     if len(str(item.excerpt)) > 5:
         md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"

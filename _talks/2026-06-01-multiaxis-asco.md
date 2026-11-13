@@ -4,7 +4,7 @@ collection: talks
 category: posters
 type: "Poster presentation"
 permalink: /talks/2026-06-01-multiaxis-asco
-venue: "ASCO Annual Meeting 2025"
+venue: "ASCO Annual Meeting 2026"
 date: 2026-06-01
 paperurl: "https://doi.org/10.1200/JCO.2026.44.16_suppl.4554"
 location: "Chicago, IL, USA"

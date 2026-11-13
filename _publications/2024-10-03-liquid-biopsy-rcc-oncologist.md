@@ -2,8 +2,10 @@
 title: "Liquid biopsy in renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2024-10-03-liquid-biopsy-rcc/
-redirect_from: /publication/2024-10-03-liquid-biopsy-rcc.html
+permalink: /publications/2024-10-03-liquid-biopsy-rcc/
+redirect_from:
+  - /publication/2024-10-03-liquid-biopsy-rcc.html
+  - /publication/2024-10-03-liquid-biopsy-rcc/
 excerpt: "Expert commentary on the prognostic significance of circulating tumor DNA in renal cell carcinoma."
 date: 2024-10-03
 venue: "<strong>The Oncologist</strong>"

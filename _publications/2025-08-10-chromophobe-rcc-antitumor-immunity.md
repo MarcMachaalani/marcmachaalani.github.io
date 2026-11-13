@@ -2,8 +2,10 @@
 title: "Tumor-Intrinsic and Microenvironmental Determinants of Impaired Antitumor Immunity in Chromophobe Renal Cell Carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-08-10-chromophobe-rcc-antitumor-immunity/
-redirect_from: /publication/2025-08-10-chromophobe-rcc-antitumor-immunity.html
+permalink: /publications/2025-08-10-chromophobe-rcc-antitumor-immunity/
+redirect_from:
+  - /publication/2025-08-10-chromophobe-rcc-antitumor-immunity.html
+  - /publication/2025-08-10-chromophobe-rcc-antitumor-immunity/
 excerpt: "Integrated single-cell and immunogenomic analysis defining the immune-depleted tumor microenvironment and impaired antitumor immunity in chromophobe renal cell carcinoma."
 date: 2025-08-10
 venue: "<strong>Journal of Clinical Oncology</strong>"

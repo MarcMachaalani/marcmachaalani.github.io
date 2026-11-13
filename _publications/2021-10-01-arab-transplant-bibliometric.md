@@ -2,8 +2,10 @@
 title: "Contribution of Arab World in Transplant Research: A PubMed-Based Bibliometric Analysis"
 collection: publications
 category: manuscripts
-permalink: /publication/2021-10-01-arab-transplant-bibliometric/
-redirect_from: /publication/2021-10-01-arab-transplant-bibliometric.html
+permalink: /publications/2021-10-01-arab-transplant-bibliometric/
+redirect_from:
+  - /publication/2021-10-01-arab-transplant-bibliometric.html
+  - /publication/2021-10-01-arab-transplant-bibliometric/
 excerpt: "Bibliometric analysis evaluating the volume, trends, and global contribution of transplant-related research output from the Arab world between 2005 and 2019."
 date: 2021-10-01
 venue: "<strong>Transplant Immunology</strong>"

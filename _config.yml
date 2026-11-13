@@ -154,13 +154,12 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter "MarcMachaalani"
 facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  "Logo.jpeg"
-og_description           :  "Portfolio and research publications of Marc Machaalani, MD."
+og_image                 : "/images/marc-machaalani-social.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:

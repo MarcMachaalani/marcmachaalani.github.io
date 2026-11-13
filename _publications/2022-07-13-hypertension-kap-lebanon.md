@@ -2,8 +2,10 @@
 title: "Knowledge, Attitude, and Practice Toward Hypertension Among Hypertensive Patients Residing in Lebanon"
 collection: publications
 category: manuscripts
-permalink: /publication/2022-07-13-hypertension-kap-lebanon/
-redirect_from: /publication/2022-07-13-hypertension-kap-lebanon.html
+permalink: /publications/2022-07-13-hypertension-kap-lebanon/
+redirect_from:
+  - /publication/2022-07-13-hypertension-kap-lebanon.html
+  - /publication/2022-07-13-hypertension-kap-lebanon/
 excerpt: "Cross-sectional study evaluating hypertension knowledge, attitudes, and clinical practices among hypertensive patients in Lebanon."
 date: 2022-07-13
 venue: "<strong>Vascular Health and Risk Management</strong>"

@@ -4,6 +4,7 @@ permalink: /awards/
 layout: catalog
 folio: "03"
 intro: "Research honors and recognition."
+description: "View Marc Machaalani’s academic honors and awards in medicine and cancer research."
 ---
 
 <ol class="award-list">

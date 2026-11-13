@@ -4,6 +4,7 @@ title: "Privacy"
 permalink: /privacy/
 intro: "A small site, with minimal data collection."
 section_label: "About this site"
+description: "Read how Marc Machaalani’s personal website handles visitor information and contact form submissions."
 ---
 
 {% if site.data.services.analytics_enabled %}

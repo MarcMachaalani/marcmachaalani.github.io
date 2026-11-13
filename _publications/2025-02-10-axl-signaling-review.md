@@ -2,8 +2,10 @@
 title: "AXL signaling in cancer: from molecular insights to targeted therapies"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-02-10-axl-signaling-review/
-redirect_from: /publication/2025-02-10-axl-signaling-review.html
+permalink: /publications/2025-02-10-axl-signaling-review/
+redirect_from:
+  - /publication/2025-02-10-axl-signaling-review.html
+  - /publication/2025-02-10-axl-signaling-review/
 excerpt: "Comprehensive review of AXL receptor tyrosine kinase signaling, therapeutic targeting strategies, and resistance mechanisms across cancer types."
 date: 2025-02-10
 venue: "<strong>Signal Transduction and Targeted Therapy</strong>"

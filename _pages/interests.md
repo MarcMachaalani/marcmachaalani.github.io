@@ -2,6 +2,7 @@
 layout: default
 title: "Beyond medicine"
 permalink: /interests/
+description: "Learn about Marc Machaalani’s interests beyond medicine, including his training in classical piano."
 ---
 
 <main id="main" class="interests-page" markdown="1">

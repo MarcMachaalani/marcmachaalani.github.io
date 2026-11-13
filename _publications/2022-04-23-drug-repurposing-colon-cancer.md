@@ -2,8 +2,10 @@
 title: "Overcoming Therapy Resistance in Colon Cancer by Drug Repurposing"
 collection: publications
 category: manuscripts
-permalink: /publication/2022-04-23-drug-repurposing-colon-cancer/
-redirect_from: /publication/2022-04-23-drug-repurposing-colon-cancer.html
+permalink: /publications/2022-04-23-drug-repurposing-colon-cancer/
+redirect_from:
+  - /publication/2022-04-23-drug-repurposing-colon-cancer.html
+  - /publication/2022-04-23-drug-repurposing-colon-cancer/
 excerpt: "Comprehensive review of repurposed pharmacologic agents as strategies to overcome therapeutic resistance in colorectal cancer."
 date: 2022-04-23
 venue: "<strong>Cancers</strong>"

@@ -2,8 +2,10 @@
 title: "MLH1 mismatch repair deficiency predicts exceptional response to immune checkpoint inhibition in clear-cell renal cell carcinoma"
 collection: publications
 category: manuscripts
-permalink: /publication/2025-11-04-mlh1-mmr-ici-ccrcc/
-redirect_from: /publication/2025-11-04-mlh1-mmr-ici-ccrcc.html
+permalink: /publications/2025-11-04-mlh1-mmr-ici-ccrcc/
+redirect_from:
+  - /publication/2025-11-04-mlh1-mmr-ici-ccrcc.html
+  - /publication/2025-11-04-mlh1-mmr-ici-ccrcc/
 excerpt: "Genomic and immunohistochemical analysis identifying somatic MLH1 deficiency as a rare but robust predictor of exceptional response to immune checkpoint inhibition in clear-cell renal cell carcinoma."
 date: 2025-11-04
 venue: "<strong>European Urology</strong>"
