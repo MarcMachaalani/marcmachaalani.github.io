@@ -5,7 +5,7 @@
     follow.setAttribute('aria-expanded', String(!expanded));
   });
 
-  const masthead = document.querySelector('.masthead');
+  const masthead = document.querySelector('.journal-head');
   if (masthead && 'ResizeObserver' in window) {
     const updateScrollOffset = () => {
       const height = masthead.getBoundingClientRect().height;
