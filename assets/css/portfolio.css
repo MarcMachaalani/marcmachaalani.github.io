@@ -99,6 +99,10 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 .work-detail__back { display: inline-block; margin-block: 2rem; }
 .journal img { max-width: 100%; }
 .journal .page__footer, .legacy .page__footer { background: var(--wash); color: var(--ink); margin-top: 3rem; }
+body.legacy { box-sizing: border-box; display: flex; flex-direction: column; min-height: 100dvh; }
+.legacy > #main { flex: 1 0 auto; width: 100%; }
+.legacy .page__footer { position: static; float: none; }
+.author__urls-wrapper button[aria-expanded="true"] + .author__urls { display: block; }
 .colophon { padding-block: 2.5rem; font-size: .85rem; }
 .colophon strong { font-size: 1.3rem; }
 .colophon nav { justify-content: flex-end; }
@@ -151,7 +155,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 
 /* A shared rhythm for the public folio. */
 :root { --radius: .45rem; --ease: cubic-bezier(.2,.7,.25,1); --shadow: 0 10px 30px color-mix(in srgb, var(--ink) 7%, transparent); }
-html { scroll-behavior: smooth; scroll-padding-top: 8rem; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--masthead-height, 8rem); }
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 ::selection { background: var(--accent); color: var(--paper); }
 .journal { line-height: 1.75; }
