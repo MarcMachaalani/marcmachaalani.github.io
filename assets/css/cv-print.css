@@ -1,52 +1,130 @@
-/* CV page. Screen uses the journal styles; print is a US Letter curriculum vitae. */
-.cv-page #main { width: min(820px, 90%); margin: 0 auto 3rem; }
+@font-face {
+  font-family: "CV Sans";
+  font-style: normal;
+  font-weight: 200 900;
+  src: url(../fonts/cv-sourcesans3.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'CV Serif';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-italic-greek.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'CV Serif';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'CV Serif';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'CV Serif';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-normal-greek.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'CV Serif';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-normal-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'CV Serif';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(../fonts/cv-sourceserif4-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.cv-page #main {
+  width: min(820px, 90%);
+  margin: 0 auto 3rem;
+  font: 1rem/1.55 "CV Serif", serif;
+}
+
+.cv-page .cv h1, .cv-page .cv h2, .cv-page .cv h3,
+.cv-meta, .cv-actions {
+  font-family: "CV Sans", sans-serif;
+  letter-spacing: normal;
+}
+
 .cv-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
-.cv-head h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 0.15em 0 0.35em; }
-.cv-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin: 0; }
-.cv-links a { text-decoration: none; }
-.cv-updated { color: var(--muted); margin: 0.8rem 0 0; }
-.cv-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.1rem 0 0; }
+.cv-page .cv-head h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 700; margin: 0; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 0; }
 .cv-actions button { font: inherit; cursor: pointer; }
-.cv-section { margin-top: 2.4rem; }
-.cv-section h2 { font-size: 1.35rem; margin: 0 0 0.4rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule); }
-.cv-entry { padding: 0.85rem 0 0.2rem; break-inside: avoid; page-break-inside: avoid; }
-.cv-entry__top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.cv-entry h3 { margin: 0; font-size: 1.05rem; }
-.cv-entry p { margin: 0.15rem 0 0; }
-.cv-meta { color: var(--muted); text-align: right; white-space: nowrap; }
-.cv-detail { color: var(--muted); }
-.cv-entry ul, .cv-languages { margin: 0.35rem 0 0; padding-left: 1.15rem; }
-.cv-entry li + li { margin-top: 0.2rem; }
-.cv-numbered { margin: 0.4rem 0 0; padding-left: 1.35rem; }
-.cv-numbered li { margin: 0.55rem 0; break-inside: avoid; page-break-inside: avoid; }
+.cv-section { margin-top: 2rem; }
+.cv-page .cv-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.cv-entry { padding: 0.6rem 0 0.15rem; }
+.cv-entry__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 1rem; }
+.cv-page .cv-entry h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+.cv-entry p { margin: 0.15em 0 0; }
+.cv-meta { color: var(--muted); font-size: 0.875em; }
+.cv-entry ul, .cv-languages { margin: 0.25em 0 0; padding-left: 1.2em; }
+.cv-entry li + li { margin-top: 0.15em; }
+.cv-numbered { margin: 0.4em 0 0; padding-left: 1.6em; }
+.cv-numbered li { margin: 0.45em 0; }
 .cv-numbered a { overflow-wrap: anywhere; }
 
+@page {
+  size: letter;
+  margin: 0.7in;
+  @bottom-center {
+    font: 8pt "CV Sans", sans-serif;
+    color: #000;
+    content: counter(page) " / " counter(pages);
+  }
+}
+
 @media print {
-  .journal-head, .page__footer, .cv-actions, .skip, .appearance, .notice { display: none !important; }
-  html, body, .cv-page, .cv-page #main {
+  .cv-page .journal-head, .cv-page .page__footer, .cv-page .cv-actions,
+  .cv-page .skip, .cv-page .appearance, .cv-page .notice { display: none !important; }
+  html, body.cv-page, .cv-page #main {
     background: #fff !important;
     color: #000 !important;
     width: auto !important;
     max-width: none !important;
     margin: 0 !important;
   }
-  .cv-page {
-    font-family: "DejaVu Serif", "Liberation Serif", "Times New Roman", serif;
-    font-size: 9.5pt;
-    line-height: 1.32;
+  .cv-page #main {
+    --rule: #777;
+    font-size: 10pt;
+    line-height: 1.35;
+    widows: 3;
+    orphans: 3;
   }
+  .cv-page .cv *, .cv-page .cv a:visited { color: #000 !important; }
   .cv-head { padding-top: 0; }
-  .cv-head h1 { font-size: 16pt; }
-  .cv-links, .cv-updated, .cv-detail, .cv-meta, .cv-entry p, .cv-entry li { color: #000 !important; }
-  .cv-section { margin-top: 11pt; }
-  .cv-section h2 {
-    font-size: 11pt;
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-  .cv-entry { padding-top: 4pt; }
-  .cv-entry h3 { font-size: 10pt; }
-  .cv-numbered li { margin: 3pt 0; font-size: 9pt; line-height: 1.28; }
-  a, a:visited { color: #000 !important; text-decoration: underline; }
-  h2, h3 { widows: 3; orphans: 3; }
+  .cv-page .cv-head h1 { font-size: 19pt; }
+  .cv-section { margin-top: 12pt; }
+  .cv-page .cv-section h2 { font-size: 11pt; padding-bottom: 3pt; }
+  .cv-page .cv-entry h3 { font-size: 10pt; }
+  .cv-entry { padding: 4pt 0 0; }
+  .cv-meta { font-size: 9.5pt; }
+  .cv-numbered li { margin: 4pt 0; }
+  .cv-entry, .cv-numbered li, .cv-languages li { break-inside: avoid; }
+  .cv h1, .cv h2, .cv h3 { break-after: avoid; }
 }

@@ -7,44 +7,9 @@ redirect_from:
 author_profile: false
 description: "Curriculum vitae of Marc Machaalani, MD, internal medicine resident at Yale."
 ---
-{% assign newest = "0000-00-00" %}
-{% for post in site.publications %}
-  {% assign d = post.date | date: "%Y-%m-%d" %}
-  {% if d > newest %}{% assign newest = d %}{% endif %}
-{% endfor %}
-{% for post in site.talks %}
-  {% assign d = post.date | date: "%Y-%m-%d" %}
-  {% if d > newest %}{% assign newest = d %}{% endif %}
-{% endfor %}
-{% for award in site.data.awards %}
-  {% assign d = award.date | append: "" | strip %}
-  {% if d.size == 4 %}{% assign d = d | append: "-01-01" %}{% endif %}
-  {% if d.size == 7 %}{% assign d = d | append: "-01" %}{% endif %}
-  {% if d > newest %}{% assign newest = d %}{% endif %}
-{% endfor %}
-{% capture updated_label %}{% include cv-date.html date=newest form="short" %}{% endcapture %}
-<style>
-@page {
-  size: letter;
-  margin: 0.62in 0.68in 0.72in;
-  @bottom-center {
-    font-family: "DejaVu Sans", "Liberation Sans", sans-serif;
-    font-size: 8pt;
-    color: #000;
-    content: "Marc Machaalani, MD · Page " counter(page) " of " counter(pages) " · Updated {{ updated_label | strip }}";
-  }
-}
-</style>
 
 <header class="cv-head">
   <h1>Marc Machaalani, MD</h1>
-  <p class="cv-links">
-    <a href="{{ '/' | absolute_url }}">marcmachaalani.com</a>
-    <a href="{{ '/contact/' | absolute_url }}">marcmachaalani.com/contact</a>
-    <a href="{{ site.author.orcid }}">{{ site.author.orcid | remove: 'https://' | remove: 'http://' }}</a>
-    <a href="{{ site.author.googlescholar }}">Google Scholar</a>
-  </p>
-  <p class="cv-updated">Updated {{ updated_label | strip }}</p>
   <p class="cv-actions">
     <a class="portfolio-button portfolio-button--primary" href="{{ '/assets/cv.pdf' | relative_url }}">Download PDF</a>
     <button type="button" class="portfolio-button" onclick="window.print()">Print</button>
@@ -102,6 +67,7 @@ description: "Curriculum vitae of Marc Machaalani, MD, internal medicine residen
   <h2 id="cv-papers">Published Papers</h2>
   <ol class="cv-numbered">
     {% for post in site.publications reversed %}
+    {% if post.cv == false %}{% continue %}{% endif %}
     <li>
       {{ post.citation }}
       {% assign cite = post.citation | downcase %}
