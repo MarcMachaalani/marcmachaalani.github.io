@@ -43,7 +43,9 @@
       if (!document.querySelector('[data-publication-abstract]')) {
         set(document, '.work-detail__body', inline.excerpt ? '<p>' + inline.excerpt + '</p>' : page.html);
       }
-      const metadata = document.querySelector('.work-detail__metadata'); if (metadata) { const spans = metadata.querySelectorAll('span'), location = path.startsWith('_talks/') && spans.length > 2 ? spans[2].cloneNode(true) : null; metadata.replaceChildren(); for (const text of [fields.venue,fields.date?.slice(0,4)]) if (text) { const span = document.createElement('span'); span.textContent = text; metadata.append(span); } if (location) metadata.append(location); }
+      const metadata = document.querySelector('.work-detail__metadata'); if (metadata && path.startsWith('_publications/')) {
+        metadata.textContent = [fields.venue && 'Published in ' + fields.venue, fields.date?.slice(0,4)].filter(Boolean).join(', ');
+      } else if (metadata) { const spans = metadata.querySelectorAll('span'), location = path.startsWith('_talks/') && spans.length > 2 ? spans[2].cloneNode(true) : null; metadata.replaceChildren(); for (const text of [fields.venue,fields.date?.slice(0,4)]) if (text) { const span = document.createElement('span'); span.textContent = text; metadata.append(span); } if (location) metadata.append(location); }
       const detail = document.querySelector('.work-detail'); citation(detail,inline.citation,true); links(detail,fields);
     } else if (path.startsWith('_media/')) { set(document,'.page__title',inline.title); set(document,'.page__content',page.html); }
     if (path.startsWith('_pages/') && !['_pages/about.md','_pages/interests.md'].includes(path)) { set(document,'.catalog-title h1',inline.title); set(document,'.catalog-title > p:last-child',inline.intro); }
@@ -65,7 +67,7 @@
         if (node.classList.contains('media-card')) { const action = node.querySelector('.media-card__action'); if (action && record.fields.paperurl) action.href = record.fields.paperurl; else if (action) action.remove(); }
         const presented = node.querySelector('.presentation-meta'); if (presented && record.fields.venue) presented.textContent = 'Presented at ' + record.fields.venue;
         const time = node.querySelector('time'); if (time && record.fields.date) { time.dateTime = record.fields.date; time.textContent = new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(record.fields.date)); }
-        const venue = node.querySelector('.publication-venue'); if (venue) venue.textContent = [record.fields.venue,record.fields.date?.slice(0,4)].filter(Boolean).join(', ');
+        const venue = node.querySelector('.publication-venue'); if (venue) venue.textContent = [record.fields.venue && 'Published in ' + record.fields.venue,record.fields.date?.slice(0,4)].filter(Boolean).join(', ');
         if (node.hasAttribute('data-publication')) { node.dataset.year = record.fields.date?.slice(0,4) || ''; node.dataset.articleType = record.fields.article_type || 'Journal Article'; node.dataset.topics = JSON.stringify((record.fields.topics || '').split(',').map(value => value.trim()).filter(Boolean)); }
         citation(node,record.inline.citation); links(node,record.fields);
       }
