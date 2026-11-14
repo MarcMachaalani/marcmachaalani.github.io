@@ -53,8 +53,14 @@ layout: default
           </details>
         {% endif %}
         <nav class="work-detail__resources publication-links" aria-label="Related links">
-          {% if page.paperurl %}<a href="{{ page.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">{% if page.collection == "publications" %}<i class="fas fa-file-pdf" aria-hidden="true"></i> Paper{% else %}Link{% endif %}</a>{% endif %}
+          {% if page.paperurl %}<a href="{{ page.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">{% if page.collection == "publications" %}DOI{% else %}Link{% endif %}</a>{% endif %}
           {% if page.pubmed %}<a href="{{ page.pubmed }}" class="pub-link pub-link-pubmed" target="_blank" rel="noopener"><i class="fas fa-notes-medical" aria-hidden="true"></i> PubMed</a>{% endif %}
+          {% if page.pdfurl %}
+            {% assign pdf_prefix = page.pdfurl | slice: 0, 1 %}
+            <a href="{% if pdf_prefix == "/" %}{{ page.pdfurl | relative_url | escape }}{% else %}{{ page.pdfurl | escape }}{% endif %}" class="pub-link pub-link-pdf"{% if pdf_prefix == "/" %} download{% else %} target="_blank" rel="noopener"{% endif %}>
+              <i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF
+            </a>
+          {% endif %}
           {% if page.slidesurl %}<a href="{{ page.slidesurl }}" class="pub-link pub-link-slides" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint" aria-hidden="true"></i> Slides</a>{% endif %}
           {% if page.video %}<a href="{{ page.video }}" class="pub-link pub-link-video" target="_blank" rel="noopener"><i class="fas fa-video" aria-hidden="true"></i> Video</a>{% endif %}
           {% if page.code %}<a href="{{ page.code }}" class="pub-link pub-link-code" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Code</a>{% endif %}
