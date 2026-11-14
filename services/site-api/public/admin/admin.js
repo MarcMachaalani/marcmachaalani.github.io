@@ -4,7 +4,7 @@
   let csrf, files = [], assets = [], current, media, dirty = false, saving = false, savedSnapshot = '', loading = 0, uploading = false;
   let pendingPdf = null;
   const labels = { title:'Title', date:'Publication date', excerpt:'Summary', venue:'Journal or venue', article_type:'Article type', topics:'Topics (separate with commas)', paperurl:'Publisher or DOI link', pubmed:'PubMed link', citation:'Citation', intro:'Page introduction' };
-  const pageNames = { 'about.md':'Home page', 'interests.md':'Beyond medicine', 'awards.md':'Honors & awards', 'publications.html':'Publications page', 'talks.html':'Presentations page', 'media.html':'Media page', 'contact.html':'Contact page' };
+  const pageNames = { 'about.md':'Home page', 'interests.md':'Beyond medicine', 'awards.md':'Honors & awards', 'publications.html':'Publications page', 'talks.html':'Presentations page', 'media.html':'Press page', 'contact.html':'Contact page' };
   const status = message => { $('#status').textContent = message; };
   const bytesLabel = size => size < 1024 * 1024 ? `${Math.max(1, Math.round(size / 1024))} KB` : `${(size / 1024 / 1024).toFixed(1)} MB`;
   function element(tag, className, text) { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; }
