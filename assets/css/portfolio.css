@@ -278,3 +278,37 @@ html[data-theme="dark"] .publication-filters select { background-image: url("dat
 .interests-photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 .interests-photo--chess img { aspect-ratio: 1; object-fit: cover; object-position: center 68%; }
 .interests-photo figcaption { margin-top: .5rem; color: var(--muted); font-size: .85rem; }
+
+/* The abstracts toggle is a checkbox, not a text field. */
+.publication-filters label.publication-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .55rem;
+  grid-column: 1 / -1;
+  justify-self: start;
+  width: max-content;
+  max-width: 100%;
+  margin: .15rem 0 0;
+  color: var(--ink);
+  font-size: .95rem;
+  font-weight: 450;
+}
+.publication-filters label.publication-toggle input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  min-height: 0;
+  max-height: 1rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: .15rem;
+  background: transparent;
+  box-shadow: none;
+  accent-color: var(--accent);
+  flex: 0 0 1rem;
+}
