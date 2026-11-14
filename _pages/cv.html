@@ -69,10 +69,27 @@ description: "Curriculum vitae of Marc Machaalani, MD, internal medicine residen
     {% for post in site.publications reversed %}
     {% if post.cv == false %}{% continue %}{% endif %}
     <li>
-      {{ post.citation }}
-      {% assign cite = post.citation | downcase %}
-      {% if post.pmid %}{% unless post.citation contains post.pmid %} PMID: {{ post.pmid }}.{% endunless %}{% endif %}
-      {% if post.paperurl contains "doi.org/" %}{% unless cite contains "doi" %} {% assign doi = post.paperurl | split: "doi.org/" | last %}doi: {{ doi }}.{% endunless %}{% endif %}
+      {% assign citation = post.citation %}
+      {% if post.paperurl contains "doi.org/" %}
+        {% assign doi = post.paperurl | split: "doi.org/" | last %}
+        {% capture doi_link %}<a href="{{ post.paperurl | escape }}">{{ doi | escape }}</a>{% endcapture %}
+        {% if citation contains doi %}
+          {% assign citation = citation | replace_first: doi, doi_link %}
+        {% else %}
+          {% assign citation = citation | append: " doi: " | append: doi_link | append: "." %}
+        {% endif %}
+      {% endif %}
+      {% if post.pubmed and post.pmid %}
+        {% capture pmid_link %}<a href="{{ post.pubmed | escape }}">{{ post.pmid | escape }}</a>{% endcapture %}
+        {% assign pmid_label = post.pmid | prepend: "PMID: " %}
+        {% assign linked_pmid_label = pmid_link | prepend: "PMID: " %}
+        {% if citation contains pmid_label %}
+          {% assign citation = citation | replace_first: pmid_label, linked_pmid_label %}
+        {% else %}
+          {% assign citation = citation | append: " " | append: linked_pmid_label | append: "." %}
+        {% endif %}
+      {% endif %}
+      {{ citation }}
     </li>
     {% endfor %}
   </ol>
