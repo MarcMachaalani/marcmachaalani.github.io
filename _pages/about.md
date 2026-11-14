@@ -38,23 +38,23 @@ description: "Marc Machaalani, MD, is an internal medicine resident at Yale. His
   <div class="research-grid">
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publications/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
-      <p>Plasma profiling identifies metabolic signals associated with immunotherapy outcomes across cancer types.</p>
+      <h3><a href="/publications/2026-01-07-nature-medicine-smadcam1-mrcc/">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
+      <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
+    </article>
+    <article class="research-card">
+      <p class="research-card__meta">Nature Reviews Clinical Oncology · 2026</p>
+      <h3><a href="/publications/2026-04-28-nrco-hif2/">The clinical landscape of HIF2α inhibitors in oncology</a></h3>
+      <p>A review of how HIF2α inhibitors became a treatment for kidney cancer and where they may have a role in other cancers.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2026</p>
-      <h3><a href="/publications/2026-01-07-nature-medicine-smadcam1-mrcc/">Soluble MAdCAM-1 as a biomarker in metastatic renal cell carcinoma</a></h3>
-      <p>A multi-cohort study connecting a circulating biomarker with clinical outcomes, gut microbiota, and immune regulation.</p>
+      <h3><a href="/publications/2026-06-25-nat-med-histidine/">Metabolic determinants of cancer immunotherapy outcomes</a></h3>
+      <p>Plasma profiling identifies metabolic signals associated with immunotherapy outcomes across cancer types.</p>
     </article>
     <article class="research-card">
       <p class="research-card__meta">Nature Medicine · 2025</p>
       <h3><a href="/publications/2025-11-28-hif2-cachexia-rcc/">Targeting of HIF2-driven cachexia in kidney cancer</a></h3>
       <p>This study examines how HIF2 signaling contributes to weight loss and high calcium levels in clear cell kidney cancer.</p>
-    </article>
-    <article class="research-card">
-      <p class="research-card__meta">Journal of Clinical Oncology · 2025</p>
-      <h3><a href="/publications/2025-08-10-chromophobe-rcc-antitumor-immunity/">Antitumor immunity in chromophobe renal cell carcinoma</a></h3>
-      <p>Integrated single-cell and immunogenomic analyses characterize the tumor microenvironment in chromophobe kidney cancer.</p>
     </article>
   </div>
 </section>
