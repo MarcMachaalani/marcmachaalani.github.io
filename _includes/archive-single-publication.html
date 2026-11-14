@@ -94,7 +94,8 @@
       {% endif %}
 
       {% if post.pdfurl %}
-        <a href="{{ post.pdfurl | escape }}" class="pub-link pub-link-pdf" target="_blank" rel="noopener">
+        {% assign pdf_prefix = post.pdfurl | slice: 0, 1 %}
+        <a href="{% if pdf_prefix == "/" %}{{ post.pdfurl | relative_url | escape }}{% else %}{{ post.pdfurl | escape }}{% endif %}" class="pub-link pub-link-pdf"{% if pdf_prefix == "/" %} download{% else %} target="_blank" rel="noopener"{% endif %}>
           <i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF
         </a>
       {% endif %}

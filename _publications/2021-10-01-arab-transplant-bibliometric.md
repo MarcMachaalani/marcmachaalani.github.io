@@ -21,6 +21,7 @@ venue: "<strong>Transplant Immunology</strong>"
 paperurl: "https://doi.org/10.1016/j.trim.2021.101432"
 citation: "El Ayoubi LM, El Masri J, <strong>Machaalani M</strong>, El Hage S, Salameh P. Contribution of Arab World in Transplant Research: A PubMed-Based Bibliometric Analysis. <i>Transpl Immunol</i>. 2021;68:101432. doi:10.1016/j.trim.2021.101432."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/34186171/"
+pdfurl: "/files/publications/2021-10-01-arab-transplant-bibliometric.pdf"
 pmid: "34186171"
 article_type: "Journal Article"
 topics: ["Public health"]

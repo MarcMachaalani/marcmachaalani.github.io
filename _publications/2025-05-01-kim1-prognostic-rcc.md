@@ -14,6 +14,7 @@ venue: "<strong>European Urology Focus</strong>"
 paperurl: "https://doi.org/10.1016/j.euf.2025.06.012"
 citation: "Steiner C†, <strong>Machaalani M</strong>†, Bonventre JV, McDermott DF, Choueiri TK, Xu W. KIM-1 as a prognostic marker in renal cell carcinoma. <i>Eur Urol Focus</i>. 2025;11(3):432-435. doi:10.1016/j.euf.2025.06.012. †Equal contribution."
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/40619332/"
+pdfurl: "/files/publications/2025-05-01-kim1-prognostic-rcc.pdf"
 pmid: "40619332"
 article_type: "Journal Article"
 topics: ["Renal cell carcinoma", "Biomarkers"]

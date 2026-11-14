@@ -56,7 +56,8 @@ layout: default
           {% if page.paperurl %}<a href="{{ page.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">{% if page.collection == "publications" %}DOI{% else %}Link{% endif %}</a>{% endif %}
           {% if page.pubmed %}<a href="{{ page.pubmed }}" class="pub-link pub-link-pubmed" target="_blank" rel="noopener"><i class="fas fa-notes-medical" aria-hidden="true"></i> PubMed</a>{% endif %}
           {% if page.pdfurl %}
-            <a href="{{ page.pdfurl | escape }}" class="pub-link pub-link-pdf" target="_blank" rel="noopener">
+            {% assign pdf_prefix = page.pdfurl | slice: 0, 1 %}
+            <a href="{% if pdf_prefix == "/" %}{{ page.pdfurl | relative_url | escape }}{% else %}{{ page.pdfurl | escape }}{% endif %}" class="pub-link pub-link-pdf"{% if pdf_prefix == "/" %} download{% else %} target="_blank" rel="noopener"{% endif %}>
               <i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF
             </a>
           {% endif %}
