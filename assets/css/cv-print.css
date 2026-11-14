@@ -150,6 +150,7 @@
   }
   [aria-labelledby="cv-awards"] .cv-entry + .cv-entry,
   [aria-labelledby="cv-leadership"] .cv-entry + .cv-entry { margin-top: 4pt; }
+  [aria-labelledby="cv-education"] .cv-entry { --cv-meta-column: 10em; }
   .cv-meta { font-size: 9.5pt; }
   .cv-numbered li { margin: 4pt 0; }
   .cv-entry, .cv-numbered li, .cv-languages li { break-inside: avoid; }
