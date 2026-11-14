@@ -14,5 +14,7 @@ paperurl: "https://doi.org/10.1200/jco.2025.43.16_suppl.12125"
 citation: |-
   Yekedüz E, Saad E, <strong>Machaalani M</strong>, Şímșek B, Steiner C, Semaan K, Abdelnaser A, Eid M, Shavakhi M, Nawfal R, Chehade REH, Saliby RM, Khatoun WD, Saleh M, Tarantino P, McGregor BA, B JB, Tolaney SM, Gusev A, Choueiri TK. Germline determinants of pneumonitis in patients with cancer treated with antibody drug conjugates <i>Journal of Clinical Oncology</i>. 2025. doi:10.1200/jco.2025.43.16_suppl.12125.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Cancer genomics"
+  - "Clinical outcomes"
 ---

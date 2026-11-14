@@ -14,5 +14,6 @@ paperurl: "https://doi.org/10.1200/jco.2024.42.16_suppl.9000"
 citation: |-
   Roy AM, Bakouny Z, Dizman N, Özay Zİ, Lal BM, Nawfal R, Eid M, Chehade REH, <strong>Machaalani M</strong>, Butt A, Aggarwal C, Bekaii‐Saab T, Chávez‐MacGregor M, Jr GDLL, Marshall AL, Murphy MC, Owonikoko TK, Lee AI, Choueiri TK. International medical graduates (IMG) representation at international oncology conference meetings <i>Journal of Clinical Oncology</i>. 2024. doi:10.1200/jco.2024.42.16_suppl.9000.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Public health"
 ---

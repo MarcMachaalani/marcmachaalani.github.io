@@ -16,4 +16,5 @@ citation: |-
 article_type: "Abstract"
 topics:
   - "Bladder cancer"
+  - "Clinical outcomes"
 ---

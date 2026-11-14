@@ -13,4 +13,6 @@ citation: |-
 article_type: "Abstract"
 topics:
   - "Renal cell carcinoma"
+  - "Targeted therapies"
+  - "Biomarkers"
 ---

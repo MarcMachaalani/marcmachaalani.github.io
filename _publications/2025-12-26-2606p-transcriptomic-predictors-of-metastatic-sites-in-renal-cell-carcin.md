@@ -13,4 +13,6 @@ citation: |-
 article_type: "Abstract"
 topics:
   - "Renal cell carcinoma"
+  - "Cancer genomics"
+  - "Immunotherapy"
 ---

@@ -62,6 +62,12 @@ class ScholarTests(unittest.TestCase):
         self.assertIn("often appear after checkpoint therapy", content)
         self.assertNotIn("can cause toxicities", content.split("excerpt:")[1])
 
+    def test_topics_include_disease_site(self):
+        topics = scholar.topics_for("ERBB2 mutations and association with molecular phenotype in urothelial carcinoma")
+        self.assertIn("Bladder cancer", topics)
+        self.assertIn("Cancer genomics", topics)
+        self.assertIn("Prostate cancer", scholar.topics_for("neuroendocrine prostate cancer"))
+
     def test_blocked_page_and_duplicate_title(self):
         self.assertTrue(scholar.scholar_blocked("<html>unusual traffic recaptcha</html>"))
         self.assertFalse(scholar.scholar_blocked(LIST_HTML))

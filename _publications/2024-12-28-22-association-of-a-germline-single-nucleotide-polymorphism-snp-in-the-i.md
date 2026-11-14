@@ -14,5 +14,7 @@ paperurl: "https://doi.org/10.1093/oncolo/oyae181.003"
 citation: |-
   Saad E, Mehrabad EM, Labaki C, Saliby RM, Semaan K, Eid M, <strong>Machaalani M</strong>, Chehade REH, Nawfal R, Sun M, Sharon E, Shah PK, Vemula SV, Gupta SK, Braun DA, Van Allen EM, Gusev A, Choueiri TK. Association of a germline single nucleotide polymorphism (SNP) in the interleukin-7 (IL7) gene with immune-related adverse events (irAEs). <i>The Oncologist</i>. 2024. doi:10.1093/oncolo/oyae181.003.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Immunotherapy"
+  - "Cancer genomics"
 ---

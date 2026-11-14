@@ -29,7 +29,9 @@ LIST_URL = (
 )
 
 TOPIC_RULES = {
-    "Renal cell carcinoma": r"renal cell|kidney (?:cancer|neoplasms)|rcc|ccrcc|mrcc",
+    "Renal cell carcinoma": r"renal cell|kidney (?:cancer|neoplasms)|\brcc\b|ccrcc|mrcc",
+    "Bladder cancer": r"bladder|urothelial",
+    "Prostate cancer": r"prostate",
     "Immunotherapy": r"immunotherap|immune checkpoint|checkpoint inhib|nivolumab|ipilimumab|avelumab|pembrolizumab",
     "Biomarkers": r"biomarker|kim-1|madcam|liquid biopsy|prognostic",
     "Cancer genomics": r"genomic|mutation|germline|polygenic|nf2|tert|erbb2",
