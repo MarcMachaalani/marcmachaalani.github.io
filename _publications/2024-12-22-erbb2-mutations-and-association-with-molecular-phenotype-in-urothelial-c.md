@@ -14,5 +14,7 @@ paperurl: "https://doi.org/10.1200/jco.2024.42.16_suppl.4590"
 citation: |-
   <strong>Machaalani M</strong>, El Zarif T, Stockhammer P, Semaan K, Eid M, Chehade REH, Nawfal R, Yekedüz E, Nassar AH, Lee GM, Baca SC, Choueiri TK, Grant MJ, B JB. ERBB2 mutations and association with molecular phenotype in urothelial carcinoma <i>Journal of Clinical Oncology</i>. 2024. doi:10.1200/jco.2024.42.16_suppl.4590.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Bladder cancer"
+  - "Cancer genomics"
 ---

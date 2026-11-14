@@ -14,5 +14,6 @@ paperurl: "https://doi.org/10.1200/jco.2023.41.16_suppl.3122"
 citation: |-
   El Zarif T, <strong>Machaalani M</strong>, Nawfal R, Xie W, Choueiri TK, Pomerantz MM. Characterizing telomerase reverse transcriptase (TERT) promoter mutations (mut) across sex, race, and cancer types <i>Journal of Clinical Oncology</i>. 2023. doi:10.1200/jco.2023.41.16_suppl.3122.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Cancer genomics"
 ---

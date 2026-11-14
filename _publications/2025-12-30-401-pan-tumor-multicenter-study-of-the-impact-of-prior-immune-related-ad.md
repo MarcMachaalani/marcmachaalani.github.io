@@ -14,5 +14,7 @@ paperurl: "https://doi.org/10.1136/jitc-2025-sitc2025.0401"
 citation: |-
   <strong>Machaalani M</strong>, Nassar AH, Chehade REH, Alchoueiry M, Eid M, Salem S, Yekedüz E, Saliby RM, Jansen CS, Challa P, Wang X, Farhat EB, Issa W, Kawtharany H, Abu‐Sbeih H, Shah MK, Aijaz A, Pannu S, Tarantino P, Mittra A, Zhang J, Zhang T, Henske EP, Tolaney SM, Schellhorn SE, Choueiri TK, Naqash AR, Steiner C. Pan-tumor multicenter study of the impact of prior immune-related adverse events (irAEs) on safety and efficacy of subsequent antibody-drug conjugate (ADC). <i>Journal for ImmunoTherapy of Cancer</i>. 2025. doi:10.1136/jitc-2025-sitc2025.0401.
 article_type: "Abstract"
-topics: []
+topics:
+  - "Immunotherapy"
+  - "Clinical outcomes"
 ---

@@ -15,5 +15,6 @@ citation: |-
   Khatoun WD, El Masri J, Saad E, Eid M, <strong>Machaalani M</strong>, Saleh MJ, Nawfal R, Semaan K, Chehade REH, Steiner C, Yekedüz E, Ascione L, Labaki C, Saliby RM, El Zarif T, Signoretti S, McDermott DF, Van Allen EM, Choueiri TK. Landscape of genomic alterations in genes implicated in the regulation of hypoxia inducible factor (HIF) signaling: A pooled analysis of two pan-cancer cohorts <i>Journal of Clinical Oncology</i>. 2025. doi:10.1200/jco.2025.43.16_suppl.3143.
 article_type: "Abstract"
 topics:
-  - "Biomarkers"
+  - "Cancer genomics"
+  - "Targeted therapies"
 ---
