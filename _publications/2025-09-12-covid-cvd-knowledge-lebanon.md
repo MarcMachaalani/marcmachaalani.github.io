@@ -2,6 +2,7 @@
 title: "Perspectives on Knowledge, Precautionary Behaviors, and Psychological Status of Patients with Cardiovascular Diseases During the First Wave of the COVID-19 Pandemic in Lebanon: A Multicentric Cross-Sectional Study"
 collection: publications
 category: manuscripts
+cv: false
 permalink: /publications/2025-09-12-covid-cvd-knowledge-lebanon/
 excerpt: "Multicentric cross-sectional study of knowledge, precautionary behaviors, and psychological status among patients with cardiovascular diseases in Lebanon during the first COVID-19 wave."
 date: 2025-09-12
