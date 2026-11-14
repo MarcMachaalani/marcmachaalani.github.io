@@ -1,0 +1,18 @@
+---
+title: "Genomic and clinical correlates of belzutifan treatment in renal cell carcinoma (RCC): A retrospective analysis of 240 RCC patients."
+collection: publications
+category: abstracts
+permalink: /publications/2026-12-13-genomic-and-clinical-correlates-of-belzutifan-treatment-in-renal-cell-ca/
+cv: false
+excerpt: |-
+  528 Background: Belzutifan is a HIF-2α inhibitor approved for the treatment of advanced RCC, targeting the hypoxia signaling pathway central to tumor progression. While initial clinical trials demonstrated efficacy, predictive biomarkers remain undefined. Methods: Comprehensive DNA (592-gene panel or whole exome) and RNA (whole transcriptome) sequencing were performed on RCC samples via Caris Life Sciences. Patient samples with clear cell histology or VHL mutation in non-clear cell histology were considered for the study. Time-on-treatment (TOT) data for Belzutifan were extracted from insurance claims, and patients were stratified as responders or non-responders based on the median TOT. Results: In a cohort of 2,538 RCC patients, 240 patient samples were identified to have received Belzutifan (majority treated after biopsy) and were stratified into responders (n = 109) and non-responders (n = 131) based on median TOT (77 days; 95% CI: 62–84 days). No statistically significant differences were observed between the two groups across a range of clinical and demographic variables. Median age was 60 years in responders and 62 in non-responders. The proportion of metastatic biopsies was 61.1% in non-responders vs 58.7% in responders. Genomic profiling revealed high prevalence of VHL mutations in both groups (94.4% in responders vs. 92.8% in non-responders). Responders exhibited enrichment for alterations in the PI3K/AKT/mTOR pathway, including PIK3CA (12.4% vs. 3.3%), PIK3CB (6.7% vs. 1.9%), PIK3R1 (4.8% vs. 0.8%), and PTEN (13.2% vs. 9.8%). Mutations in DNA damage response genes were also more common in responders, particularly STAG2 (6.7% vs. 0%) and ATM (4.8% vs. 0.8%). In contrast, non-responders showed higher frequencies of BAP1 (17.7% vs. 12.2%), ARID1A (8.3% vs. 2.9%), NF2 (4.0% vs. 1.9%), and KDM5C (14.6% vs. 11.8%). None of these differences were statistically significant, and no single mutation was unique to either group, suggesting response may depend on combined or pathway-level alterations rather than individual genes. Transcriptomic analysis of HIF pathway genes revealed subtle numerical differences: slightly higher EPAS1 expression in responders (median: 7.73 vs. 7.54) and CA9 (4.82 vs. 4.46). Expression of other genes such as HIF1A, ARNT, ARNT2, and HIF3A showed minor variation between groups, with HIF1A and HIF3A slightly numerically higher in non-responders. Conclusions: Belzutifan response in RCC may relate to PI3K/AKT/mTOR and DNA damage response alterations, whereas resistance may involve chromatin remodeling mutations. Minimal clinical or demographic differences support broad trial inclusion, though subtle HIF-pathway and mutational patterns suggest molecular markers warranting prospective validation.
+date: 2026-12-13
+venue: "Journal of Clinical Oncology"
+paperurl: "https://doi.org/10.1200/jco.2026.44.7_suppl.528"
+citation: |-
+  Chen Y, Nazari S, Elliott A, Kulkarni N, Smith N, Nawfal R, Ascione L, <strong>Machaalani M</strong>, Barata PC, Rose BS, Bagrodia A, Agarwal N, Pal SK, Choueiri TK, McKay RR. Genomic and clinical correlates of belzutifan treatment in renal cell carcinoma (RCC): A retrospective analysis of 240 RCC patients. <i>Journal of Clinical Oncology</i>. 2026. doi:10.1200/jco.2026.44.7_suppl.528.
+article_type: "Abstract"
+topics:
+  - "Renal cell carcinoma"
+  - "Biomarkers"
+---

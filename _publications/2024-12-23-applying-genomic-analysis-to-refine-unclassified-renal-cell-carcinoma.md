@@ -1,0 +1,17 @@
+---
+title: "Applying genomic analysis to refine unclassified renal cell carcinoma."
+collection: publications
+category: abstracts
+permalink: /publications/2024-12-23-applying-genomic-analysis-to-refine-unclassified-renal-cell-carcinoma/
+cv: false
+excerpt: |-
+  4551 Background: Despite the improvements in genomic and pathological techniques to identify renal cell carcinoma (RCC), 2-6% of all patients with RCC cannot be classified into a particular subgroup, thus called “unclassified” RCC (uRCC). Ascertaining the genomic profile of those patients may help select proper treatment and find novel targets. Methods: The American Association for Cancer Research (AACR) Project Genomics Evidence Neoplasia Information Exchange (GENIE) database v15.0 was used to select patients with RCC by using the OncoTree codes. All included patients were divided into four groups based on the most frequent subtypes of RCC: clear cell RCC (ccRCC), papillary RCC (pRCC), chromophobe RCC (chRCC), and uRCC. The Cancer Genome Atlas (TCGA) was additionally used to assess corresponding oncogenic signaling pathways. We employed the chi-squared test to compare categorical variables and applied the Benjamini-Hochberg correction to calculate Q-values, thereby controlling the false discovery rate. Results: Overall, 1,990 tumor samples from 1,888 patients were evaluated. uRCC was observed in 184 patients (9.7%), whereas most had ccRCC (n=1339, 70.9%), followed by pRCC (n=224, 11.9%) and chRCC (n=141, 7.5%). Age distribution at sample sequencing was comparable between uRCC and other RCC subtypes (P>0.05). The proportion of female patients with uRCC was higher at 38.4%, compared to 26.5% in ccRCC (Q=0.002) and 16.3% in pRCC (Q<0.001), yet was comparable to chRCC at 48.6% (Q=0.210). The prevalence of uRCC was also greater among black patients, accounting for 8.6% vs. 2.1% in ccRCC (Q=0.001). Among patients with uRCC (n=224), the most common genomic alterations (GAs) were detected in NF2 (15.8%), SETD2(15.8%), TP53 (13.9%), TERT(13.4%), and VHL(11.8%). NF2 alterations were also more prevalent in patients with uRCC than in patients with ccRCC (1.8%, Q<0.001), chRCC (0.7%, Q<0.001), and pRCC (5.8%, Q=0.058). Notably, median overall survival (OS) was poorer in uRCC patients with altered NF2(n=29) than in those with unaltered NF2(n=155, 30.7 vs. 87.1 months, p=0.058). Of patients with uRCC, 135 (72.5%) samples were from primary tumors and 39 (20.9%) from metastatic sites, with no difference in GA frequencies between the two. CDKN2A and CDKN2B were the most frequent co-mutated genes in uRCC (Q<0.001), followed by VHL and BAP1 (Q<0.001), and SETD2 and PBRM1 (Q=0.023). GAs in uRCC were primarily observed in pathways related to TP53 (42.8%), cell cycle (33.3%), PI3K (23.5%), and HIPPO (7.7%). Conclusions: uRCC exhibited a unique genomic profile distinct from other common RCC subtypes. Notably, NF2alterations were frequent and correlated with a poorer prognosis. [Table: see text]
+date: 2024-12-23
+venue: "Journal of Clinical Oncology"
+paperurl: "https://doi.org/10.1200/jco.2024.42.16_suppl.4551"
+citation: |-
+  Yekedüz E, Braun DA, Chehade REH, Eid M, Labaki C, <strong>Machaalani M</strong>, Nassar AH, Nawfal R, Saad E, Saliby RM, Semaan K, Sun M, Hirsch MS, Ürün Y, El Zarif T, Choueiri TK. Applying genomic analysis to refine unclassified renal cell carcinoma. <i>Journal of Clinical Oncology</i>. 2024. doi:10.1200/jco.2024.42.16_suppl.4551.
+article_type: "Abstract"
+topics:
+  - "Renal cell carcinoma"
+---
