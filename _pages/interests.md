@@ -6,7 +6,6 @@ description: "Learn about Marc Machaalani’s interests beyond medicine, includi
 ---
 
 <header class="interests-heading"><p class="home-eyebrow">Away from the hospital</p><h1>Beyond medicine</h1></header>
-There is quite a bit more to life than medicine. 
 
 I studied piano at the Lebanese National Higher Conservatory of Music from 2006 to 2021, earning a Bachelor's Degree with High Distinction. You can find some of my music on my [YouTube channel](https://www.youtube.com/@MarcMachaalani).
 

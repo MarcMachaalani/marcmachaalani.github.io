@@ -272,7 +272,7 @@ html[data-theme="dark"] .publication-filters select { background-image: url("dat
 .home-links .portal-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
 @media (max-width:740px) { .home-links .portal-grid { grid-template-columns: 1fr; } }
 
-.interests-photo { margin: 1.25rem auto 2rem; max-width: 33rem; }
+.interests-photo { margin: 1.25rem auto 2rem; width: 85%; max-width: 18rem; }
 .interests-photo img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 .interests-photo--chess img { aspect-ratio: 1; object-fit: cover; object-position: center 68%; }
 .interests-photo figcaption { margin-top: .5rem; color: var(--muted); font-size: .85rem; }
