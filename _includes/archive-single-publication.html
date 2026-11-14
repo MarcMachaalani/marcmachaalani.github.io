@@ -83,7 +83,7 @@
     <div class="publication-links">
       {% if post.paperurl %}
         <a href="{{ post.paperurl }}" class="pub-link pub-link-paper" target="_blank" rel="noopener">
-          DOI
+          <i class="fas fa-link" aria-hidden="true"></i> DOI
         </a>
       {% endif %}
 
@@ -96,7 +96,7 @@
       {% if post.pdfurl %}
         {% assign pdf_prefix = post.pdfurl | slice: 0, 1 %}
         <a href="{% if pdf_prefix == "/" %}{{ post.pdfurl | relative_url | escape }}{% else %}{{ post.pdfurl | escape }}{% endif %}" class="pub-link pub-link-pdf"{% if pdf_prefix == "/" %} download{% else %} target="_blank" rel="noopener"{% endif %}>
-          <i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF
+          <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
         </a>
       {% endif %}
       {% if post.slidesurl %}
