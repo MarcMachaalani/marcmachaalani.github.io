@@ -1,0 +1,47 @@
+name: Check Google Scholar abstracts
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - scripts/import_scholar_abstracts.py
+      - .github/workflows/scholar-abstracts.yml
+  schedule:
+    - cron: '40 14 * * 1' # Mondays, 14:40 UTC, after the PubMed check
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: scholar-abstracts
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test importer
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Import missing abstracts
+        run: python scripts/import_scholar_abstracts.py --write
+      - name: Open or update abstract review
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.PUBMED_PR_TOKEN || github.token }}
+          branch: automation/scholar-abstracts
+          delete-branch: true
+          add-paths: _publications/*.md
+          commit-message: 'Import newly listed Google Scholar abstracts'
+          title: 'Review new Google Scholar abstracts'
+          body: |
+            Google Scholar listed meeting abstracts that are not already on the site.
+
+            Summaries are taken from the conclusion when Scholar provides one. Please confirm authorship, the journal, the year, and that each summary states the finding before merging. Journal articles are left to the PubMed importer. If Scholar blocks the request, this job changes nothing.
+          draft: false
