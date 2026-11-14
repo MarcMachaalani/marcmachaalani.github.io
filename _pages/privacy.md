@@ -8,17 +8,11 @@ description: "Read how Marc Machaalani’s personal website handles visitor info
 ---
 
 {% if site.data.services.analytics_enabled %}
-This site counts page views to understand which pages are useful. It stores only a page path, a UTC calendar date, and an aggregate count, retained for up to 90 days. It does not use analytics cookies, visitor IDs, fingerprinting, or cross-site tracking. Search terms, URL query strings, referring pages, and IP addresses are not stored in the analytics database. Counts measure page views, not unique people, and may include automated traffic. The script respects Do Not Track and Global Privacy Control.
+This site counts page views. It stores a page path, a UTC date, and a count, kept for up to 90 days. It does not use cookies or visitor IDs, and it does not store IP addresses, search terms, or referring pages. Counts are page views, not people. The script respects Do Not Track and Global Privacy Control.
 {% else %}
 Site usage analytics are currently disabled.
 {% endif %}
 
-When enabled, the contact form sends your name, email address, subject, and message to me by email through Cloudflare and Resend. These services process the message to deliver it and prevent abuse. Messages are not saved in this website's database or repository. Cloudflare Turnstile checks submissions for spam. Network addresses are processed transiently for delivery and rate limiting.
+The contact form sends your name, email address, subject, and message to me by email through Cloudflare and Resend. Messages are not saved on this website. Cloudflare Turnstile checks submissions for spam, and network addresses are used only briefly to deliver the message and limit abuse.
 
-GitHub Pages hosts the public site. GitHub, Cloudflare, and the email provider may process connection information and retain operational logs under their own policies. The application's analytics database contains no connection logs.
-
-The private editor uses a short-lived, secure sign-in cookie and GitHub authentication. Drafts are stored privately in Cloudflare D1. Only the version the owner publishes is returned to visitors. Content edits do not create GitHub commits or pull requests. GitHub Pages continues to host the site’s layout and a baseline copy of the content.
-
-Embedded videos and links to other websites have their own privacy practices. You may contact me about information you have sent through the [contact page](/contact/).
-
-The owner editor stores uploaded PDFs and photos privately. Paper PDFs have no public download route. Photos become public only when added to a published page. Uploads used only in an unpublished draft stay private.
+GitHub Pages hosts the site. GitHub and Cloudflare may keep their own connection logs. Embedded videos and links to other sites follow those sites’ practices. Questions about a message you sent can go through the [contact page](/contact/).
