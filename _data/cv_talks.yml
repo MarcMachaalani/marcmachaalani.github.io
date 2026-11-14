@@ -1,0 +1,28 @@
+# Author lines for the CV, keyed by talk filename without extension.
+# Set include: false to keep a talk on the site but off the CV.
+# Talks omitted here are still listed, without an author line.
+
+"2021-07-14-cvd-covid-lebanon-oral":
+  authors: "<strong>Machaalani M</strong>, Fakhry B, Farhat K, Alhaddad J, Rahmeh Y, Ghiya P, Awad DC, Zaiter A, Louka JG, Olaywan L, Halawi A, Cherry H, Ghazal M, Sahili M, Atallah B, Naja W, Chammas E, Asmar R, Yared N, Chahine MN"
+"2024-01-24-onclive-immune-signatures-oral":
+  authors: "<strong>Machaalani M</strong>, Saad E, Labaki C, Song L, Pan W, Saliby RM, Bakouny Z, Wall M, Semaan K, Eid M, Lee GSM, Braun DA, Liu XS, Choueiri TK"
+"2024-05-24-asco-erbb2-urothelial-poster":
+  authors: "<strong>Machaalani M</strong>, El Zarif T, Stockhammer P, Semaan K, Eid M, El Hajj Chehade R, Nawfal R, Yekeduz E, Nassar A, Lee GSM, Baca S, Choueiri TK, Grant MJ, Bellmunt J"
+"2024-07-11-kcrs-axl-cmet-poster":
+  authors: "<strong>Machaalani M</strong>, Sabarwal A, Rawat L, Balan M, Eid M, Saad E, Semaan K, Yang Y, Ascione J, Freedman M, Lee GS, Pal S, Choueiri TK"
+"2024-09-14-esmo-erbb2-amplifications-poster":
+  authors: "<strong>Machaalani M</strong>, Chehade REH, Nassar A, Zarif TE, Saad E, Yekeduz E, Saliby RM, Steiner C, Nawfal R, Semaan K, Eid M, Lee GSM, Pomerantz M, McKay RR, Tarantino P, Braun DA, Sun M, Tolaney SM, Choueiri TK"
+"2025-02-18-asco-gu-kim1-javelin-poster":
+  authors: "<strong>Machaalani M</strong>, Saliby RM, Zhong C, Saad E, Steiner C, Liu X, Cai T, Sun M, Lee GSM, Xie W, McDermott DF, Choueiri TK, Xu W"
+"2025-02-25-onclive-kim1-oral":
+  authors: "<strong>Machaalani M</strong>, Saliby RM, Zhong C, Saad E, Steiner C, Liu X, Cai T, Sun M, Lee GSM, Xie W, McDermott DF, Choueiri TK, Xu W"
+"2025-05-22-sitc-biomarkers-oral":
+  authors: "<strong>Machaalani M</strong> et al"
+"2025-05-28-asco-kim1-integrative-poster":
+  authors: "<strong>Machaalani M</strong>, Saliby RM, Saad E, Steiner C, Zhong C, Yekeduz E, Liu X, Eid M, El Hajj Chehade R, Ascione L, El Masri J, Saleh MJ, Cai T, Sun M, Lee GSM, Xie W, Signoretti S, McDermott DF, Choueiri TK, Xu W"
+"2025-07-18-kcrs-kim1-integrative-oral":
+  authors: "<strong>Machaalani M</strong>, Saliby RM, Zhong C, Saad E, Steiner C, Yekeduz E, Ascione L, Saleh M, El Masri J, Barrios P, Liu X, Cai T, Sun M, Lee GSM, Xie W, Signoretti S, McDermott D, Choueiri TK, Xu W"
+"2025-09-07-sitc-irae-adc-poster":
+  authors: "<strong>Marc Machaalani</strong>, Amin H. Nassar, Razane El Hajj Chehade, Clara Steiner, Michel Alchoueiry, Marc Eid, Samer Salem, Emre Yekedüz, Renee Maria Saliby, Caroline S Jansen, Pavan Challa, Xiao Wang, Elias Bou Farhat, Wadih Issa, Hassan Kawtharany, Hamzah Abu-Sbeih, Mitali Shah, Ayesha Aijaz, Sagal Pannu, Paolo Tarantino, Arjun Mittra, Jun Zhang, Tian Zhang, Elizabeth P Henske, Sara M Tolaney, Sarah E Schellhorn, Toni K Choueiri, Abdul Rafeh Naqash"
+"2025-10-17-madcam1-esmo-oral":
+  authors: "<strong>Machaalani M</strong>, Alves Costa Silva C, Saliby RM, Zhong C, Xie W, Pasolli E, Piccinno G, Dalban C, Fidelle M, Lee GSM, Birebent R, Saad E, Steiner C, Segata N, Thiery-Vuillemin A, Escudier B, Derosa L, Zitvogel L, Albiges L, Choueiri TK"

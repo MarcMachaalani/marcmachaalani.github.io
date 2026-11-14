@@ -1,0 +1,142 @@
+---
+layout: cv
+title: "CV"
+permalink: /cv/
+redirect_from:
+  - /resume
+author_profile: false
+description: "Curriculum vitae of Marc Machaalani, MD, internal medicine resident at Yale."
+---
+{% assign newest = "0000-00-00" %}
+{% for post in site.publications %}
+  {% assign d = post.date | date: "%Y-%m-%d" %}
+  {% if d > newest %}{% assign newest = d %}{% endif %}
+{% endfor %}
+{% for post in site.talks %}
+  {% assign d = post.date | date: "%Y-%m-%d" %}
+  {% if d > newest %}{% assign newest = d %}{% endif %}
+{% endfor %}
+{% for award in site.data.awards %}
+  {% assign d = award.date | append: "" | strip %}
+  {% if d.size == 4 %}{% assign d = d | append: "-01-01" %}{% endif %}
+  {% if d.size == 7 %}{% assign d = d | append: "-01" %}{% endif %}
+  {% if d > newest %}{% assign newest = d %}{% endif %}
+{% endfor %}
+{% capture updated_label %}{% include cv-date.html date=newest form="short" %}{% endcapture %}
+<style>
+@page {
+  size: letter;
+  margin: 0.62in 0.68in 0.72in;
+  @bottom-center {
+    font-family: "DejaVu Sans", "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    color: #000;
+    content: "Marc Machaalani, MD · Page " counter(page) " of " counter(pages) " · Updated {{ updated_label | strip }}";
+  }
+}
+</style>
+
+<header class="cv-head">
+  <h1>Marc Machaalani, MD</h1>
+  <p class="cv-links">
+    <a href="{{ '/' | absolute_url }}">marcmachaalani.com</a>
+    <a href="{{ '/contact/' | absolute_url }}">marcmachaalani.com/contact</a>
+    <a href="{{ site.author.orcid }}">{{ site.author.orcid | remove: 'https://' | remove: 'http://' }}</a>
+    <a href="{{ site.author.googlescholar }}">Google Scholar</a>
+  </p>
+  <p class="cv-updated">Updated {{ updated_label | strip }}</p>
+  <p class="cv-actions">
+    <a class="portfolio-button portfolio-button--primary" href="{{ '/assets/cv.pdf' | relative_url }}">Download PDF</a>
+    <button type="button" class="portfolio-button" onclick="window.print()">Print</button>
+  </p>
+</header>
+
+<section class="cv-section" aria-labelledby="cv-education">
+  <h2 id="cv-education">Education</h2>
+  {% for item in site.data.cv_content.education %}
+  <article class="cv-entry">
+    <div class="cv-entry__top"><h3>{{ item.institution }}</h3><p class="cv-meta">{{ item.location }}</p></div>
+    <div class="cv-entry__top"><p>{{ item.program }}</p><p class="cv-meta">{% include cv-range.html start=item.start end=item.end %}</p></div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="cv-section" aria-labelledby="cv-awards">
+  <h2 id="cv-awards">Honors and Awards</h2>
+  {% for award in site.data.awards %}
+  <article class="cv-entry">
+    <div class="cv-entry__top">
+      <h3>{{ award.title }}</h3>
+      <p class="cv-meta">{% include cv-date.html date=award.date form="short" %}</p>
+    </div>
+    <p class="cv-detail">{% if award.organization %}{{ award.organization }}{% if award.location %} · {{ award.location }}{% endif %}{% elsif award.location %}{{ award.location }}{% endif %}</p>
+    {% if award.note %}<p class="cv-detail">{{ award.note }}</p>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="cv-section" aria-labelledby="cv-research">
+  <h2 id="cv-research">Research Experience</h2>
+  {% for item in site.data.cv_content.research_experience %}
+  <article class="cv-entry">
+    <div class="cv-entry__top"><h3>{{ item.title }}</h3><p class="cv-meta">{% include cv-range.html start=item.start end=item.end %}</p></div>
+    <ul>
+      {% for bullet in item.bullets %}
+      <li>{% if bullet contains "https://" %}{% assign bits = bullet | split: "https://" %}{{ bits[0] }}<a href="https://{{ bits[1] }}">https://{{ bits[1] }}</a>{% else %}{{ bullet }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </article>
+  {% endfor %}
+  {% assign reviewing = site.data.cv_content.reviewing %}
+  <article class="cv-entry">
+    <div class="cv-entry__top"><h3>{{ reviewing.title }}</h3><p class="cv-meta">{% include cv-range.html start=reviewing.start end=reviewing.end %}</p></div>
+    <ul>
+      {% for bullet in reviewing.bullets %}
+      <li>{% if bullet contains "https://" %}{% assign bits = bullet | split: "https://" %}{{ bits[0] }}<a href="https://{{ bits[1] }}">https://{{ bits[1] }}</a>{% else %}{{ bullet }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </article>
+</section>
+
+<section class="cv-section" aria-labelledby="cv-papers">
+  <h2 id="cv-papers">Published Papers</h2>
+  <ol class="cv-numbered">
+    {% for post in site.publications reversed %}
+    <li>
+      {{ post.citation }}
+      {% assign cite = post.citation | downcase %}
+      {% if post.pmid %}{% unless post.citation contains post.pmid %} PMID: {{ post.pmid }}.{% endunless %}{% endif %}
+      {% if post.paperurl contains "doi.org/" %}{% unless cite contains "doi" %} {% assign doi = post.paperurl | split: "doi.org/" | last %}doi: {{ doi }}.{% endunless %}{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="cv-section" aria-labelledby="cv-orals">
+  <h2 id="cv-orals">Oral Presentations (First Author)</h2>
+  {% include cv-talks.html categories="orals invited" %}
+</section>
+
+<section class="cv-section" aria-labelledby="cv-posters">
+  <h2 id="cv-posters">Poster Presentations (First Author)</h2>
+  {% include cv-talks.html categories="posters" %}
+</section>
+
+<section class="cv-section" aria-labelledby="cv-leadership">
+  <h2 id="cv-leadership">Leadership and Extra-Curricular Activities</h2>
+  {% for item in site.data.cv_content.leadership %}
+  <article class="cv-entry">
+    <div class="cv-entry__top"><h3>{{ item.name }}</h3><p class="cv-meta">{% include cv-range.html start=item.start end=item.end %}</p></div>
+    <p class="cv-detail">{{ item.description }}</p>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="cv-section" aria-labelledby="cv-languages">
+  <h2 id="cv-languages">Languages</h2>
+  <ul class="cv-languages">
+    {% for item in site.data.cv_content.languages %}
+    <li><strong>{{ item.language }}:</strong> {{ item.level }}</li>
+    {% endfor %}
+  </ul>
+</section>

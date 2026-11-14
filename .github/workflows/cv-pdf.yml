@@ -1,0 +1,85 @@
+name: CV PDF
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "_publications/**"
+      - "_talks/**"
+      - "_data/awards.yml"
+      - "_data/cv_content.yml"
+      - "_data/cv_talks.yml"
+      - "_pages/cv.html"
+      - "_layouts/cv.html"
+      - "_includes/cv-date.html"
+      - "_includes/cv-range.html"
+      - "_includes/cv-talks.html"
+      - "assets/css/cv-print.css"
+      - "scripts/build_cv_pdf.py"
+      - ".github/workflows/cv-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cv-pdf-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Build site
+        run: bundle exec jekyll build --safe
+        env:
+          JEKYLL_ENV: production
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils fonts-dejavu-core fonts-liberation
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+      - name: Render PDF
+        run: |
+          if [ -f assets/cv.pdf ]; then cp assets/cv.pdf /tmp/cv-old.pdf; fi
+          python3 scripts/build_cv_pdf.py
+          pdftotext assets/cv.pdf /tmp/cv.txt
+          python3 - << 'PY'
+          from pathlib import Path
+          text = Path("/tmp/cv.txt").read_text(encoding="utf-8", errors="replace")
+          required = [
+              "Marc Machaalani, MD",
+              "Published Papers",
+              "Oral Presentations (First Author)",
+              "Poster Presentations (First Author)",
+              "Frank Shaughnessy",
+              "α",
+              "–",
+              "ü",
+          ]
+          missing = [item for item in required if item not in text]
+          if missing:
+              raise SystemExit("PDF text missing: " + ", ".join(missing))
+          if "@" in text or "mailto:" in text.lower():
+              raise SystemExit("PDF contains an email address")
+          print(f"PDF text ok ({len(text)} chars)")
+          PY
+          if [ -f /tmp/cv-old.pdf ]; then
+            if diff -q <(pdftotext /tmp/cv-old.pdf -) <(pdftotext assets/cv.pdf -) >/dev/null; then
+              mv /tmp/cv-old.pdf assets/cv.pdf
+              echo "PDF text unchanged; keeping the committed file."
+              exit 0
+            fi
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/cv.pdf
+          git commit -m "Update CV PDF"
+          git push

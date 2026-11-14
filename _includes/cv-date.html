@@ -1,0 +1,18 @@
+{% comment %}
+  include.date: YYYY, YYYY-MM, or YYYY-MM-DD
+  include.form: short (Feb 2026) or long (February 2026)
+{% endcomment %}
+{%- assign raw = include.date | append: "" | strip -%}
+{%- assign parts = raw | split: "-" -%}
+{%- assign year = parts[0] -%}
+{%- assign month = parts[1] | default: "" -%}
+{%- assign short_months = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec" | split: "|" -%}
+{%- assign long_months = "January|February|March|April|May|June|July|August|September|October|November|December" | split: "|" -%}
+{%- if month != "" and month != "00" -%}
+  {%- assign idx = month | plus: 0 | minus: 1 -%}
+  {%- if include.form == "long" -%}{{- long_months[idx] }} {{ year -}}
+  {%- else -%}{{- short_months[idx] }} {{ year -}}
+  {%- endif -%}
+{%- else -%}
+  {{- year -}}
+{%- endif -%}

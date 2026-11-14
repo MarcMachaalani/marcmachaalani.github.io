@@ -5,7 +5,7 @@ category: orals
 type: "Oral presentation"
 permalink: /talks/2025-02-25-onclive-kim1-oral
 venue: "OncLive National Fellows Forum: Genitourinary Cancers 2025"
-date: 2025-02-25
+date: 2025-02-12
 location: "San Francisco, CA, USA"
 ---
 
