@@ -118,7 +118,12 @@
       "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
       "name" : "{{ site.social.name | default: site.name }}",
       "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
+      "sameAs" : {{ site.social.links | jsonify }}{% if site.social.job_title %},
+      "jobTitle" : {{ site.social.job_title | jsonify }}{% endif %}{% if site.social.affiliation %},
+      "affiliation" : {
+        "@type" : "Organization",
+        "name" : {{ site.social.affiliation | jsonify }}
+      }{% endif %}
     }
   </script>
 {% endif %}

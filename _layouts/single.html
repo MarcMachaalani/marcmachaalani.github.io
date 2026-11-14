@@ -38,7 +38,14 @@ layout: default
           </p>
         </header>
         <section class="work-detail__body" itemprop="text">
-          {% if page.excerpt %}{{ page.excerpt | markdownify }}{% else %}{{ content }}{% endif %}
+          {% if work_kind == "publication" and page.abstract.size > 0 %}
+            <div data-publication-abstract>
+              <h2>Abstract</h2>
+              {% for section in page.abstract %}
+                <p>{% if section.label %}<strong>{{ section.label | escape }}</strong> {% endif %}{{ section.text | escape }}</p>
+              {% endfor %}
+            </div>
+          {% elsif page.excerpt %}{{ page.excerpt | markdownify }}{% else %}{{ content }}{% endif %}
         </section>
         {% if page.citation %}
           <details class="publication-citation work-detail__citation">

@@ -6,6 +6,8 @@ permalink: /publications/2026-06-25-nat-med-histidine/
 redirect_from:
   - /publication/2026-06-25-nat-med-histidine.html
   - /publication/2026-06-25-nat-med-histidine/
+abstract:
+  - text: "Immune-checkpoint inhibitors benefit a subset of patients with advanced cancer, and the metabolic determinants of response remain unclear. Here, using targeted metabolomics and metagenomics, we profiled 4,336 plasma samples from 1,714 patients across five tumor types and 16 cohorts spanning Europe and North America, longitudinally sampled during five immune-checkpoint inhibitor-based treatment modalities, including fecal microbiota transplantation. A multimodal machine-learning framework integrating 154 metabolites with clinical variables identified five metabolites, age, body mass index and renal function as predictors of 12-month progression-free survival. The model achieved areas under the curve of 0.88 in training and 0.73 in validation cohorts of 105 and 30 patients, respectively and generalized across seven external cohorts. Histidine was a favorable prognostic feature of survival, whereas long-chain fatty acids and succinate were negatively associated with outcome. Histidine supplementation enhanced antitumor immunity in mice. Histidine-rich diets improved progression-free survival in patients lacking dysbiotic microbiome signatures associated with histidine catabolism."
 excerpt: "Multi-cohort study integrating plasma metabolomics, metagenomics, and clinical data to identify metabolic determinants of immunotherapy outcomes, linking histidine with improved survival and long-chain fatty acids and succinate with worse outcomes across advanced cancer types."
 date: 2026-06-25
 venue: "<strong>Nature Medicine</strong>"

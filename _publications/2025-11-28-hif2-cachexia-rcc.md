@@ -6,6 +6,8 @@ permalink: /publications/2025-11-28-hif2-cachexia-rcc/
 redirect_from:
   - /publication/2025-11-28-hif2-cachexia-rcc.html
   - /publication/2025-11-28-hif2-cachexia-rcc/
+abstract:
+  - text: "Kidney cancer frequently causes paraneoplastic syndromes, including hypercalcemia and cachexia, but the underlying mechanisms are incompletely understood. The most common form of kidney cancer, clear cell renal cell carcinoma (ccRCC), is frequently caused by loss of the pVHL tumor suppressor protein and the resulting upregulation of the HIF2 transcription factor. We show that PTHLH, which resides on a ccRCC amplicon on chromosome 12p, is a direct HIF2 transcriptional target in ccRCC. Further, we show that the increased PTHLH expression is both necessary and sufficient for the induction of hypercalcemia and cachexia in preclinical orthotopic cell line tumor models. Consistent with these observations, two different allosteric HIF2 inhibitors, belzutifan and NKT2152, rapidly ameliorated hypercalcemia and cachexia in patients with ccRCC, including in some who did not exhibit objective tumor shrinkage. Our findings support prospective clinical studies to determine whether HIF2 inhibitors can be leveraged not only for tumor control, but also for the treatment of cancer-associated cachexia in renal cell carcinoma."
 excerpt: "Mechanistic and translational study demonstrating that HIF2-driven PTHLH mediates hypercalcemia and cachexia in clear cell renal cell carcinoma and is rapidly reversed by HIF2 inhibition."
 date: 2025-11-28
 venue: "<strong>Nature Medicine</strong>"

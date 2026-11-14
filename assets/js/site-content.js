@@ -33,10 +33,16 @@
   function apply(page) {
     const fields = page.fields, inline = page.inline;
     if (path === '_pages/about.md') set(document,'.splash .page__content',page.html);
-    else if (path === '_pages/interests.md') { const main = new DOMParser().parseFromString(page.html,'text/html').querySelector('main'); if (main) document.querySelector('#main').replaceWith(main); }
+    else if (path === '_pages/interests.md') {
+      const body = new DOMParser().parseFromString(page.html, 'text/html').body;
+      set(document, '#main', (body.querySelector('main') || body).innerHTML);
+    }
     else if (path === '_pages/awards.md') set(document,'[data-content-body]',page.html);
     else if (/^_(publications|talks)\//.test(path)) {
-      set(document,'.work-detail__title',inline.title); set(document,'.work-detail__body',inline.excerpt ? '<p>' + inline.excerpt + '</p>' : page.html);
+      set(document, '.work-detail__title', inline.title);
+      if (!document.querySelector('[data-publication-abstract]')) {
+        set(document, '.work-detail__body', inline.excerpt ? '<p>' + inline.excerpt + '</p>' : page.html);
+      }
       const metadata = document.querySelector('.work-detail__metadata'); if (metadata) { const spans = metadata.querySelectorAll('span'), location = path.startsWith('_talks/') && spans.length > 2 ? spans[2].cloneNode(true) : null; metadata.replaceChildren(); for (const text of [fields.venue,fields.date?.slice(0,4)]) if (text) { const span = document.createElement('span'); span.textContent = text; metadata.append(span); } if (location) metadata.append(location); }
       const detail = document.querySelector('.work-detail'); citation(detail,inline.citation,true); links(detail,fields);
     } else if (path.startsWith('_media/')) { set(document,'.page__title',inline.title); set(document,'.page__content',page.html); }

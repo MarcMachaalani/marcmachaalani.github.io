@@ -6,6 +6,8 @@ permalink: /publications/2024-10-03-liquid-biopsy-rcc/
 redirect_from:
   - /publication/2024-10-03-liquid-biopsy-rcc.html
   - /publication/2024-10-03-liquid-biopsy-rcc/
+abstract:
+  - text: "This commentary focuses on the article by Correa et al on the association of circulating tumor DNA with patient prognosis in renal cell carcinoma."
 excerpt: "Expert commentary on the prognostic significance of circulating tumor DNA in renal cell carcinoma."
 date: 2024-10-03
 venue: "<strong>The Oncologist</strong>"

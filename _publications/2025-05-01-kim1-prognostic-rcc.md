@@ -6,6 +6,8 @@ permalink: /publications/2025-05-01-kim1-prognostic-rcc/
 redirect_from:
   - /publication/2025-05-01-kim1-prognostic-rcc.html
   - /publication/2025-05-01-kim1-prognostic-rcc/
+abstract:
+  - text: "There is an unmet need for a noninvasive biomarker in renal cell carcinoma. KIM-1 has emerged as a compelling candidate according to retrospective evidence and post hoc analyses of prospective trials. Prospective studies are needed for validation and clinical implementation."
 excerpt: "Review and clinical perspective highlighting KIM-1 as a promising noninvasive prognostic biomarker in renal cell carcinoma."
 date: 2025-05-01
 venue: "<strong>European Urology Focus</strong>"
