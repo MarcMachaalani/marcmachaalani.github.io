@@ -15,6 +15,18 @@ I studied piano at the Lebanese National Higher Conservatory of Music from 2006 
 </div>
 
 
-When I have an afternoon free, I like to play tennis, go for a bike ride, or spend a little time with friends in nature around New Haven. I also enjoy a game of chess. You can find me on [Lichess](https://lichess.org/@/Marcotitto).
+When I have an afternoon free, I like to play tennis, go for a bike ride, or spend a little time with friends in nature around New Haven.
+
+<figure class="interests-photo">
+  <img src="{{ '/images/interests/east-rock.jpg' | relative_url }}" alt="East Rock Park in New Haven" loading="lazy" decoding="async">
+  <figcaption>East Rock Park, New Haven.</figcaption>
+</figure>
+
+I also enjoy a game of chess. You can find me on [Lichess](https://lichess.org/@/Marcotitto).
+
+<figure class="interests-photo interests-photo--chess">
+  <img src="{{ '/images/interests/chess-2019.jpg' | relative_url }}" alt="Marc Machaalani studying the chessboard during a tournament" loading="lazy" decoding="async">
+  <figcaption>First place and gold medal at the 2019 Lebanese University Chess Championship.</figcaption>
+</figure>
 
 My bookshelves lean toward classics and history. I keep track of what I’m reading on [Goodreads](https://www.goodreads.com/marcmachaalani). I also keep a film diary on [Letterboxd](https://letterboxd.com/Marcotitto/).

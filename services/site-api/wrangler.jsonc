@@ -7,7 +7,7 @@
   "assets": { "directory": "public", "binding": "ASSETS", "run_worker_first": true },
   "observability": { "enabled": false },
   "vars": {
-    "SITE_ORIGIN": "https://marcmachaalani.github.io",
+    "SITE_ORIGIN": "https://marcmachaalani.com",
     "GITHUB_REPO": "MarcMachaalani/marcmachaalani.github.io",
     "GITHUB_BRANCH": "master",
     "OWNER_ID": "103030028"
