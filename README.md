@@ -12,6 +12,7 @@ The site is built with [Jekyll](https://jekyllrb.com/) and the [Academic Pages](
 - Publications: `_publications/`
 - Presentations: `_talks/`
 - Awards and media: `_pages/awards.md` and `_pages/media.html`
+- CV: `/cv/` and `/assets/cv.pdf`, generated from site data. See `docs/cv.md`.
 - Custom visual styles: `_sass/_custom.scss`
 - Images and downloadable files: `images/` and `files/`
 

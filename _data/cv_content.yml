@@ -1,0 +1,95 @@
+# Hand-written CV sections. Publications, talks, and awards are generated.
+# Dates are YYYY or YYYY-MM. Use end: present for an open range. Do not put an email address in this file.
+
+education:
+  - institution: Yale School of Medicine
+    location: New Haven, CT, USA
+    program: Traditional Internal Medicine Residency Program
+    start: "2026"
+    end: present
+  - institution: Dana-Farber Cancer Institute
+    location: Boston, MA, USA
+    program: Postdoctoral Research Fellowship
+    start: "2023"
+    end: "2026"
+  - institution: Lebanese University, Faculty of Medical Sciences
+    location: Beirut, Lebanon
+    program: Doctor of Medicine (M.D.)
+    start: "2016"
+    end: "2023"
+  - institution: Lebanese National Higher Conservatory of Music
+    location: Beirut, Lebanon
+    program: "Bachelor's Degree in Piano Studies with High Distinction"
+    start: "2006"
+    end: "2021"
+
+research_experience:
+  - title: Postdoctoral Research Fellow
+    start: "2023"
+    end: "2026"
+    bullets:
+      - Medical Oncology Department at Dana-Farber Cancer Institute, Boston, MA
+      - Mentored by Toni K. Choueiri, MD (Professor) and Wenxin Xu, MD (Assistant Professor)
+      - "Techniques: Western blotting, ELISA, multiplex immunoassays, protein quantification, DNA/RNA extraction, PCR, RT-qPCR, gel electrophoresis, plasmid cloning, bacterial transformation, Midi-Prep, dsDNA quantification, maintenance of mammalian cell lines, transfection, viability assays, DESeq2 analyses, GSEA (fgsea/msigdbr), regression models"
+      - Focus on integrative analyses of circulating and tumor biomarkers in renal cell carcinoma, tumor–host interactions, immune evasion, the gut microbiome, and cancer genomics.
+  - title: Research Volunteer
+    start: "2020"
+    end: "2023"
+    bullets:
+      - Lebanese University, Faculty of Medicine, Lebanon
+      - Published six peer-reviewed articles, including four as first author
+      - Mentored junior students in research projects
+
+reviewing:
+  title: Ad Hoc Reviewer
+  start: "2020"
+  end: present
+  bullets:
+    - Reviewed 30+ manuscripts for 10+ journals including Nature
+    - "Web of Science profile: https://www.webofscience.com/wos/author/record/AAU-9292-2021"
+
+leadership:
+  - name: Lebanese Cardiology Group
+    start: "2021"
+    end: "2023"
+    description: Oversaw a nationwide research project on CPR knowledge and sudden cardiac arrest (SCA) awareness involving 2,200+ participants.
+  - name: Lebanese Oncology Interest Group
+    start: "2021"
+    end: "2023"
+    description: Led workshops, volunteering opportunities, fundraising, and free cancer clinics for underserved patients.
+  - name: Lebanese Association of Medical Services for Addictions
+    start: "2021"
+    end: "2023"
+    description: Organized public education campaigns to reduce stigma around addiction and mental health; participated in community outreach and medical education programs.
+  - name: KidneyCAN Advocacy
+    start: "2024"
+    end: "2026"
+    description: Advocate for kidney cancer research funding through the Kidney Cancer Research Program (KCRP) by meeting with U.S. Representatives and Senators.
+  - name: Lank Center for Genitourinary Oncology Journal Club
+    start: "2023"
+    end: "2026"
+    description: Organize and lead monthly journal clubs on GU oncology for faculty and research fellows.
+  - name: Health Outreach to the Middle East (HOME)
+    start: "2022"
+    end: "2023"
+    description: Participated in mobile clinics providing free healthcare services to underserved communities.
+  - name: Lebanese National Higher Conservatory of Music
+    start: "2006"
+    end: "2021"
+    description: Completed formal training in solfège, music theory, harmony, and counterpoint; tenor in Youth Choir and accompanist for violin rehearsals and performances.
+  - name: Medicine Chess Club
+    start: "2018"
+    end: "2021"
+    description: Founded and led the chess club; organized training sessions; won multiple chess tournaments including the 2019 Lebanese University Championship.
+  - name: Lebanese Youth Red Cross
+    start: "2016"
+    end: "2016"
+    description: Organized fundraising campaigns and participated in a sexual health education training camp.
+
+languages:
+  - language: Arabic
+    level: native language
+  - language: English and French
+    level: full professional proficiency
+  - language: German and Spanish
+    level: limited working proficiency

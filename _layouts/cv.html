@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+{% assign journal = true %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/cv-print.css' | relative_url }}">
+  </head>
+  <body class="journal cv-page">
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+    <main id="main" class="cv">
+      {{ content }}
+    </main>
+    <div class="page__footer">
+      <footer>
+        {% include footer.html %}
+      </footer>
+    </div>
+    {% if site.data.services.analytics_enabled and site.data.services.api_base != "" %}
+      <script defer src="{{ '/assets/js/usage.js' | relative_url }}" data-endpoint="{{ site.data.services.api_base | escape }}/usage"></script>
+    {% endif %}
+  </body>
+</html>

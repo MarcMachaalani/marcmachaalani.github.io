@@ -1,0 +1,21 @@
+{% comment %} include.categories: space-separated talk categories. include.heading: section title. {% endcomment %}
+{%- assign wanted = include.categories | split: " " -%}
+{%- assign n = 0 -%}
+<ol class="cv-numbered">
+{%- for post in site.talks reversed -%}
+  {%- unless wanted contains post.category -%}{% continue %}{%- endunless -%}
+  {%- if post.cv == false -%}{% continue %}{%- endif -%}
+  {%- assign slug = post.path | split: "/" | last | replace: ".md", "" -%}
+  {%- assign extra = site.data.cv_talks[slug] -%}
+  {%- if extra.include == false -%}{% continue %}{%- endif -%}
+  {%- assign n = n | plus: 1 -%}
+  {%- assign talk_date = post.date | date: "%Y-%m-%d" -%}
+  <li>
+    {%- if extra.authors %}{{ extra.authors }}. {% endif -%}
+    {{ post.title }}.
+    {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
+    ({% include cv-date.html date=talk_date form="short" %}).
+    {%- if post.paperurl %} <a href="{{ post.paperurl }}">{% if post.paperurl contains "doi.org/" %}{{ post.paperurl | split: "doi.org/" | last }}{% else %}{{ post.paperurl }}{% endif %}</a>{% endif -%}
+  </li>
+{%- endfor -%}
+</ol>

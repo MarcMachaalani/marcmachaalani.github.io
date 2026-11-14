@@ -1,0 +1,35 @@
+# Newest first. date is YYYY-MM or YYYY-MM-DD (quoted so Jekyll keeps it a string).
+# organization is omitted when the awards page has no sponsor, only a place.
+# note is printed on the CV only.
+- date: "2026-02-25"
+  title: Merit Travel Grant
+  organization: OncLive National Fellows Forum for Genitourinary Cancers
+  location: San Francisco, CA, USA
+- date: "2025-10"
+  title: Merit Award
+  organization: European Society of Medical Oncology (ESMO) Congress
+  location: Berlin, Germany
+- date: "2025-06"
+  title: Conquer Cancer Merit Award
+  organization: American Society of Clinical Oncology (ASCO) Annual Meeting
+  location: Chicago, IL, USA
+- date: "2025-02"
+  title: Conquer Cancer Merit Award
+  organization: American Society of Clinical Oncology Genitourinary (ASCO GU) Cancers Symposium
+  location: San Francisco, CA, USA
+- date: "2025-02-12"
+  title: Merit Travel Grant
+  organization: OncLive National Fellows Forum for Genitourinary Cancers
+  location: San Francisco, CA, USA
+- date: "2024-12"
+  title: Frank Shaughnessy Endowed Fellowship in Kidney Cancer
+  location: Boston, MA, USA
+- date: "2024-01"
+  title: Merit Travel Grant
+  organization: OncLive National Fellows Forum for Genitourinary Cancers
+  location: San Francisco, CA, USA
+- date: "2023-09"
+  title: Merit Award for Distinguished Medical Students
+  organization: American Lebanese Medical Association (ALMA)
+  location: Beirut, Lebanon
+  note: "Selected by the American Lebanese Medical Association (ALMA) as one of six recipients among 800+ medical students, based on the dean's recommendation."
