@@ -49,13 +49,7 @@
     {%- comment -%} Publication-specific metadata {%- endcomment -%}
     {% if post.venue %}
       <p class="publication-venue">
-        {% if post.article_type == "Abstract" %}
-          {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ post.date | date: "%Y" }}
-        {% elsif post.article_type == "Book Chapter" %}
-          Book chapter in {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ post.date | date: "%Y" }}
-        {% else %}
-          Published in {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ post.date | date: "%Y" }}
-        {% endif %}
+        Published in {{ post.venue | markdownify | remove: '<p>' | remove: '</p>' | strip }}, {{ post.date | date: "%Y" }}
       </p>
     {% elsif post.date %}
       <p class="page__date">
@@ -75,6 +69,9 @@
         {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}
         <strong><a href="{{ base_path }}{{ post.url }}"> Read more</a></strong>
       </p>
+    {% endif %}
+    {% if post.article_type == "Abstract" and post.abstract.size > 0 %}
+      <p class="publication-fulltext" hidden>{% for section in post.abstract %}{{ section.text | escape }} {% endfor %}</p>
     {% endif %}
 
     {%- comment -%} Citation section (collapsible) {%- endcomment -%}
