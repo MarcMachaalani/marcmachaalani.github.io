@@ -44,10 +44,19 @@ python3 scripts/import_pubmed_publications.py --write
 
 The first command is a preview. Review the records before using `--write`; existing PMIDs and titles are skipped and existing files are never overwritten. To preview selected records, pass `--pmid 12345678 87654321`. PubMed data can be incomplete or matched to the wrong author, so check each preview before adding it.
 
+Meeting abstracts are not indexed the same way. A second helper reads the public Google Scholar profile and proposes only new meeting abstracts, in the same form as the abstracts already on the site: the meeting number is removed from the title, the journal is bold, and the summary is taken from the conclusion rather than the opening sentence.
+
+```sh
+python3 scripts/import_scholar_abstracts.py
+python3 scripts/import_scholar_abstracts.py --write
+```
+
+Scholar sometimes refuses automated requests. When that happens the command stops without changing files. A weekly action runs the same check and opens a pull request only when it finds something new.
+
 ## Template and license
 
 This site began with the [Academic Pages](https://github.com/academicpages/academicpages.github.io) project, built on the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) Jekyll theme. Template and theme credits are retained in [LICENSE](LICENSE).
 
 ## Site updates
 
-Publication search and filters run entirely on GitHub Pages. A weekly PubMed action proposes new journal publications through pull requests. Contact delivery, private page counts, and the owner editor are implemented in `services/site-api` and require one-time service activation. See [site services and setup](docs/site-services.md).
+Publication search and filters run entirely on GitHub Pages. Weekly actions propose new PubMed journal publications and new Google Scholar meeting abstracts through pull requests. Contact delivery, private page counts, and the owner editor are implemented in `services/site-api` and require one-time service activation. See [site services and setup](docs/site-services.md).
