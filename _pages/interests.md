@@ -5,8 +5,6 @@ permalink: /interests/
 description: "Learn about Marc Machaalani’s interests beyond medicine, including his training in classical piano."
 ---
 
-<main id="main" class="interests-page" markdown="1">
-
 <header class="interests-heading"><p class="home-eyebrow">Away from the hospital</p><h1>Beyond medicine</h1></header>
 There is quite a bit more to life than medicine. 
 
@@ -20,5 +18,3 @@ I studied piano at the Lebanese National Higher Conservatory of Music from 2006 
 When I have an afternoon free, I like to play tennis, go for a bike ride, or spend a little time with friends in nature around New Haven. I also enjoy a game of chess. You can find me on [Lichess](https://lichess.org/@/Marcotitto).
 
 My bookshelves lean toward classics and history. I keep track of what I’m reading on [Goodreads](https://www.goodreads.com/marcmachaalani). I also keep a film diary on [Letterboxd](https://letterboxd.com/Marcotitto/).
-
-</main>

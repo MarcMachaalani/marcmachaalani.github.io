@@ -165,7 +165,14 @@ og_image                 : "/images/marc-machaalani-yale-social.jpg"
 social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  job_title: "Internal Medicine Resident"
+  affiliation: "Yale School of Medicine"
+  links:
+    - "https://orcid.org/0000-0002-6708-9922"
+    - "https://scholar.google.com/citations?user=hYkqkEUAAAAJ"
+    - "https://pubmed.ncbi.nlm.nih.gov/?term=machaalani+m"
+    - "https://www.researchgate.net/profile/Marc-Machaalani"
+    - "https://x.com/MarcMachaalani"
 
 
 # Analytics
@@ -181,6 +188,8 @@ include:
   - _pages
   - files
 exclude:
+  - markdown_generator
+  - talkmap
   - services
   - tests
   - docs
@@ -241,13 +250,13 @@ kramdown:
 # These settings control the types of collections used by the template
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
   portfolio:
-    output: true
+    output: false
     permalink: /:collection/:path/
   talks:
     output: true

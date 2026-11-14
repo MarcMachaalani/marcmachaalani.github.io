@@ -6,6 +6,8 @@ permalink: /publications/2025-11-04-mlh1-mmr-ici-ccrcc/
 redirect_from:
   - /publication/2025-11-04-mlh1-mmr-ici-ccrcc.html
   - /publication/2025-11-04-mlh1-mmr-ici-ccrcc/
+abstract:
+  - text: "Immune checkpoint inhibition can result in deep and durable responses in clear-cell renal cell carcinoma (ccRCC), yet no biomarkers currently guide management. While mismatch repair (MMR) deficiency is an established predictive biomarker for immunotherapy response in other malignancies, this has not been evaluated in ccRCC, despite the proximity of MMR gene MLH1 to VHL on chromosome 3p. Through genomic and immunohistochemical analyses across multiple cohorts, we identify somatic MLH1 deficiency as a relatively rare but robust predictor of exceptional immunotherapy response in ccRCC."
 excerpt: "Genomic and immunohistochemical analysis identifying somatic MLH1 deficiency as a rare but robust predictor of exceptional response to immune checkpoint inhibition in clear-cell renal cell carcinoma."
 date: 2025-11-04
 venue: "<strong>European Urology</strong>"

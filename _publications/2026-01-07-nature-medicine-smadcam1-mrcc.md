@@ -4,6 +4,8 @@ collection: publications
 category: manuscripts
 permalink: /publications/2026-01-07-nature-medicine-smadcam1-mrcc/
 redirect_from: /publications/2026-01-07-nature-medicine-smadcam1-mrcc.html
+abstract:
+  - text: "Patients with metastatic renal cell carcinoma treated with immune checkpoint inhibitors or antiangiogenic tyrosine kinase inhibitors may develop resistance driven by gut dysbiosis, which disrupts the MAdCAM-1-α4β7 axis and promotes the recruitment of immunosuppressive IL-17-producing T regulatory (Tr17) cells into tumors. We evaluated soluble MAdCAM-1 (sMAdCAM-1) as a prognostic biomarker in 1,051 patients from three cohorts: JAVELIN Renal 101 (avelumab plus axitinib versus sunitinib), SURF (sunitinib) and NIVOREN (nivolumab after tyrosine kinase inhibitors). In the JAVELIN cohort, baseline sMAdCAM-1 levels >180 ng ml-1 were associated with significantly improved progression-free survival (13.9 versus 8.4 months, P < 0.01) and overall survival (18 months: 84.2% versus 68.1%, P < 0.01), independent of IMDC risk groups. We validated the prognostic value of sMAdCAM-1 for overall survival in the SURF and NIVOREN cohorts. Notably, low sMAdCAM-1 levels were associated with an immunosuppressive gut microbiota profile dominated by Enterocloster species. Therefore, sMAdCAM-1 deserves further investigations as a biomarker-guided tool for microbiota-targeted interventions."
 excerpt: "Evaluation of soluble MAdCAM-1 as a prognostic biomarker in metastatic renal cell carcinoma, linking clinical outcomes to gut microbiota composition and immune regulation across three independent clinical trials."
 date: 2026-01-07
 venue: "<strong>Nature Medicine</strong>"

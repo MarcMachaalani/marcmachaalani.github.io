@@ -20,7 +20,11 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    {{ content }}
+    {% if page.url == "/interests/" %}
+      <main id="main" class="interests-page" tabindex="-1">{{ content }}</main>
+    {% else %}
+      {{ content }}
+    {% endif %}
     {% include site-gallery.html %}
 
     <div class="page__footer">
