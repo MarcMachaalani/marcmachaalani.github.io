@@ -36,7 +36,7 @@ research_experience:
     start: "2020"
     end: "2023"
     bullets:
-      - Lebanese University, Faculty of Medicine, Lebanon
+      - Lebanese University, Faculty of Medical Sciences, Lebanon
       - Published six peer-reviewed articles, including four as first author
       - Mentored junior students in research projects
 
@@ -49,18 +49,6 @@ reviewing:
     - "Web of Science profile: https://www.webofscience.com/wos/author/record/AAU-9292-2021"
 
 leadership:
-  - name: Lebanese Cardiology Group
-    start: "2021"
-    end: "2023"
-    description: Oversaw a nationwide research project on CPR knowledge and sudden cardiac arrest (SCA) awareness involving 2,200+ participants.
-  - name: Lebanese Oncology Interest Group
-    start: "2021"
-    end: "2023"
-    description: Led workshops, volunteering opportunities, fundraising, and free cancer clinics for underserved patients.
-  - name: Lebanese Association of Medical Services for Addictions
-    start: "2021"
-    end: "2023"
-    description: Organized public education campaigns to reduce stigma around addiction and mental health; participated in community outreach and medical education programs.
   - name: KidneyCAN Advocacy
     start: "2024"
     end: "2026"
@@ -73,23 +61,31 @@ leadership:
     start: "2022"
     end: "2023"
     description: Participated in mobile clinics providing free healthcare services to underserved communities.
-  - name: Lebanese National Higher Conservatory of Music
-    start: "2006"
-    end: "2021"
-    description: Completed formal training in solfège, music theory, harmony, and counterpoint; tenor in Youth Choir and accompanist for violin rehearsals and performances.
+  - name: Lebanese Cardiology Group
+    start: "2021"
+    end: "2023"
+    description: Oversaw a nationwide research project on CPR knowledge and sudden cardiac arrest (SCA) awareness involving 2,200+ participants.
+  - name: Lebanese Oncology Interest Group
+    start: "2021"
+    end: "2023"
+    description: Led workshops, volunteering opportunities, fundraising, and free cancer clinics for underserved patients.
+  - name: Lebanese Association of Medical Services for Addictions
+    start: "2021"
+    end: "2023"
+    description: Organized public education campaigns to reduce stigma around addiction and mental health; participated in community outreach and medical education programs.
   - name: Medicine Chess Club
     start: "2018"
     end: "2021"
     description: Founded and led the chess club; organized training sessions; won multiple chess tournaments including the 2019 Lebanese University Championship.
-  - name: Lebanese Youth Red Cross
-    start: "2016"
-    end: "2016"
-    description: Organized fundraising campaigns and participated in a sexual health education training camp.
+  - name: Lebanese National Higher Conservatory of Music
+    start: "2006"
+    end: "2021"
+    description: Completed formal training in solfège, music theory, harmony, and counterpoint; tenor in Youth Choir and accompanist for violin rehearsals and performances.
 
 languages:
   - language: Arabic
     level: native language
   - language: English and French
     level: full professional proficiency
-  - language: German and Spanish
+  - language: German
     level: limited working proficiency
