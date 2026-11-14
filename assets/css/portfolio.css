@@ -138,6 +138,8 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 [hidden] { display: none !important; }
 .publication-filters { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)) auto; gap: 1rem; align-items: end; padding: 1.5rem 0; margin-top: 1rem; border-block: 1px solid var(--rule); }
 .publication-search { grid-column: 1 / -1; }
+.publication-toggle { grid-column: 1 / -1; display: flex; align-items: center; gap: .6rem; justify-self: start; margin: 0; color: var(--ink); font-size: .95rem; }
+.publication-filters .publication-toggle input { width: 1.05rem; height: 1.05rem; min-height: 0; margin: 0; padding: 0; accent-color: var(--accent); }
 .publication-filters label, .contact-form label { display: block; font-size: .85rem; color: var(--muted); }
 .publication-filters input, .publication-filters select, .contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--rule); border-radius: 0; padding: .7rem; margin-top: .4rem; background: var(--paper); color: var(--ink); font: inherit; }
 .publication-filters button, .contact-form button { cursor: pointer; background: var(--paper); color: var(--ink); font: inherit; }

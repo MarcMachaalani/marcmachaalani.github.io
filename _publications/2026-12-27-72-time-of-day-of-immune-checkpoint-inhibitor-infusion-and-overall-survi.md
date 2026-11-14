@@ -1,0 +1,18 @@
+---
+title: "72 Time-of-day of Immune Checkpoint Inhibitor Infusion and Overall Survival in Renal Cell Carcinoma: A Real-World Cohort Analysis"
+collection: publications
+category: abstracts
+permalink: /publications/2026-12-27-72-time-of-day-of-immune-checkpoint-inhibitor-infusion-and-overall-survi/
+cv: false
+excerpt: |-
+  Abstract Background Previous retrospective work found an association between earlier immune-checkpoint inhibitors (ICI) infusion times and survival outcomes in renal cell carcinoma (RCC). A recent randomized trial in non-small cell lung cancer (NSCLC) also reported benefit, however, a recent analysis of several randomized trials in NSCLC found no association. Prior studies have used heterogeneous exposure definitions. Whether time-of-day (ToD) of ICI infusion impacts survival in real-world RCC patients remains unclear. We evaluated the association between ToD of ICI infusion and overall survival (OS) in RCC patients treated at Dana-Farber Cancer Institute (DFCI), using the first infusion (C1D1) as the primary exposure on biological grounds. Methods We conducted a retrospective cohort study of RCC patients receiving first- or second-line ICI-based therapy at DFCI (June 2015-December 2024). OS was assessed considering C1D1 infusion time (before vs after 12 PM; before vs after 3 PM; and three categories (<12 PM, 12-4 PM, >4 PM)); and a cumulative exposure definition matching prior mRCC studies (≥25% of infusions after 4:30 PM vs < 25%). Cox models were adjusted for age, sex , season, tumor mutational burden and line of therapy. 3-month landmark analyses addressed immortal time bias. Results 117 RCC patients received first- or second-line ICI-based therapy at DFCI between June 2015 and January 2024 (median follow-up 33 months, IQR 16.3–62.3; 84 deaths). C1D1 infusion time was not associated with OS at any cutoff, before vs after 12 PM (HR 0.77, 95% CI 0.47–1.27, p = 0.31), before vs after 3 PM (HR 0.98, 95% CI 0.59–1.62, p = 0.93) or three-category comparisons (morning vs late afternoon/evening: HR 0.64, 95% CI 0.31–1.33, p = 0.23; midday/afternoon vs late afternoon/evening: HR 0.80, 95% CI 0.41–1.54, p = 0.50). However, the cumulative exposure definition (≥25% (n = 15) of infusions after 4:30 PM vs < 25% (n = 102)) showed statistically significant worse OS for the group that received late infusions (HR 1.93, 95% CI 1.01–3.67, p = 0.046). This signal persisted after a 3-month landmark analysis (HR 2.14, 95% CI 1.11–4.12, p = 0.023), arguing against immortal time bias. Conclusions In this real-world cohort, C1D1 timing of ICI infusion was not associated with OS. An exploratory cumulative-exposure analysis (≥25% of all infusions after 4:30 PM) was associated with worse OS, persisting after landmark analysis. Biologically, any effect of infusion timing would plausibly be largest at the first infusion; we therefore consider the exploratory cumulative-exposure signal difficult to reconcile with a direct circadian effect on ICI activity. Whether this signal reflects a true biological effect or unmeasured confounding factors needs further investigation.
+date: 2026-12-27
+venue: "The Oncologist"
+paperurl: "https://doi.org/10.1093/oncolo/oyag312.073"
+citation: |-
+  Barrios P, Saleh M, Ascione L, Ali AH, Baroud T, Eid M, Chehade REH, El Sarout S, El Masri J, Ibrahim É, <strong>Machaalani M</strong>, Nafeh G, Nawfal R, Ott PA, Hodi FS, Kehl KL, Xie W, McGregor B, Gusev A, Choueiri TK. 72 Time-of-day of Immune Checkpoint Inhibitor Infusion and Overall Survival in Renal Cell Carcinoma: A Real-World Cohort Analysis. <i>The Oncologist</i>. 2026. doi:10.1093/oncolo/oyag312.073.
+article_type: "Abstract"
+topics:
+  - "Renal cell carcinoma"
+  - "Immunotherapy"
+---

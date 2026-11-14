@@ -1,0 +1,17 @@
+---
+title: "Abstract A025: SLC1A1/EAAT3 sustains oncogenic metabolic programs in kidney cancer"
+collection: publications
+category: abstracts
+permalink: /publications/2026-12-17-abstract-a025-slc1a1-eaat3-sustains-oncogenic-metabolic-programs-in-kidn/
+cv: false
+excerpt: |-
+  Abstract Background: Epigenetic dysregulation is a hallmark of pVHL-deficient clear cell Renal Cell Carcinomas (ccRCCs). This includes increases in Histone H3 lysine 27 acetylation (H3K27ac), which is associated with transcriptional activation. Its accumulation at regulatory elements (e.g., promoters and enhancers/super-enhancers) marks regulators of cellular identity and key oncogenes in many cancers. In ccRCC, H3K27ac dysregulation has been linked to both tumor development and metastasis. Importantly, prior studies investigating dysregulated H3K27ac in kidney cancer relied largely on HIF2α-dependent 786-O cells possibly missing HIF-independent epigenetic programs. We hypothesized that H3K27ac marks critical oncogenes genes in pVHL-deficient ccRCCs through both HIF-dependent and independent mechanisms. Methods: We used both HIF2α-dependent and -independent cell line models of ccRCC to identify genes with nearby pVHL-dependent alterations in H3K27ac peaks. Follow up studies included an in vivo positive selection ORF screen, cell-based mechanistic studies, and in vivo preclinical validations. Results: pVHL loss promotes SLC1A1 expression through H3K27ac dysregulation independent of HIF. SLC1A1 inactivation depletes Asp/Glu-derived metabolites [e.g., Tricarboxylic acid (TCA) cycle and nucleotide intermediates] and impedes ccRCC growth. In human tumors, SLC1A1 expression is associated with reduced immune infiltration and advanced stage/metastatic disease. Finally, in preclinical models of ccRCC, SLC1A1 inactivation reduces both lung metastasis and growth of established kidney tumors. Conclusions: Altogether, we show that SLC1A1 is an actionable dependency whose targeted inhibition may complement existing therapeutic strategies in pVHL-deficient ccRCCs. Citation Format: Treg Grubb, Pooneh Koochaki, Sayed Matar, Fatme Ghandour, Marc Machaalani, Eddy Saad, Cerise Tang, Eduard Reznik, Jesminara Khatun, Carleigh Salem, Noah Dubasik, David Orlando, Matthew Guenther, Gyanu Parajuli, Raghvendra Srivastava, Steven Martinez, Jesse Coker, Ritesh Kotecha, Ari Hakimi, John Asara, Timothy Chan, Sakari Vanharanta, Shaun Stauffer, William G. Kaelin Jr., Sabina Signoretti, Toni Choueiri, Abhishek Chakraborty. SLC1A1/EAAT3 sustains oncogenic metabolic programs in kidney cancer [abstract]. In: Proceedings of the AACR Special Conference in Cancer Research: Innovations in Kidney Cancer Research: From Molecular Insights to Therapeutic Breakthroughs; 2026 Mar 13-16; Philadelphia, PA. Philadelphia (PA): AACR; Cancer Res 2026;86(5_Suppl_2):Abstract nr A025.
+date: 2026-12-17
+venue: "Cancer Research"
+paperurl: "https://doi.org/10.1158/1538-7445.kidney26-a025"
+citation: |-
+  Grubb TM, Koochaki P, Matar S, Ghandour F, <strong>Machaalani M</strong>, Saad E, Tang C, Reznik E, Khatun J, Salem C, Dubasik N, Orlando DA, Guenther MG, Parajuli G, Srivastava RM, Martinez SR, Coker JA, Kotecha RR, Hakimi AA, Asara JM, Chan TA, Vanharanta S, Stauffer SR, Kaelin WG, Signoretti S, Choueiri TK, Chakraborty AA. Abstract A025: SLC1A1/EAAT3 sustains oncogenic metabolic programs in kidney cancer. <i>Cancer Research</i>. 2026. doi:10.1158/1538-7445.kidney26-a025.
+article_type: "Abstract"
+topics:
+  - "Renal cell carcinoma"
+---

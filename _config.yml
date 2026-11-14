@@ -90,6 +90,10 @@ publication_category:
     title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  chapters:
+    title: 'Book Chapters'
+  abstracts:
+    title: 'Abstracts'
 
 # Talk Category - The following the list of talk categories and their headings
 talk_category:
